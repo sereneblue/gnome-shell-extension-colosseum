@@ -121,5 +121,133 @@
       <default>false</default>
       <summary>Enable NBA team: Washington Wizards</summary>
     </key>
+    <key name="nfl-ari" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Arizona Cardinals</summary>
+    </key>
+    <key name="nfl-atl" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Atlanta Falcons</summary>
+    </key>
+    <key name="nfl-bal" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Baltimore Ravens</summary>
+    </key>
+    <key name="nfl-buf" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Buffalo Bills</summary>
+    </key>
+    <key name="nfl-car" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Carolina Panthers</summary>
+    </key>
+    <key name="nfl-chi" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Chicago Bears</summary>
+    </key>
+    <key name="nfl-cin" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Cincinnati Bengals</summary>
+    </key>
+    <key name="nfl-cli" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Cleveland Browns</summary>
+    </key>
+    <key name="nfl-dal" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Dallas Cowboys</summary>
+    </key>
+    <key name="nfl-den" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Denver Broncos</summary>
+    </key>
+    <key name="nfl-det" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Detroit Lions</summary>
+    </key>
+    <key name="nfl-gb" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Green Bay Packers</summary>
+    </key>
+    <key name="nfl-hou" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Houston Texans</summary>
+    </key>
+    <key name="nfl-ind" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Indianapolis Colts</summary>
+    </key>
+    <key name="nfl-jax" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Jacksonville Jaguars</summary>
+    </key>
+    <key name="nfl-kc" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Kansas City Chiefs</summary>
+    </key>
+    <key name="nfl-lv" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Las Vegas Raiders</summary>
+    </key>
+    <key name="nfl-lac" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Los Angeles Chargers</summary>
+    </key>
+    <key name="nfl-lar" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Los Angeles Rams</summary>
+    </key>
+    <key name="nfl-mia" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Miami Dolphins</summary>
+    </key>
+    <key name="nfl-min" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Minnesota Vikings</summary>
+    </key>
+    <key name="nfl-ne" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: New England Patriots</summary>
+    </key>
+    <key name="nfl-no" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: New Orleans Saints</summary>
+    </key>
+    <key name="nfl-nyg" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: New York Giants</summary>
+    </key>
+    <key name="nfl-nyj" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: New York Jets</summary>
+    </key>
+    <key name="nfl-phi" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Philadelphia Eagles</summary>
+    </key>
+    <key name="nfl-pit" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Pittsburgh Steelers</summary>
+    </key>
+    <key name="nfl-sf" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: San Francisco 49ers</summary>
+    </key>
+    <key name="nfl-sea" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Seattle Seahawks</summary>
+    </key>
+    <key name="nfl-tb" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Tampa Bay Buccaneers</summary>
+    </key>
+    <key name="nfl-ten" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Tennessee Titans</summary>
+    </key>
+    <key name="nfl-wsh" type="b">
+        <default>false</default>
+        <summary>Enable NFL team: Washington</summary>
+    </key>
   </schema>
 </schemalist>
