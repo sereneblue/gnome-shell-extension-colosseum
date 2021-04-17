@@ -1,373 +1,497 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
-  <schema id="org.gnome.shell.extensions.colosseum" path="/org/gnome/shell/extensions/colosseum/">
-    <key name="mlb-ari" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Arizona Diamondbacks</summary>
-    </key>
-    <key name="mlb-atl" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Atlanta Braves</summary>
-    </key>
-    <key name="mlb-bal" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Baltimore Orioles</summary>
-    </key>
-    <key name="mlb-bos" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Boston Red Sox</summary>
-    </key>
-    <key name="mlb-chc" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Chicago Cubs</summary>
-    </key>
-    <key name="mlb-chw" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Chicago White Sox</summary>
-    </key>
-    <key name="mlb-cin" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Cincinnati Reds</summary>
-    </key>
-    <key name="mlb-cle" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Cleveland Indians</summary>
-    </key>
-    <key name="mlb-col" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Colorado Rockies</summary>
-    </key>
-    <key name="mlb-det" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Detroit Tigers</summary>
-    </key>
-    <key name="mlb-hou" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Houston Astros</summary>
-    </key>
-    <key name="mlb-kc" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Kansas City Royals</summary>
-    </key>
-    <key name="mlb-laa" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Los Angeles Angels</summary>
-    </key>
-    <key name="mlb-lad" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Los Angeles Dodgers</summary>
-    </key>
-    <key name="mlb-mia" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Miami Marlins</summary>
-    </key>
-    <key name="mlb-mil" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Milwaukee Brewers</summary>
-    </key>
-    <key name="mlb-min" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Minnesota Twins</summary>
-    </key>
-    <key name="mlb-nym" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: New York Mets</summary>
-    </key>
-    <key name="mlb-nyy" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: New York Yankees</summary>
-    </key>
-    <key name="mlb-oak" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Oakland Athletics</summary>
-    </key>
-    <key name="mlb-phi" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Philadelphia Phillies</summary>
-    </key>
-    <key name="mlb-pit" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Pittsburgh Pirates</summary>
-    </key>
-    <key name="mlb-sd" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: San Diego Padres</summary>
-    </key>
-    <key name="mlb-sf" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: San Francisco Giants</summary>
-    </key>
-    <key name="mlb-sea" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Seattle Mariners</summary>
-    </key>
-    <key name="mlb-stl" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: St. Louis Cardinals</summary>
-    </key>
-    <key name="mlb-tb" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Tampa Bay Rays</summary>
-    </key>
-    <key name="mlb-tex" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Texas Rangers</summary>
-    </key>
-    <key name="mlb-tor" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Toronto Blue Jays</summary>
-    </key>
-    <key name="mlb-wsh" type="b">
-        <default>false</default>
-        <summary>Enable MLB team: Washington Nationals</summary>
-    </key>
-    <key name="nba-atl" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Atlanta Hawks</summary>
-    </key>
-    <key name="nba-nos" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Boston Celtics</summary>
-    </key>
-    <key name="nba-bkn" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Brooklyn Nets</summary>
-    </key>
-    <key name="nba-cha" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Charlotte Hornets</summary>
-    </key>
-    <key name="nba-chi" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Chicago Bulls</summary>
-    </key>
-    <key name="nba-cle" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Cleveland Cavaliers</summary>
-    </key>
-    <key name="nba-dal" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Dallas Mavericks</summary>
-    </key>
-    <key name="nba-den" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Denver Nuggets</summary>
-    </key>
-    <key name="nba-det" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Detroit Pistons</summary>
-    </key>
-    <key name="nba-gs" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Golden State Warriors</summary>
-    </key>
-    <key name="nba-hou" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Houston Rockets</summary>
-    </key>
-    <key name="nba-ind" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Indiana Pacers</summary>
-    </key>
-    <key name="nba-lac" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: LA Clippers</summary>
-    </key>
-    <key name="nba-lal" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Los Angeles Lakers</summary>
-    </key>
-    <key name="nba-mem" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Memphis Grizzlies</summary>
-    </key>
-    <key name="nba-mia" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Miami Heat</summary>
-    </key>
-    <key name="nba-mil" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Milwaukee Bucks</summary>
-    </key>
-    <key name="nba-min" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Minnesota Timberwolves</summary>
-    </key>
-    <key name="nba-no" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: New Orleans Pelicans</summary>
-    </key>
-    <key name="nba-ny" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: New York Knicks</summary>
-    </key>
-    <key name="nba-okc" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Oklahoma City Thunder</summary>
-    </key>
-    <key name="nba-orl" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Orlando Magic</summary>
-    </key>
-    <key name="nba-phi" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Philadelphia 76ers</summary>
-    </key>
-    <key name="nba-phx" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Phoenix Suns</summary>
-    </key>
-    <key name="nba-por" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Portland Trail Blazers</summary>
-    </key>
-    <key name="nba-sac" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Sacramento Kings</summary>
-    </key>
-    <key name="nba-sa" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: San Antonio Spurs</summary>
-    </key>
-    <key name="nba-tor" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Toronto Raptors</summary>
-    </key>
-    <key name="nba-utah" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Utah Jazz</summary>
-    </key>
-    <key name="nba-wsh" type="b">
-      <default>false</default>
-      <summary>Enable NBA team: Washington Wizards</summary>
-    </key>
-    <key name="nfl-ari" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Arizona Cardinals</summary>
-    </key>
-    <key name="nfl-atl" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Atlanta Falcons</summary>
-    </key>
-    <key name="nfl-bal" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Baltimore Ravens</summary>
-    </key>
-    <key name="nfl-buf" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Buffalo Bills</summary>
-    </key>
-    <key name="nfl-car" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Carolina Panthers</summary>
-    </key>
-    <key name="nfl-chi" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Chicago Bears</summary>
-    </key>
-    <key name="nfl-cin" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Cincinnati Bengals</summary>
-    </key>
-    <key name="nfl-cli" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Cleveland Browns</summary>
-    </key>
-    <key name="nfl-dal" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Dallas Cowboys</summary>
-    </key>
-    <key name="nfl-den" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Denver Broncos</summary>
-    </key>
-    <key name="nfl-det" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Detroit Lions</summary>
-    </key>
-    <key name="nfl-gb" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Green Bay Packers</summary>
-    </key>
-    <key name="nfl-hou" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Houston Texans</summary>
-    </key>
-    <key name="nfl-ind" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Indianapolis Colts</summary>
-    </key>
-    <key name="nfl-jax" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Jacksonville Jaguars</summary>
-    </key>
-    <key name="nfl-kc" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Kansas City Chiefs</summary>
-    </key>
-    <key name="nfl-lv" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Las Vegas Raiders</summary>
-    </key>
-    <key name="nfl-lac" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Los Angeles Chargers</summary>
-    </key>
-    <key name="nfl-lar" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Los Angeles Rams</summary>
-    </key>
-    <key name="nfl-mia" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Miami Dolphins</summary>
-    </key>
-    <key name="nfl-min" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Minnesota Vikings</summary>
-    </key>
-    <key name="nfl-ne" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: New England Patriots</summary>
-    </key>
-    <key name="nfl-no" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: New Orleans Saints</summary>
-    </key>
-    <key name="nfl-nyg" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: New York Giants</summary>
-    </key>
-    <key name="nfl-nyj" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: New York Jets</summary>
-    </key>
-    <key name="nfl-phi" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Philadelphia Eagles</summary>
-    </key>
-    <key name="nfl-pit" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Pittsburgh Steelers</summary>
-    </key>
-    <key name="nfl-sf" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: San Francisco 49ers</summary>
-    </key>
-    <key name="nfl-sea" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Seattle Seahawks</summary>
-    </key>
-    <key name="nfl-tb" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Tampa Bay Buccaneers</summary>
-    </key>
-    <key name="nfl-ten" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Tennessee Titans</summary>
-    </key>
-    <key name="nfl-wsh" type="b">
-        <default>false</default>
-        <summary>Enable NFL team: Washington</summary>
-    </key>
-  </schema>
+    <schema id="org.gnome.shell.extensions.colosseum" path="/org/gnome/shell/extensions/colosseum/">
+        <key name="mlb-ari" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Arizona Diamondbacks</summary>
+        </key>
+        <key name="mlb-atl" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Atlanta Braves</summary>
+        </key>
+        <key name="mlb-bal" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Baltimore Orioles</summary>
+        </key>
+        <key name="mlb-bos" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Boston Red Sox</summary>
+        </key>
+        <key name="mlb-chc" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Chicago Cubs</summary>
+        </key>
+        <key name="mlb-chw" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Chicago White Sox</summary>
+        </key>
+        <key name="mlb-cin" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Cincinnati Reds</summary>
+        </key>
+        <key name="mlb-cle" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Cleveland Indians</summary>
+        </key>
+        <key name="mlb-col" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Colorado Rockies</summary>
+        </key>
+        <key name="mlb-det" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Detroit Tigers</summary>
+        </key>
+        <key name="mlb-hou" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Houston Astros</summary>
+        </key>
+        <key name="mlb-kc" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Kansas City Royals</summary>
+        </key>
+        <key name="mlb-laa" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Los Angeles Angels</summary>
+        </key>
+        <key name="mlb-lad" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Los Angeles Dodgers</summary>
+        </key>
+        <key name="mlb-mia" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Miami Marlins</summary>
+        </key>
+        <key name="mlb-mil" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Milwaukee Brewers</summary>
+        </key>
+        <key name="mlb-min" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Minnesota Twins</summary>
+        </key>
+        <key name="mlb-nym" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: New York Mets</summary>
+        </key>
+        <key name="mlb-nyy" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: New York Yankees</summary>
+        </key>
+        <key name="mlb-oak" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Oakland Athletics</summary>
+        </key>
+        <key name="mlb-phi" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Philadelphia Phillies</summary>
+        </key>
+        <key name="mlb-pit" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Pittsburgh Pirates</summary>
+        </key>
+        <key name="mlb-sd" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: San Diego Padres</summary>
+        </key>
+        <key name="mlb-sf" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: San Francisco Giants</summary>
+        </key>
+        <key name="mlb-sea" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Seattle Mariners</summary>
+        </key>
+        <key name="mlb-stl" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: St. Louis Cardinals</summary>
+        </key>
+        <key name="mlb-tb" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Tampa Bay Rays</summary>
+        </key>
+        <key name="mlb-tex" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Texas Rangers</summary>
+        </key>
+        <key name="mlb-tor" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Toronto Blue Jays</summary>
+        </key>
+        <key name="mlb-wsh" type="b">
+            <default>false</default>
+            <summary>Enable MLB team: Washington Nationals</summary>
+        </key>
+        <key name="nba-atl" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Atlanta Hawks</summary>
+        </key>
+        <key name="nba-nos" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Boston Celtics</summary>
+        </key>
+        <key name="nba-bkn" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Brooklyn Nets</summary>
+        </key>
+        <key name="nba-cha" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Charlotte Hornets</summary>
+        </key>
+        <key name="nba-chi" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Chicago Bulls</summary>
+        </key>
+        <key name="nba-cle" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Cleveland Cavaliers</summary>
+        </key>
+        <key name="nba-dal" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Dallas Mavericks</summary>
+        </key>
+        <key name="nba-den" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Denver Nuggets</summary>
+        </key>
+        <key name="nba-det" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Detroit Pistons</summary>
+        </key>
+        <key name="nba-gs" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Golden State Warriors</summary>
+        </key>
+        <key name="nba-hou" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Houston Rockets</summary>
+        </key>
+        <key name="nba-ind" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Indiana Pacers</summary>
+        </key>
+        <key name="nba-lac" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: LA Clippers</summary>
+        </key>
+        <key name="nba-lal" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Los Angeles Lakers</summary>
+        </key>
+        <key name="nba-mem" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Memphis Grizzlies</summary>
+        </key>
+        <key name="nba-mia" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Miami Heat</summary>
+        </key>
+        <key name="nba-mil" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Milwaukee Bucks</summary>
+        </key>
+        <key name="nba-min" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Minnesota Timberwolves</summary>
+        </key>
+        <key name="nba-no" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: New Orleans Pelicans</summary>
+        </key>
+        <key name="nba-ny" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: New York Knicks</summary>
+        </key>
+        <key name="nba-okc" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Oklahoma City Thunder</summary>
+        </key>
+        <key name="nba-orl" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Orlando Magic</summary>
+        </key>
+        <key name="nba-phi" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Philadelphia 76ers</summary>
+        </key>
+        <key name="nba-phx" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Phoenix Suns</summary>
+        </key>
+        <key name="nba-por" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Portland Trail Blazers</summary>
+        </key>
+        <key name="nba-sac" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Sacramento Kings</summary>
+        </key>
+        <key name="nba-sa" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: San Antonio Spurs</summary>
+        </key>
+        <key name="nba-tor" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Toronto Raptors</summary>
+        </key>
+        <key name="nba-utah" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Utah Jazz</summary>
+        </key>
+        <key name="nba-wsh" type="b">
+            <default>false</default>
+            <summary>Enable NBA team: Washington Wizards</summary>
+        </key>
+        <key name="nfl-ari" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Arizona Cardinals</summary>
+        </key>
+        <key name="nfl-atl" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Atlanta Falcons</summary>
+        </key>
+        <key name="nfl-bal" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Baltimore Ravens</summary>
+        </key>
+        <key name="nfl-buf" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Buffalo Bills</summary>
+        </key>
+        <key name="nfl-car" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Carolina Panthers</summary>
+        </key>
+        <key name="nfl-chi" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Chicago Bears</summary>
+        </key>
+        <key name="nfl-cin" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Cincinnati Bengals</summary>
+        </key>
+        <key name="nfl-cli" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Cleveland Browns</summary>
+        </key>
+        <key name="nfl-dal" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Dallas Cowboys</summary>
+        </key>
+        <key name="nfl-den" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Denver Broncos</summary>
+        </key>
+        <key name="nfl-det" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Detroit Lions</summary>
+        </key>
+        <key name="nfl-gb" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Green Bay Packers</summary>
+        </key>
+        <key name="nfl-hou" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Houston Texans</summary>
+        </key>
+        <key name="nfl-ind" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Indianapolis Colts</summary>
+        </key>
+        <key name="nfl-jax" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Jacksonville Jaguars</summary>
+        </key>
+        <key name="nfl-kc" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Kansas City Chiefs</summary>
+        </key>
+        <key name="nfl-lv" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Las Vegas Raiders</summary>
+        </key>
+        <key name="nfl-lac" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Los Angeles Chargers</summary>
+        </key>
+        <key name="nfl-lar" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Los Angeles Rams</summary>
+        </key>
+        <key name="nfl-mia" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Miami Dolphins</summary>
+        </key>
+        <key name="nfl-min" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Minnesota Vikings</summary>
+        </key>
+        <key name="nfl-ne" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: New England Patriots</summary>
+        </key>
+        <key name="nfl-no" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: New Orleans Saints</summary>
+        </key>
+        <key name="nfl-nyg" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: New York Giants</summary>
+        </key>
+        <key name="nfl-nyj" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: New York Jets</summary>
+        </key>
+        <key name="nfl-phi" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Philadelphia Eagles</summary>
+        </key>
+        <key name="nfl-pit" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Pittsburgh Steelers</summary>
+        </key>
+        <key name="nfl-sf" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: San Francisco 49ers</summary>
+        </key>
+        <key name="nfl-sea" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Seattle Seahawks</summary>
+        </key>
+        <key name="nfl-tb" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Tampa Bay Buccaneers</summary>
+        </key>
+        <key name="nfl-ten" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Tennessee Titans</summary>
+        </key>
+        <key name="nfl-wsh" type="b">
+            <default>false</default>
+            <summary>Enable NFL team: Washington</summary>
+        </key>
+        <key name="nhl-ana" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Anaheim Ducks</summary>
+        </key>
+        <key name="nhl-ari" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Arizona Coyotes</summary>
+        </key>
+        <key name="nhl-bos" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Boston Bruins</summary>
+        </key>
+        <key name="nhl-buf" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Buffalo Sabres</summary>
+        </key>
+        <key name="nhl-cgy" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Calgary Flames</summary>
+        </key>
+        <key name="nhl-car" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Carolina Hurricanes</summary>
+        </key>
+        <key name="nhl-chi" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Chicago Blackhawks</summary>
+        </key>
+        <key name="nhl-col" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Colorado Avalanche</summary>
+        </key>
+        <key name="nhl-cbj" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Columbus Blue Jackets</summary>
+        </key>
+        <key name="nhl-dal" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Dallas Stars</summary>
+        </key>
+        <key name="nhl-det" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Detroit Red Wings</summary>
+        </key>
+        <key name="nhl-edm" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Edmonton Oilers</summary>
+        </key>
+        <key name="nhl-fla" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Florida Panthers</summary>
+        </key>
+        <key name="nhl-la" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Los Angeles Kings</summary>
+        </key>
+        <key name="nhl-min" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Minnesota Wild</summary>
+        </key>
+        <key name="nhl-mtl" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Montreal Canadiens</summary>
+        </key>
+        <key name="nhl-nsh" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Nashville Predators</summary>
+        </key>
+        <key name="nhl-nj" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: New Jersey Devils</summary>
+        </key>
+        <key name="nhl-nyi" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: New York Islanders</summary>
+        </key>
+        <key name="nhl-nyr" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: New York Rangers</summary>
+        </key>
+        <key name="nhl-ott" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Ottawa Senators</summary>
+        </key>
+        <key name="nhl-phi" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Philadelphia Flyers</summary>
+        </key>
+        <key name="nhl-pit" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Pittsburgh Penguins</summary>
+        </key>
+        <key name="nhl-sj" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: San Jose Sharks</summary>
+        </key>
+        <key name="nhl-stl" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: St. Louis Blues</summary>
+        </key>
+        <key name="nhl-tb" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Tampa Bay Lightning</summary>
+        </key>
+        <key name="nhl-tor" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Toronto Maple Leafs</summary>
+        </key>
+        <key name="nhl-van" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Vancouver Canucks</summary>
+        </key>
+        <key name="nhl-vgs" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Vegas Golden Knights</summary>
+        </key>
+        <key name="nhl-wsh" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Washington Capitals</summary>
+        </key>
+        <key name="nhl-wpg" type="b">
+            <default>false</default>
+            <summary>Enable NHL team: Winnipeg Jets</summary>
+        </key>
+    </schema>
 </schemalist>
