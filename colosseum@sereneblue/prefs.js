@@ -14,6 +14,8 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
             this.orientation = Gtk.Orientation.VERTICAL;
             this.spacing = 0;
 
+            this.total = {};
+
             const schemaSource = Gio.SettingsSchemaSource.new_from_directory(
                 EXTENSION.dir.get_child('schemas').get_path(), Gio.SettingsSchemaSource.get_default(), false
             );
@@ -32,11 +34,18 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
         		let enabled = "enabledList" + leagues[i];
         		let teams = "teamsList" + leagues[i];
 
+                this.total[leagues[i]] = {
+                    enabled: 0,
+                    disabled: 0
+                };
+
                 this["_" + enabled] = builder.get_object(enabled);
                 this["_" + teams] = builder.get_object(teams);
 
                 this["_" + enabled].set_sort_func(this._sortList.bind(this));
                 this["_" + teams].set_sort_func(this._sortList.bind(this));
+
+                this["_label" + leagues[i]] = builder.get_object(leagues[i].toLowerCase() + "-tab");
 
                 for (let j = 0; j < CONSTANTS.SPORTS[leagues[i]].length; j++) {
                     this._addTeam(
@@ -46,6 +55,8 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
                     	}
                     );
                 }
+
+                this._updateTabLabel(leagues[i]);
         	}
 
             this.append(container);
@@ -56,8 +67,10 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
 
             if (row.enabled) {
                 this["_enabledList" + team.league].append(row);
+                this.total[team.league].enabled += 1;
             } else {
                 this["_teamsList" + team.league].append(row);
+                this.total[team.league].disabled += 1;
             }
         }
 
@@ -75,10 +88,22 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
 
                 if (wasEnabled) {
                     this[enabled].append(row);
+
+                    this.total[data.league].enabled += 1;
+                    this.total[data.league].disabled -= 1;
                 } else {
                     this[teams].append(row);
+
+                    this.total[data.league].enabled -= 1;
+                    this.total[data.league].disabled += 1;
                 }
+
+                this._updateTabLabel(data.league);
             }
+        }
+
+        _updateTabLabel(league) {
+            this["_label" + league].set_text(league + (this.total[league].enabled ? ` (${this.total[league].enabled})` : ""));
         }
 
         _sortList(a, b) {
