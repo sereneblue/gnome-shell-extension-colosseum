@@ -1,6 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
   <schema id="org.gnome.shell.extensions.colosseum" path="/org/gnome/shell/extensions/colosseum/">
+    <key name="mlb-ari" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Arizona Diamondbacks</summary>
+    </key>
+    <key name="mlb-atl" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Atlanta Braves</summary>
+    </key>
+    <key name="mlb-bal" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Baltimore Orioles</summary>
+    </key>
+    <key name="mlb-bos" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Boston Red Sox</summary>
+    </key>
+    <key name="mlb-chc" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Chicago Cubs</summary>
+    </key>
+    <key name="mlb-chw" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Chicago White Sox</summary>
+    </key>
+    <key name="mlb-cin" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Cincinnati Reds</summary>
+    </key>
+    <key name="mlb-cle" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Cleveland Indians</summary>
+    </key>
+    <key name="mlb-col" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Colorado Rockies</summary>
+    </key>
+    <key name="mlb-det" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Detroit Tigers</summary>
+    </key>
+    <key name="mlb-hou" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Houston Astros</summary>
+    </key>
+    <key name="mlb-kc" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Kansas City Royals</summary>
+    </key>
+    <key name="mlb-laa" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Los Angeles Angels</summary>
+    </key>
+    <key name="mlb-lad" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Los Angeles Dodgers</summary>
+    </key>
+    <key name="mlb-mia" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Miami Marlins</summary>
+    </key>
+    <key name="mlb-mil" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Milwaukee Brewers</summary>
+    </key>
+    <key name="mlb-min" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Minnesota Twins</summary>
+    </key>
+    <key name="mlb-nym" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: New York Mets</summary>
+    </key>
+    <key name="mlb-nyy" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: New York Yankees</summary>
+    </key>
+    <key name="mlb-oak" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Oakland Athletics</summary>
+    </key>
+    <key name="mlb-phi" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Philadelphia Phillies</summary>
+    </key>
+    <key name="mlb-pit" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Pittsburgh Pirates</summary>
+    </key>
+    <key name="mlb-sd" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: San Diego Padres</summary>
+    </key>
+    <key name="mlb-sf" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: San Francisco Giants</summary>
+    </key>
+    <key name="mlb-sea" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Seattle Mariners</summary>
+    </key>
+    <key name="mlb-stl" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: St. Louis Cardinals</summary>
+    </key>
+    <key name="mlb-tb" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Tampa Bay Rays</summary>
+    </key>
+    <key name="mlb-tex" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Texas Rangers</summary>
+    </key>
+    <key name="mlb-tor" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Toronto Blue Jays</summary>
+    </key>
+    <key name="mlb-wsh" type="b">
+        <default>false</default>
+        <summary>Enable MLB team: Washington Nationals</summary>
+    </key>
     <key name="nba-atl" type="b">
       <default>false</default>
       <summary>Enable NBA team: Atlanta Hawks</summary>
