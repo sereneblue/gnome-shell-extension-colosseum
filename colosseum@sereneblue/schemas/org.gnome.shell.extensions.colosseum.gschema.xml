@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.colosseum" path="/org/gnome/shell/extensions/colosseum/">
+    <key name="nba-atl" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Atlanta Hawks</summary>
+    </key>
+    <key name="nba-nos" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Boston Celtics</summary>
+    </key>
+    <key name="nba-bkn" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Brooklyn Nets</summary>
+    </key>
+    <key name="nba-cha" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Charlotte Hornets</summary>
+    </key>
+    <key name="nba-chi" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Chicago Bulls</summary>
+    </key>
+    <key name="nba-cle" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Cleveland Cavaliers</summary>
+    </key>
+    <key name="nba-dal" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Dallas Mavericks</summary>
+    </key>
+    <key name="nba-den" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Denver Nuggets</summary>
+    </key>
+    <key name="nba-det" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Detroit Pistons</summary>
+    </key>
+    <key name="nba-gs" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Golden State Warriors</summary>
+    </key>
+    <key name="nba-hou" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Houston Rockets</summary>
+    </key>
+    <key name="nba-ind" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Indiana Pacers</summary>
+    </key>
+    <key name="nba-lac" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: LA Clippers</summary>
+    </key>
+    <key name="nba-lal" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Los Angeles Lakers</summary>
+    </key>
+    <key name="nba-mem" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Memphis Grizzlies</summary>
+    </key>
+    <key name="nba-mia" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Miami Heat</summary>
+    </key>
+    <key name="nba-mil" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Milwaukee Bucks</summary>
+    </key>
+    <key name="nba-min" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Minnesota Timberwolves</summary>
+    </key>
+    <key name="nba-no" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: New Orleans Pelicans</summary>
+    </key>
+    <key name="nba-ny" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: New York Knicks</summary>
+    </key>
+    <key name="nba-okc" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Oklahoma City Thunder</summary>
+    </key>
+    <key name="nba-orl" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Orlando Magic</summary>
+    </key>
+    <key name="nba-phi" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Philadelphia 76ers</summary>
+    </key>
+    <key name="nba-phx" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Phoenix Suns</summary>
+    </key>
+    <key name="nba-por" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Portland Trail Blazers</summary>
+    </key>
+    <key name="nba-sac" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Sacramento Kings</summary>
+    </key>
+    <key name="nba-sa" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: San Antonio Spurs</summary>
+    </key>
+    <key name="nba-tor" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Toronto Raptors</summary>
+    </key>
+    <key name="nba-utah" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Utah Jazz</summary>
+    </key>
+    <key name="nba-wsh" type="b">
+      <default>false</default>
+      <summary>Enable NBA team: Washington Wizards</summary>
+    </key>
+  </schema>
+</schemalist>
