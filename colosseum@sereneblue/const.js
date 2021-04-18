@@ -5,7 +5,8 @@ var PREF_LEAGUES = {
     MLB: "mlb-enabled",
     NBA: "nba-enabled",
     NFL: "nfl-enabled",
-    NHL: "nhl-enabled"   
+    NHL: "nhl-enabled",
+    WNBA: "wnba-enabled"
 };
 
 var SPORTS = {
@@ -139,5 +140,19 @@ var SPORTS = {
     { id: 37, name: "Vegas Golden Knights", pref: "nhl-vgs" },
     { id: 23, name: "Washington Capitals", pref: "nhl-wsh" },
     { id: 28, name: "Winnipeg Jets", pref: "nhl-wpg" }
+  ],
+  WNBA: [
+    { id: 20, name: "Atlanta Dream", pref: "wnba-atl" },
+    { id: 19, name: "Chicago Sky", pref: "wnba-chi" },
+    { id: 18, name: "Connecticut Sun", pref: "wnba-conn" },
+    { id: 3, name: "Dallas Wings", pref: "wnba-dal" },
+    { id: 5, name: "Indiana Fever", pref: "wnba-ind" },
+    { id: 17, name: "Las Vegas Aces", pref: "wnba-lv" },
+    { id: 6, name: "Los Angeles Sparks", pref: "wnba-la" },
+    { id: 8, name: "Minnesota Lynx", pref: "wnba-min" },
+    { id: 9, name: "New York Liberty", pref: "wnba-ny" },
+    { id: 11, name: "Phoenix Mercury", pref: "wnba-phx" },
+    { id: 14, name: "Seattle Storm", pref: "wnba-sea" },
+    { id: 16, name: "Washington Mystics", pref: "wnba-wsh" }
   ],
 };

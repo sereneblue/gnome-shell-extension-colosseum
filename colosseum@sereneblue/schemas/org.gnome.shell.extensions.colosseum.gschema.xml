@@ -25,6 +25,10 @@
             <default>false</default>
             <summary>Enable NHL scoreboard</summary>
         </key>
+        <key name="wnba-enabled" type="b">
+            <default>false</default>
+            <summary>Enable WNBA scoreboard</summary>
+        </key>
         <key name="mlb-ari" type="b">
             <default>false</default>
             <summary>Follow MLB team: Arizona Diamondbacks</summary>
@@ -516,6 +520,54 @@
         <key name="nhl-wpg" type="b">
             <default>false</default>
             <summary>Follow NHL team: Winnipeg Jets</summary>
+        </key>
+        <key name="wnba-atl" type="b">
+            <default>false</default>
+            <summary>Follow WNBA team: Atlanta Dream</summary>
+        </key>
+        <key name="wnba-chi" type="b">
+            <default>false</default>
+            <summary>Follow WNBA team: Chicago Sky</summary>
+        </key>
+        <key name="wnba-conn" type="b">
+            <default>false</default>
+            <summary>Follow WNBA team: Connecticut Sun</summary>
+        </key>
+        <key name="wnba-dal" type="b">
+            <default>false</default>
+            <summary>Follow WNBA team: Dallas Wings</summary>
+        </key>
+        <key name="wnba-ind" type="b">
+            <default>false</default>
+            <summary>Follow WNBA team: Indiana Fever</summary>
+        </key>
+        <key name="wnba-lv" type="b">
+            <default>false</default>
+            <summary>Follow WNBA team: Las Vegas Aces</summary>
+        </key>
+        <key name="wnba-la" type="b">
+            <default>false</default>
+            <summary>Follow WNBA team: Los Angeles Sparks</summary>
+        </key>
+        <key name="wnba-min" type="b">
+            <default>false</default>
+            <summary>Follow WNBA team: Minnesota Lynx</summary>
+        </key>
+        <key name="wnba-ny" type="b">
+            <default>false</default>
+            <summary>Follow WNBA team: New York Liberty</summary>
+        </key>
+        <key name="wnba-phx" type="b">
+            <default>false</default>
+            <summary>Follow WNBA team: Phoenix Mercury</summary>
+        </key>
+        <key name="wnba-sea" type="b">
+            <default>false</default>
+            <summary>Follow WNBA team: Seattle Storm</summary>
+        </key>
+        <key name="wnba-wsh" type="b">
+            <default>false</default>
+            <summary>Follow WNBA team: Washington Mystics</summary>
         </key>
     </schema>
 </schemalist>
