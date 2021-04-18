@@ -1,0 +1,45 @@
+.scoreboard .team {
+	width: 130px;
+}
+
+.scoreboard .team--winner {
+	width: 130px;
+	font-weight: bold;
+}
+
+.scoreboard .team--loser {
+	width: 130px;
+    color: rgba(255, 255, 255, 0.70);
+}
+
+.scoreboard .score {
+	width: 50px;
+	text-align: right;
+}
+
+.scoreboard .score--winner {
+	width: 50px;
+	text-align: right;
+	font-weight: bold;
+}
+
+.scoreboard .score--loser {
+	width: 50px;
+	text-align: right;
+    color: rgba(255, 255, 255, 0.70);
+}
+
+.scoreboard .meta {
+	width: 90px;
+	text-align: right;
+}
+
+.scoreboard .divider {
+	background-color: rgba(255, 255, 255, 0.1);
+	height: 1px;
+	margin: 3px 0px;
+}
+
+.scoreBoardPanel {
+	width: 295px;
+}
