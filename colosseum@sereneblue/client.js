@@ -59,6 +59,13 @@ var ColosseumClient = class ColosseumClient {
 
 	async getScores() {
 		let scoreboardDate = new Date();
+
+		// show previous day's scores until 7:00 UTC
+		let utcHour = scoreboardDate.getUTCHours();
+		if (utcHour < 7) {
+			scoreboardDate.setUTCHours(utcHour - 8);
+		}
+
 		let events = [];
 
 		let leagues = this.getEnabledLeagues();
