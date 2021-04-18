@@ -31,19 +31,19 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
             const leagues = Object.keys(CONSTANTS.SPORTS);
 
         	for (let i = 0; i < leagues.length; i++) {
-        		let enabled = "enabledList" + leagues[i];
-        		let teams = "teamsList" + leagues[i];
+        		let followed = "followList" + leagues[i];
+        		let notFollowing = "notFollowingList" + leagues[i];
 
                 this.total[leagues[i]] = {
-                    enabled: 0,
-                    disabled: 0
+                    followed: 0,
+                    notFollowing: 0
                 };
 
-                this["_" + enabled] = builder.get_object(enabled);
-                this["_" + teams] = builder.get_object(teams);
+                this["_" + followed] = builder.get_object(followed);
+                this["_" + notFollowing] = builder.get_object(notFollowing);
 
-                this["_" + enabled].set_sort_func(this._sortList.bind(this));
-                this["_" + teams].set_sort_func(this._sortList.bind(this));
+                this["_" + followed].set_sort_func(this._sortList.bind(this));
+                this["_" + notFollowing].set_sort_func(this._sortList.bind(this));
 
                 this["_label" + leagues[i]] = builder.get_object(leagues[i].toLowerCase() + "-tab");
 
@@ -66,36 +66,36 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
             let row = new TeamRow(team, this._settings, this._moveRow.bind(this));
 
             if (row.enabled) {
-                this["_enabledList" + team.league].append(row);
-                this.total[team.league].enabled += 1;
+                this["_followList" + team.league].append(row);
+                this.total[team.league].followed += 1;
             } else {
-                this["_teamsList" + team.league].append(row);
-                this.total[team.league].disabled += 1;
+                this["_notFollowingList" + team.league].append(row);
+                this.total[team.league].notFollowing += 1;
             }
         }
 
         _moveRow(data, wasEnabled) {
-    		let enabled = "_enabledList" + data.league;
-    		let teams = "_teamsList" + data.league;
+    		let followed = "_followList" + data.league;
+    		let notFollowing = "_notFollowingList" + data.league;
 
             let row = [
-                ...this[enabled],
-                ...this[teams],
+                ...this[followed],
+                ...this[notFollowing],
             ].find(t => t.name === data.team.name);
 
             if (row) {
                 row.get_parent().remove(row);
 
                 if (wasEnabled) {
-                    this[enabled].append(row);
+                    this[followed].append(row);
 
-                    this.total[data.league].enabled += 1;
-                    this.total[data.league].disabled -= 1;
+                    this.total[data.league].followed += 1;
+                    this.total[data.league].notFollowing -= 1;
                 } else {
-                    this[teams].append(row);
+                    this[notFollowing].append(row);
 
-                    this.total[data.league].enabled -= 1;
-                    this.total[data.league].disabled += 1;
+                    this.total[data.league].followed -= 1;
+                    this.total[data.league].notFollowing += 1;
                 }
 
                 this._updateTabLabel(data.league);
@@ -103,7 +103,7 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
         }
 
         _updateTabLabel(league) {
-            this["_label" + league].set_text(league + (this.total[league].enabled ? ` (${this.total[league].enabled})` : ""));
+            this["_label" + league].set_text(league + (this.total[league].followed ? ` (${this.total[league].followed})` : ""));
         }
 
         _sortList(a, b) {

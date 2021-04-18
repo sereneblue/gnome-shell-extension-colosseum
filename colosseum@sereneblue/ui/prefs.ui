@@ -28,14 +28,14 @@
                           <object class="GtkLabel">
                             <property name="halign">start</property>
                             <property name="hexpand">True</property>
-                            <property name="label">Enabled</property>
+                            <property name="label">Following</property>
                             <attributes>
                               <attribute name="weight" value="bold"/>
                             </attributes>
                           </object>
                         </child>
                         <child>
-                          <object class="GtkListBox" id="enabledListMLB">
+                          <object class="GtkListBox" id="followListMLB">
                             <property name="selection-mode">none</property>
                             <property name="show-separators">True</property>
                             <property name="margin-bottom">24</property>
@@ -55,7 +55,7 @@
                           </object>
                         </child>
                         <child>
-                          <object class="GtkListBox" id="teamsListMLB">
+                          <object class="GtkListBox" id="notFollowingListMLB">
                             <property name="selection-mode">none</property>
                             <property name="show-separators">True</property>
                             <property name="margin-bottom">24</property>
@@ -105,14 +105,14 @@
                           <object class="GtkLabel">
                             <property name="halign">start</property>
                             <property name="hexpand">True</property>
-                            <property name="label">Enabled</property>
+                            <property name="label">Following</property>
                             <attributes>
                               <attribute name="weight" value="bold"/>
                             </attributes>
                           </object>
                         </child>
                         <child>
-                          <object class="GtkListBox" id="enabledListNBA">
+                          <object class="GtkListBox" id="followListNBA">
                             <property name="selection-mode">none</property>
                             <property name="show-separators">True</property>
                             <property name="margin-bottom">24</property>
@@ -132,7 +132,7 @@
                           </object>
                         </child>
                         <child>
-                          <object class="GtkListBox" id="teamsListNBA">
+                          <object class="GtkListBox" id="notFollowingListNBA">
                             <property name="selection-mode">none</property>
                             <property name="show-separators">True</property>
                             <property name="margin-bottom">24</property>
@@ -182,14 +182,14 @@
                           <object class="GtkLabel">
                             <property name="halign">start</property>
                             <property name="hexpand">True</property>
-                            <property name="label">Enabled</property>
+                            <property name="label">Following</property>
                             <attributes>
                               <attribute name="weight" value="bold"/>
                             </attributes>
                           </object>
                         </child>
                         <child>
-                          <object class="GtkListBox" id="enabledListNFL">
+                          <object class="GtkListBox" id="followListNFL">
                             <property name="selection-mode">none</property>
                             <property name="show-separators">True</property>
                             <property name="margin-bottom">24</property>
@@ -209,7 +209,7 @@
                           </object>
                         </child>
                         <child>
-                          <object class="GtkListBox" id="teamsListNFL">
+                          <object class="GtkListBox" id="notFollowingListNFL">
                             <property name="selection-mode">none</property>
                             <property name="show-separators">True</property>
                             <property name="margin-bottom">24</property>
@@ -259,14 +259,14 @@
                           <object class="GtkLabel">
                             <property name="halign">start</property>
                             <property name="hexpand">True</property>
-                            <property name="label">Enabled</property>
+                            <property name="label">Following</property>
                             <attributes>
                               <attribute name="weight" value="bold"/>
                             </attributes>
                           </object>
                         </child>
                         <child>
-                          <object class="GtkListBox" id="enabledListNHL">
+                          <object class="GtkListBox" id="followListNHL">
                             <property name="selection-mode">none</property>
                             <property name="show-separators">True</property>
                             <property name="margin-bottom">24</property>
@@ -286,7 +286,7 @@
                           </object>
                         </child>
                         <child>
-                          <object class="GtkListBox" id="teamsListNHL">
+                          <object class="GtkListBox" id="notFollowingListNHL">
                             <property name="selection-mode">none</property>
                             <property name="show-separators">True</property>
                             <property name="margin-bottom">24</property>
