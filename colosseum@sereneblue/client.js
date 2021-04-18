@@ -13,10 +13,13 @@ var ColosseumClient = class ColosseumClient {
 		this.session = new Soup.Session();
 		this.dateFmt = new Intl.DateTimeFormat("en", {
 			month:'2-digit',day:'2-digit', year:'numeric',
-			timeZone: 'Pacific/Pago_Pago'
+			timeZone: 'Etc/UTC'
 		}); 
-		this.timeFmt = new Intl.DateTimeFormat("en", {
-			timeStyle: "short", hour: 'numeric', minute: 'numeric'
+
+		let locale = new Intl.DateTimeFormat();
+		this.timeFmt = new Intl.DateTimeFormat(
+			locale.resolvedOptions().locale === "en-US" ? "en-US" : "en-GB", {
+			hour: 'numeric', minute: 'numeric'
 		}); 
 
 		this.BASE_API_URL = 'https://site.api.espn.com/apis/site/v2/sports/';
