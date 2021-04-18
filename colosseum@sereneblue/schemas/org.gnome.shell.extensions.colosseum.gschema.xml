@@ -9,6 +9,22 @@
             <default>false</default>
             <summary>Display only followed teams</summary>
         </key>
+        <key name="mlb-enabled" type="b">
+            <default>false</default>
+            <summary>Enable MLB scoreboard</summary>
+        </key>
+        <key name="nba-enabled" type="b">
+            <default>false</default>
+            <summary>Enable NBA scoreboard</summary>
+        </key>
+        <key name="nfl-enabled" type="b">
+            <default>false</default>
+            <summary>Enable NFL scoreboard</summary>
+        </key>
+        <key name="nhl-enabled" type="b">
+            <default>false</default>
+            <summary>Enable NHL scoreboard</summary>
+        </key>
         <key name="mlb-ari" type="b">
             <default>false</default>
             <summary>Follow MLB team: Arizona Diamondbacks</summary>

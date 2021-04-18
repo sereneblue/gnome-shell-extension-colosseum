@@ -1,0 +1,28 @@
+<interface>
+  <requires lib="gtk+" version="4.0"/>
+  <template class="LeagueRow" parent="GtkListBoxRow">
+    <property name="activatable">False</property>
+    <child>
+      <object class="GtkGrid">
+        <property name="margin-start">12</property>
+        <property name="margin-end">12</property>
+        <property name="margin-top">12</property>
+        <property name="margin-bottom">12</property>
+        <property name="column-spacing">12</property>
+        <child>
+          <object class="GtkLabel" id="leagueLabel"/>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="hexpand">True</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkSwitch" id="leagueSwitch">
+            <property name="valign">center</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>

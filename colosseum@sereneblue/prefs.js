@@ -27,6 +27,8 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
             const builder = new Gtk.Builder();
             builder.add_from_file(EXTENSION.path + "/ui/prefs.ui")
 
+            this._leagues = builder.get_object("leagues")
+            ;
             const container = builder.get_object("container");
             const leagues = Object.keys(CONSTANTS.SPORTS);
 
@@ -57,12 +59,18 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
                 }
 
                 this._updateTabLabel(leagues[i]);
+                this._addLeague(leagues[i]);
         	}
 
             this.append(container);
 
             this._settings.bind(CONSTANTS.PREF_UPDATE_FREQ, builder.get_object("prefs_frequency"), "value", Gio.SettingsBindFlags.DEFAULT);
             this._settings.bind(CONSTANTS.PREF_FOLLOWED_ONLY, builder.get_object("prefs_followed_only"), "active", Gio.SettingsBindFlags.DEFAULT);
+        }
+
+        _addLeague(league) {
+            let row = new LeagueRow(league, this._settings);
+            this._leagues.append(row);
         }
 
         _addTeam(team) {
@@ -122,7 +130,7 @@ const TeamRow = GObject.registerClass({
         'teamLabel',
         'teamSwitch'
     ],
-}, class ExtensionRow extends Gtk.ListBoxRow {
+}, class Row extends Gtk.ListBoxRow {
     _init(data, settings, callback) {
         super._init();
 
@@ -151,6 +159,26 @@ const TeamRow = GObject.registerClass({
         this._switchCallback(this._data, enabled);
     }
 });
+
+const LeagueRow = GObject.registerClass({
+    GTypeName: 'LeagueRow',
+    Template: 'file:///' + EXTENSION.path + "/ui/league-row.ui",
+    InternalChildren: [
+        'leagueLabel',
+        'leagueSwitch'
+    ],
+}, class Row extends Gtk.ListBoxRow {
+    _init(league, settings) {
+        super._init();
+
+        this._app = Gio.Application.get_default();
+        this._settings = settings;
+        this._leagueLabel.label = league;
+
+        this._settings.bind(CONSTANTS.PREF_LEAGUES[league], this._leagueSwitch, "active", Gio.SettingsBindFlags.DEFAULT);
+    }
+});
+
 
 function init() {}
 

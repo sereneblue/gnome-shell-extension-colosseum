@@ -1,6 +1,13 @@
 var PREF_UPDATE_FREQ = "update-frequency";
 var PREF_FOLLOWED_ONLY = "followed-only";
 
+var PREF_LEAGUES = {
+    MLB: "mlb-enabled",
+    NBA: "nba-enabled",
+    NFL: "nfl-enabled",
+    NHL: "nhl-enabled"   
+};
+
 var SPORTS = {
   MLB: [
     { id: 29, name: "Arizona Diamondbacks", pref: "mlb-ari" },
