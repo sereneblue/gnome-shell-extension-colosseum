@@ -60,6 +60,9 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
         	}
 
             this.append(container);
+
+            this._settings.bind(CONSTANTS.PREF_UPDATE_FREQ, builder.get_object("prefs_frequency"), "value", Gio.SettingsBindFlags.DEFAULT);
+            this._settings.bind(CONSTANTS.PREF_FOLLOWED_ONLY, builder.get_object("prefs_followed_only"), "active", Gio.SettingsBindFlags.DEFAULT);
         }
 
         _addTeam(team) {

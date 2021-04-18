@@ -1,497 +1,505 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
     <schema id="org.gnome.shell.extensions.colosseum" path="/org/gnome/shell/extensions/colosseum/">
+        <key name="update-frequency" type="i">
+            <default>1</default>
+            <summary>Live score update frequency</summary>
+        </key>
+        <key name="followed-only" type="b">
+            <default>false</default>
+            <summary>Display only followed teams</summary>
+        </key>
         <key name="mlb-ari" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Arizona Diamondbacks</summary>
+            <summary>Follow MLB team: Arizona Diamondbacks</summary>
         </key>
         <key name="mlb-atl" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Atlanta Braves</summary>
+            <summary>Follow MLB team: Atlanta Braves</summary>
         </key>
         <key name="mlb-bal" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Baltimore Orioles</summary>
+            <summary>Follow MLB team: Baltimore Orioles</summary>
         </key>
         <key name="mlb-bos" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Boston Red Sox</summary>
+            <summary>Follow MLB team: Boston Red Sox</summary>
         </key>
         <key name="mlb-chc" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Chicago Cubs</summary>
+            <summary>Follow MLB team: Chicago Cubs</summary>
         </key>
         <key name="mlb-chw" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Chicago White Sox</summary>
+            <summary>Follow MLB team: Chicago White Sox</summary>
         </key>
         <key name="mlb-cin" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Cincinnati Reds</summary>
+            <summary>Follow MLB team: Cincinnati Reds</summary>
         </key>
         <key name="mlb-cle" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Cleveland Indians</summary>
+            <summary>Follow MLB team: Cleveland Indians</summary>
         </key>
         <key name="mlb-col" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Colorado Rockies</summary>
+            <summary>Follow MLB team: Colorado Rockies</summary>
         </key>
         <key name="mlb-det" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Detroit Tigers</summary>
+            <summary>Follow MLB team: Detroit Tigers</summary>
         </key>
         <key name="mlb-hou" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Houston Astros</summary>
+            <summary>Follow MLB team: Houston Astros</summary>
         </key>
         <key name="mlb-kc" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Kansas City Royals</summary>
+            <summary>Follow MLB team: Kansas City Royals</summary>
         </key>
         <key name="mlb-laa" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Los Angeles Angels</summary>
+            <summary>Follow MLB team: Los Angeles Angels</summary>
         </key>
         <key name="mlb-lad" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Los Angeles Dodgers</summary>
+            <summary>Follow MLB team: Los Angeles Dodgers</summary>
         </key>
         <key name="mlb-mia" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Miami Marlins</summary>
+            <summary>Follow MLB team: Miami Marlins</summary>
         </key>
         <key name="mlb-mil" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Milwaukee Brewers</summary>
+            <summary>Follow MLB team: Milwaukee Brewers</summary>
         </key>
         <key name="mlb-min" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Minnesota Twins</summary>
+            <summary>Follow MLB team: Minnesota Twins</summary>
         </key>
         <key name="mlb-nym" type="b">
             <default>false</default>
-            <summary>Enable MLB team: New York Mets</summary>
+            <summary>Follow MLB team: New York Mets</summary>
         </key>
         <key name="mlb-nyy" type="b">
             <default>false</default>
-            <summary>Enable MLB team: New York Yankees</summary>
+            <summary>Follow MLB team: New York Yankees</summary>
         </key>
         <key name="mlb-oak" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Oakland Athletics</summary>
+            <summary>Follow MLB team: Oakland Athletics</summary>
         </key>
         <key name="mlb-phi" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Philadelphia Phillies</summary>
+            <summary>Follow MLB team: Philadelphia Phillies</summary>
         </key>
         <key name="mlb-pit" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Pittsburgh Pirates</summary>
+            <summary>Follow MLB team: Pittsburgh Pirates</summary>
         </key>
         <key name="mlb-sd" type="b">
             <default>false</default>
-            <summary>Enable MLB team: San Diego Padres</summary>
+            <summary>Follow MLB team: San Diego Padres</summary>
         </key>
         <key name="mlb-sf" type="b">
             <default>false</default>
-            <summary>Enable MLB team: San Francisco Giants</summary>
+            <summary>Follow MLB team: San Francisco Giants</summary>
         </key>
         <key name="mlb-sea" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Seattle Mariners</summary>
+            <summary>Follow MLB team: Seattle Mariners</summary>
         </key>
         <key name="mlb-stl" type="b">
             <default>false</default>
-            <summary>Enable MLB team: St. Louis Cardinals</summary>
+            <summary>Follow MLB team: St. Louis Cardinals</summary>
         </key>
         <key name="mlb-tb" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Tampa Bay Rays</summary>
+            <summary>Follow MLB team: Tampa Bay Rays</summary>
         </key>
         <key name="mlb-tex" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Texas Rangers</summary>
+            <summary>Follow MLB team: Texas Rangers</summary>
         </key>
         <key name="mlb-tor" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Toronto Blue Jays</summary>
+            <summary>Follow MLB team: Toronto Blue Jays</summary>
         </key>
         <key name="mlb-wsh" type="b">
             <default>false</default>
-            <summary>Enable MLB team: Washington Nationals</summary>
+            <summary>Follow MLB team: Washington Nationals</summary>
         </key>
         <key name="nba-atl" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Atlanta Hawks</summary>
+            <summary>Follow NBA team: Atlanta Hawks</summary>
         </key>
         <key name="nba-nos" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Boston Celtics</summary>
+            <summary>Follow NBA team: Boston Celtics</summary>
         </key>
         <key name="nba-bkn" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Brooklyn Nets</summary>
+            <summary>Follow NBA team: Brooklyn Nets</summary>
         </key>
         <key name="nba-cha" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Charlotte Hornets</summary>
+            <summary>Follow NBA team: Charlotte Hornets</summary>
         </key>
         <key name="nba-chi" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Chicago Bulls</summary>
+            <summary>Follow NBA team: Chicago Bulls</summary>
         </key>
         <key name="nba-cle" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Cleveland Cavaliers</summary>
+            <summary>Follow NBA team: Cleveland Cavaliers</summary>
         </key>
         <key name="nba-dal" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Dallas Mavericks</summary>
+            <summary>Follow NBA team: Dallas Mavericks</summary>
         </key>
         <key name="nba-den" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Denver Nuggets</summary>
+            <summary>Follow NBA team: Denver Nuggets</summary>
         </key>
         <key name="nba-det" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Detroit Pistons</summary>
+            <summary>Follow NBA team: Detroit Pistons</summary>
         </key>
         <key name="nba-gs" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Golden State Warriors</summary>
+            <summary>Follow NBA team: Golden State Warriors</summary>
         </key>
         <key name="nba-hou" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Houston Rockets</summary>
+            <summary>Follow NBA team: Houston Rockets</summary>
         </key>
         <key name="nba-ind" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Indiana Pacers</summary>
+            <summary>Follow NBA team: Indiana Pacers</summary>
         </key>
         <key name="nba-lac" type="b">
             <default>false</default>
-            <summary>Enable NBA team: LA Clippers</summary>
+            <summary>Follow NBA team: LA Clippers</summary>
         </key>
         <key name="nba-lal" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Los Angeles Lakers</summary>
+            <summary>Follow NBA team: Los Angeles Lakers</summary>
         </key>
         <key name="nba-mem" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Memphis Grizzlies</summary>
+            <summary>Follow NBA team: Memphis Grizzlies</summary>
         </key>
         <key name="nba-mia" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Miami Heat</summary>
+            <summary>Follow NBA team: Miami Heat</summary>
         </key>
         <key name="nba-mil" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Milwaukee Bucks</summary>
+            <summary>Follow NBA team: Milwaukee Bucks</summary>
         </key>
         <key name="nba-min" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Minnesota Timberwolves</summary>
+            <summary>Follow NBA team: Minnesota Timberwolves</summary>
         </key>
         <key name="nba-no" type="b">
             <default>false</default>
-            <summary>Enable NBA team: New Orleans Pelicans</summary>
+            <summary>Follow NBA team: New Orleans Pelicans</summary>
         </key>
         <key name="nba-ny" type="b">
             <default>false</default>
-            <summary>Enable NBA team: New York Knicks</summary>
+            <summary>Follow NBA team: New York Knicks</summary>
         </key>
         <key name="nba-okc" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Oklahoma City Thunder</summary>
+            <summary>Follow NBA team: Oklahoma City Thunder</summary>
         </key>
         <key name="nba-orl" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Orlando Magic</summary>
+            <summary>Follow NBA team: Orlando Magic</summary>
         </key>
         <key name="nba-phi" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Philadelphia 76ers</summary>
+            <summary>Follow NBA team: Philadelphia 76ers</summary>
         </key>
         <key name="nba-phx" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Phoenix Suns</summary>
+            <summary>Follow NBA team: Phoenix Suns</summary>
         </key>
         <key name="nba-por" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Portland Trail Blazers</summary>
+            <summary>Follow NBA team: Portland Trail Blazers</summary>
         </key>
         <key name="nba-sac" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Sacramento Kings</summary>
+            <summary>Follow NBA team: Sacramento Kings</summary>
         </key>
         <key name="nba-sa" type="b">
             <default>false</default>
-            <summary>Enable NBA team: San Antonio Spurs</summary>
+            <summary>Follow NBA team: San Antonio Spurs</summary>
         </key>
         <key name="nba-tor" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Toronto Raptors</summary>
+            <summary>Follow NBA team: Toronto Raptors</summary>
         </key>
         <key name="nba-utah" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Utah Jazz</summary>
+            <summary>Follow NBA team: Utah Jazz</summary>
         </key>
         <key name="nba-wsh" type="b">
             <default>false</default>
-            <summary>Enable NBA team: Washington Wizards</summary>
+            <summary>Follow NBA team: Washington Wizards</summary>
         </key>
         <key name="nfl-ari" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Arizona Cardinals</summary>
+            <summary>Follow NFL team: Arizona Cardinals</summary>
         </key>
         <key name="nfl-atl" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Atlanta Falcons</summary>
+            <summary>Follow NFL team: Atlanta Falcons</summary>
         </key>
         <key name="nfl-bal" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Baltimore Ravens</summary>
+            <summary>Follow NFL team: Baltimore Ravens</summary>
         </key>
         <key name="nfl-buf" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Buffalo Bills</summary>
+            <summary>Follow NFL team: Buffalo Bills</summary>
         </key>
         <key name="nfl-car" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Carolina Panthers</summary>
+            <summary>Follow NFL team: Carolina Panthers</summary>
         </key>
         <key name="nfl-chi" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Chicago Bears</summary>
+            <summary>Follow NFL team: Chicago Bears</summary>
         </key>
         <key name="nfl-cin" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Cincinnati Bengals</summary>
+            <summary>Follow NFL team: Cincinnati Bengals</summary>
         </key>
         <key name="nfl-cli" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Cleveland Browns</summary>
+            <summary>Follow NFL team: Cleveland Browns</summary>
         </key>
         <key name="nfl-dal" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Dallas Cowboys</summary>
+            <summary>Follow NFL team: Dallas Cowboys</summary>
         </key>
         <key name="nfl-den" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Denver Broncos</summary>
+            <summary>Follow NFL team: Denver Broncos</summary>
         </key>
         <key name="nfl-det" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Detroit Lions</summary>
+            <summary>Follow NFL team: Detroit Lions</summary>
         </key>
         <key name="nfl-gb" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Green Bay Packers</summary>
+            <summary>Follow NFL team: Green Bay Packers</summary>
         </key>
         <key name="nfl-hou" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Houston Texans</summary>
+            <summary>Follow NFL team: Houston Texans</summary>
         </key>
         <key name="nfl-ind" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Indianapolis Colts</summary>
+            <summary>Follow NFL team: Indianapolis Colts</summary>
         </key>
         <key name="nfl-jax" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Jacksonville Jaguars</summary>
+            <summary>Follow NFL team: Jacksonville Jaguars</summary>
         </key>
         <key name="nfl-kc" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Kansas City Chiefs</summary>
+            <summary>Follow NFL team: Kansas City Chiefs</summary>
         </key>
         <key name="nfl-lv" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Las Vegas Raiders</summary>
+            <summary>Follow NFL team: Las Vegas Raiders</summary>
         </key>
         <key name="nfl-lac" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Los Angeles Chargers</summary>
+            <summary>Follow NFL team: Los Angeles Chargers</summary>
         </key>
         <key name="nfl-lar" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Los Angeles Rams</summary>
+            <summary>Follow NFL team: Los Angeles Rams</summary>
         </key>
         <key name="nfl-mia" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Miami Dolphins</summary>
+            <summary>Follow NFL team: Miami Dolphins</summary>
         </key>
         <key name="nfl-min" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Minnesota Vikings</summary>
+            <summary>Follow NFL team: Minnesota Vikings</summary>
         </key>
         <key name="nfl-ne" type="b">
             <default>false</default>
-            <summary>Enable NFL team: New England Patriots</summary>
+            <summary>Follow NFL team: New England Patriots</summary>
         </key>
         <key name="nfl-no" type="b">
             <default>false</default>
-            <summary>Enable NFL team: New Orleans Saints</summary>
+            <summary>Follow NFL team: New Orleans Saints</summary>
         </key>
         <key name="nfl-nyg" type="b">
             <default>false</default>
-            <summary>Enable NFL team: New York Giants</summary>
+            <summary>Follow NFL team: New York Giants</summary>
         </key>
         <key name="nfl-nyj" type="b">
             <default>false</default>
-            <summary>Enable NFL team: New York Jets</summary>
+            <summary>Follow NFL team: New York Jets</summary>
         </key>
         <key name="nfl-phi" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Philadelphia Eagles</summary>
+            <summary>Follow NFL team: Philadelphia Eagles</summary>
         </key>
         <key name="nfl-pit" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Pittsburgh Steelers</summary>
+            <summary>Follow NFL team: Pittsburgh Steelers</summary>
         </key>
         <key name="nfl-sf" type="b">
             <default>false</default>
-            <summary>Enable NFL team: San Francisco 49ers</summary>
+            <summary>Follow NFL team: San Francisco 49ers</summary>
         </key>
         <key name="nfl-sea" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Seattle Seahawks</summary>
+            <summary>Follow NFL team: Seattle Seahawks</summary>
         </key>
         <key name="nfl-tb" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Tampa Bay Buccaneers</summary>
+            <summary>Follow NFL team: Tampa Bay Buccaneers</summary>
         </key>
         <key name="nfl-ten" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Tennessee Titans</summary>
+            <summary>Follow NFL team: Tennessee Titans</summary>
         </key>
         <key name="nfl-wsh" type="b">
             <default>false</default>
-            <summary>Enable NFL team: Washington</summary>
+            <summary>Follow NFL team: Washington</summary>
         </key>
         <key name="nhl-ana" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Anaheim Ducks</summary>
+            <summary>Follow NHL team: Anaheim Ducks</summary>
         </key>
         <key name="nhl-ari" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Arizona Coyotes</summary>
+            <summary>Follow NHL team: Arizona Coyotes</summary>
         </key>
         <key name="nhl-bos" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Boston Bruins</summary>
+            <summary>Follow NHL team: Boston Bruins</summary>
         </key>
         <key name="nhl-buf" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Buffalo Sabres</summary>
+            <summary>Follow NHL team: Buffalo Sabres</summary>
         </key>
         <key name="nhl-cgy" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Calgary Flames</summary>
+            <summary>Follow NHL team: Calgary Flames</summary>
         </key>
         <key name="nhl-car" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Carolina Hurricanes</summary>
+            <summary>Follow NHL team: Carolina Hurricanes</summary>
         </key>
         <key name="nhl-chi" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Chicago Blackhawks</summary>
+            <summary>Follow NHL team: Chicago Blackhawks</summary>
         </key>
         <key name="nhl-col" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Colorado Avalanche</summary>
+            <summary>Follow NHL team: Colorado Avalanche</summary>
         </key>
         <key name="nhl-cbj" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Columbus Blue Jackets</summary>
+            <summary>Follow NHL team: Columbus Blue Jackets</summary>
         </key>
         <key name="nhl-dal" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Dallas Stars</summary>
+            <summary>Follow NHL team: Dallas Stars</summary>
         </key>
         <key name="nhl-det" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Detroit Red Wings</summary>
+            <summary>Follow NHL team: Detroit Red Wings</summary>
         </key>
         <key name="nhl-edm" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Edmonton Oilers</summary>
+            <summary>Follow NHL team: Edmonton Oilers</summary>
         </key>
         <key name="nhl-fla" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Florida Panthers</summary>
+            <summary>Follow NHL team: Florida Panthers</summary>
         </key>
         <key name="nhl-la" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Los Angeles Kings</summary>
+            <summary>Follow NHL team: Los Angeles Kings</summary>
         </key>
         <key name="nhl-min" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Minnesota Wild</summary>
+            <summary>Follow NHL team: Minnesota Wild</summary>
         </key>
         <key name="nhl-mtl" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Montreal Canadiens</summary>
+            <summary>Follow NHL team: Montreal Canadiens</summary>
         </key>
         <key name="nhl-nsh" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Nashville Predators</summary>
+            <summary>Follow NHL team: Nashville Predators</summary>
         </key>
         <key name="nhl-nj" type="b">
             <default>false</default>
-            <summary>Enable NHL team: New Jersey Devils</summary>
+            <summary>Follow NHL team: New Jersey Devils</summary>
         </key>
         <key name="nhl-nyi" type="b">
             <default>false</default>
-            <summary>Enable NHL team: New York Islanders</summary>
+            <summary>Follow NHL team: New York Islanders</summary>
         </key>
         <key name="nhl-nyr" type="b">
             <default>false</default>
-            <summary>Enable NHL team: New York Rangers</summary>
+            <summary>Follow NHL team: New York Rangers</summary>
         </key>
         <key name="nhl-ott" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Ottawa Senators</summary>
+            <summary>Follow NHL team: Ottawa Senators</summary>
         </key>
         <key name="nhl-phi" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Philadelphia Flyers</summary>
+            <summary>Follow NHL team: Philadelphia Flyers</summary>
         </key>
         <key name="nhl-pit" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Pittsburgh Penguins</summary>
+            <summary>Follow NHL team: Pittsburgh Penguins</summary>
         </key>
         <key name="nhl-sj" type="b">
             <default>false</default>
-            <summary>Enable NHL team: San Jose Sharks</summary>
+            <summary>Follow NHL team: San Jose Sharks</summary>
         </key>
         <key name="nhl-stl" type="b">
             <default>false</default>
-            <summary>Enable NHL team: St. Louis Blues</summary>
+            <summary>Follow NHL team: St. Louis Blues</summary>
         </key>
         <key name="nhl-tb" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Tampa Bay Lightning</summary>
+            <summary>Follow NHL team: Tampa Bay Lightning</summary>
         </key>
         <key name="nhl-tor" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Toronto Maple Leafs</summary>
+            <summary>Follow NHL team: Toronto Maple Leafs</summary>
         </key>
         <key name="nhl-van" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Vancouver Canucks</summary>
+            <summary>Follow NHL team: Vancouver Canucks</summary>
         </key>
         <key name="nhl-vgs" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Vegas Golden Knights</summary>
+            <summary>Follow NHL team: Vegas Golden Knights</summary>
         </key>
         <key name="nhl-wsh" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Washington Capitals</summary>
+            <summary>Follow NHL team: Washington Capitals</summary>
         </key>
         <key name="nhl-wpg" type="b">
             <default>false</default>
-            <summary>Enable NHL team: Winnipeg Jets</summary>
+            <summary>Follow NHL team: Winnipeg Jets</summary>
         </key>
     </schema>
 </schemalist>
