@@ -143,6 +143,9 @@ var ColosseumClient = class ColosseumClient {
 		} else if (evt.status.type.id === STATUS.IN_PROGRESS || evt.status.type.id === STATUS.END_PERIOD) {
 			event.live = true;
 			event.meta = evt.status.type.shortDetail;
+		} else if (evt.status.type.id === STATUS.POSTPONED) {
+			event.isComplete = true;
+			event.meta = 'Post';
 		} else {
 			event.home.score = '';
 			event.away.score = '';
