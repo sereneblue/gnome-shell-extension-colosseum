@@ -2,7 +2,7 @@
 <schemalist>
     <schema id="org.gnome.shell.extensions.colosseum" path="/org/gnome/shell/extensions/colosseum/">
         <key name="update-frequency" type="i">
-            <default>1</default>
+            <default>5</default>
             <summary>Live score update frequency</summary>
         </key>
         <key name="followed-only" type="b">

@@ -3,8 +3,8 @@
   <requires lib="gtk" version="4.0"/>
   <object class="GtkAdjustment" id="updateFrequency">
     <property name="lower">1</property>
-    <property name="upper">10</property>
-    <property name="value">1</property>
+    <property name="upper">30</property>
+    <property name="value">5</property>
     <property name="step_increment">1</property>
   </object>
   <object class="GtkNotebook" id="container">
