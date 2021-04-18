@@ -35,6 +35,7 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
         	for (let i = 0; i < leagues.length; i++) {
         		let followed = "followList" + leagues[i];
         		let notFollowing = "notFollowingList" + leagues[i];
+                let tabContent = leagues[i].toLowerCase() + "-content";
 
                 this.total[leagues[i]] = {
                     followed: 0,
@@ -43,9 +44,11 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
 
                 this["_" + followed] = builder.get_object(followed);
                 this["_" + notFollowing] = builder.get_object(notFollowing);
+                this["_" + tabContent] = builder.get_object(tabContent);
 
                 this["_" + followed].set_sort_func(this._sortList.bind(this));
                 this["_" + notFollowing].set_sort_func(this._sortList.bind(this));
+                this["_" + tabContent].set_visible(false);
 
                 this["_label" + leagues[i]] = builder.get_object(leagues[i].toLowerCase() + "-tab");
 
@@ -69,7 +72,12 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
         }
 
         _addLeague(league) {
-            let row = new LeagueRow(league, this._settings);
+            let row = new LeagueRow(league, this._settings, this._toggleTabVisibility.bind(this));
+
+            if (row.enabled) {
+                this["_" + league.toLowerCase() + "-content"].set_visible(true);
+            }
+
             this._leagues.append(row);
         }
 
@@ -83,6 +91,10 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
                 this["_notFollowingList" + team.league].append(row);
                 this.total[team.league].notFollowing += 1;
             }
+        }
+
+        _toggleTabVisibility(league, wasEnabled) {
+            this["_" + league.toLowerCase() + "-content"].set_visible(wasEnabled);
         }
 
         _moveRow(data, wasEnabled) {
@@ -168,14 +180,28 @@ const LeagueRow = GObject.registerClass({
         'leagueSwitch'
     ],
 }, class Row extends Gtk.ListBoxRow {
-    _init(league, settings) {
+    _init(league, settings, callback) {
         super._init();
 
         this._app = Gio.Application.get_default();
         this._settings = settings;
+        this._switchCallback = callback;
+
+        this._league = league;
         this._leagueLabel.label = league;
+        this._leagueSwitch.connect("notify::active", this._onSwitchChanged.bind(this));
 
         this._settings.bind(CONSTANTS.PREF_LEAGUES[league], this._leagueSwitch, "active", Gio.SettingsBindFlags.DEFAULT);
+    }
+
+    get enabled() {
+        return this._settings.get_boolean(CONSTANTS.PREF_LEAGUES[this._league]);
+    }
+
+    _onSwitchChanged(state) {
+        let enabled = state.get_active();
+
+        this._switchCallback(this._league, enabled);
     }
 });
 

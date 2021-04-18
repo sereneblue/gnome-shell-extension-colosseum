@@ -120,7 +120,7 @@
       </object>
     </child>
     <child>
-      <object class="GtkStack">
+      <object class="GtkStack" id="mlb-content">
         <property name="transition-type">crossfade</property>
         <property name="vexpand">True</property>
         <child>
@@ -196,7 +196,7 @@
       </object>
     </child>
     <child>
-      <object class="GtkStack">
+      <object class="GtkStack" id="nba-content">
         <property name="transition-type">crossfade</property>
         <property name="vexpand">True</property>
         <child>
@@ -273,7 +273,7 @@
       </object>
     </child>
     <child>
-      <object class="GtkStack">
+      <object class="GtkStack" id="nfl-content">
         <property name="transition-type">crossfade</property>
         <property name="vexpand">True</property>
         <child>
@@ -350,7 +350,7 @@
       </object>
     </child>
     <child>
-      <object class="GtkStack">
+      <object class="GtkStack" id="nhl-content">
         <property name="transition-type">crossfade</property>
         <property name="vexpand">True</property>
         <child>
@@ -427,7 +427,7 @@
       </object>
     </child>
     <child>
-      <object class="GtkStack">
+      <object class="GtkStack" id="wnba-content">
         <property name="transition-type">crossfade</property>
         <property name="vexpand">True</property>
         <child>
