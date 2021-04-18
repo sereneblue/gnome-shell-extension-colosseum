@@ -167,10 +167,12 @@ const Colosseum = new Lang.Class({
     },
     _setTopBarText: function() {
         let totalGames = 0;
+        let completedGames = 0;
         let labelText = "";
 
         for (let i = 0; i < this._scores.length; i++) {
             totalGames += this._scores[i].games.length;
+            completedGames += this._scores[i].games.filter(g => g.isComplete).length;
 
             for (let j = 0; j < this._scores[i].following.length; j++) {
                 labelText += (this._scores[i].following[j] + " ");
@@ -180,6 +182,10 @@ const Colosseum = new Lang.Class({
         if (labelText === "") {
             if (totalGames === 0) {
                 labelText = "No games today";
+            } else if (completedGames < totalGames) {
+                labelText = `${totalGames - completedGames} games`;
+            } else if (completedGames == totalGames) {
+                labelText = "No more games today";
             } else {
                 labelText = totalGames + " game(s)";
             }

@@ -114,6 +114,7 @@ var ColosseumClient = class ColosseumClient {
 		let event = {};
 
 		event.live = false;
+		event.isComplete = evt.status.type.completed;
 		event.home = {};
 		event.home.id = home.id;
 		event.home.team = home.team.shortDisplayName;
