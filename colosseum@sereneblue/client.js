@@ -5,7 +5,8 @@ const STATUS = {
 	IN_PROGRESS: "2",
 	FINAL: "3",
 	POSTPONED: "6",
-	END_PERIOD: "22"
+	END_PERIOD: "22",
+	HALFTIME: "23"
 };
 
 var ColosseumClient = class ColosseumClient {
@@ -147,7 +148,7 @@ var ColosseumClient = class ColosseumClient {
 			event.meta = this.timeFmt.format(new Date(evt.date));
 		} else if (evt.status.type.id === STATUS.FINAL) {
 			event.meta = 'Final';
-		} else if (evt.status.type.id === STATUS.IN_PROGRESS || evt.status.type.id === STATUS.END_PERIOD) {
+		} else if (evt.status.type.id === STATUS.IN_PROGRESS || evt.status.type.id === STATUS.END_PERIOD || evt.status.type.id === STATUS.HALFTIME) {
 			event.live = true;
 			event.meta = evt.status.type.shortDetail;
 		} else if (evt.status.type.id === STATUS.POSTPONED) {
