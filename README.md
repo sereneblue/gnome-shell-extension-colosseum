@@ -1,6 +1,6 @@
 # colosseum
 
-![colosseum version](https://img.shields.io/badge/version-1-brightgreen.svg)
+![colosseum version](https://img.shields.io/badge/version-2-brightgreen.svg)
 ![GPL v3 License](https://img.shields.io/badge/license-GPL%20v3-blue.svg)
 
 <p align="center">
