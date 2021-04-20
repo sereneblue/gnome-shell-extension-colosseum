@@ -7,7 +7,7 @@
 	<img src="https://user-images.githubusercontent.com/14242625/115166165-9cfc4000-a07f-11eb-99df-400550fad124.png">
 </p>
 
-A gnome-shell extenstion to view live scores for your favorite sports teams.
+A gnome-shell extension to view live scores for your favorite sports teams.
 
 # Installation
 
