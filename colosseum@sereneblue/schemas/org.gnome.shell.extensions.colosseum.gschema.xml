@@ -13,6 +13,10 @@
             <default>false</default>
             <summary>Enable EPL scoreboard</summary>
         </key>
+        <key name="laliga-enabled" type="b">
+            <default>false</default>
+            <summary>Enable LaLiga scoreboard</summary>
+        </key>
         <key name="mlb-enabled" type="b">
             <default>false</default>
             <summary>Enable MLB scoreboard</summary>
@@ -112,6 +116,86 @@
         <key name="epl-wol" type="b">
             <default>false</default>
             <summary>Follow EPL team: Wolverhampton Wanderers</summary>
+        </key>
+        <key name="laliga-alv" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Alavés</summary>
+        </key>
+        <key name="laliga-ath" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Athletic Bilbao</summary>
+        </key>
+        <key name="laliga-atl" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Atletico Madrid</summary>
+        </key>
+        <key name="laliga-bar" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Barcelona</summary>
+        </key>
+        <key name="laliga-cel" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Celta Vigo</summary>
+        </key>
+        <key name="laliga-cad" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Cádiz</summary>
+        </key>
+        <key name="laliga-eib" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Eibar</summary>
+        </key>
+        <key name="laliga-elc" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Elche</summary>
+        </key>
+        <key name="laliga-get" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Getafe</summary>
+        </key>
+        <key name="laliga-gcf" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Granada</summary>
+        </key>
+        <key name="laliga-hue" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Huesca</summary>
+        </key>
+        <key name="laliga-lev" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Levante</summary>
+        </key>
+        <key name="laliga-osa" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Osasuna</summary>
+        </key>
+        <key name="laliga-bet" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Real Betis</summary>
+        </key>
+        <key name="laliga-mad" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Real Madrid</summary>
+        </key>
+        <key name="laliga-rso" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Real Sociedad</summary>
+        </key>
+        <key name="laliga-vall" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Real Valladolid</summary>
+        </key>
+        <key name="laliga-sev" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Sevilla FC</summary>
+        </key>
+        <key name="laliga-val" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Valencia</summary>
+        </key>
+        <key name="laliga-vill" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Villarreal</summary>
         </key>
         <key name="mlb-ari" type="b">
             <default>false</default>

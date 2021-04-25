@@ -3,6 +3,7 @@ var PREF_FOLLOWED_ONLY = "followed-only";
 
 var PREF_LEAGUES = {
     EPL: "epl-enabled",
+    LaLiga: "laliga-enabled",
     MLB: "mlb-enabled",
     NBA: "nba-enabled",
     NFL: "nfl-enabled",
@@ -32,6 +33,28 @@ var SPORTS = {
     { id: 383, name: "West Bromwich Albion", pref: "epl-wba" },
     { id: 371, name: "West Ham United", pref: "epl-whu" },
     { id: 380, name: "Wolverhampton Wanderers", pref: "epl-wol" }
+  ],
+  LaLiga: [
+    { id: 96, name: "Alavés", pref: "laliga-alv" },
+    { id: 93, name: "Athletic Bilbao", pref: "laliga-ath" },
+    { id: 1068, name: "Atletico Madrid", pref: "laliga-atl" },
+    { id: 83, name: "Barcelona", pref: "laliga-bar" },
+    { id: 85, name: "Celta Vigo", pref: "laliga-cel" },
+    { id: 3842, name: "Cádiz", pref: "laliga-cad" },
+    { id: 3752, name: "Eibar", pref: "laliga-eib" },
+    { id: 3751, name: "Elche", pref: "laliga-elc" },
+    { id: 2922, name: "Getafe", pref: "laliga-get" },
+    { id: 3747, name: "Granada", pref: "laliga-gcf" },
+    { id: 5413, name: "Huesca", pref: "laliga-hue" },
+    { id: 29, name: "Levante", pref: "laliga-lev" },
+    { id: 97, name: "Osasuna", pref: "laliga-osa" },
+    { id: 244, name: "Real Betis", pref: "laliga-bet" },
+    { id: 86, name: "Real Madrid", pref: "laliga-mad" },
+    { id: 89, name: "Real Sociedad", pref: "laliga-rso" },
+    { id: 95, name: "Real Valladolid", pref: "laliga-vall" },
+    { id: 243, name: "Sevilla FC", pref: "laliga-sev" },
+    { id: 94, name: "Valencia", pref: "laliga-val" },
+    { id: 102, name: "Villarreal", pref: "laliga-vill" }
   ],
   MLB: [
     { id: 29, name: "Arizona Diamondbacks", pref: "mlb-ari" },

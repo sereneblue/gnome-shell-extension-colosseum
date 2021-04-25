@@ -63,6 +63,7 @@ var ColosseumClient = class ColosseumClient {
 		this.BASE_API_URL = 'https://site.api.espn.com/apis/site/v2/sports/';
 		this.API_URLS = {
 			EPL: this.BASE_API_URL + 'soccer/eng.1/scoreboard',
+			LaLiga: this.BASE_API_URL + 'soccer/esp.1/scoreboard',
 			MLB: this.BASE_API_URL + 'baseball/mlb/scoreboard',
 			NBA: this.BASE_API_URL + 'basketball/nba/scoreboard',
 			NFL: this.BASE_API_URL + 'football/nfl/scoreboard',
