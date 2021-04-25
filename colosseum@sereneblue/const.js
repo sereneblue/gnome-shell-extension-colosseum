@@ -2,6 +2,7 @@ var PREF_UPDATE_FREQ = "update-frequency";
 var PREF_FOLLOWED_ONLY = "followed-only";
 
 var PREF_LEAGUES = {
+    Bund: "bund-enabled",
     EPL: "epl-enabled",
     LaLiga: "laliga-enabled",
     MLB: "mlb-enabled",
@@ -12,6 +13,26 @@ var PREF_LEAGUES = {
 };
 
 var SPORTS = {
+  Bund: [
+    { id: 2506, name: "Arminia Bielefeld", pref: "bund-dsc" },
+    { id: 131, name: "Bayer Leverkusen", pref: "bund-lev" },
+    { id: 132, name: "Bayern Munich", pref: "bund-mun" },
+    { id: 124, name: "Borussia Dortmund", pref: "bund-dor" },
+    { id: 268, name: "Borussia Monchengladbach", pref: "bund-mon" },
+    { id: 125, name: "Eintracht Frankfurt", pref: "bund-einf" },
+    { id: 3841, name: "FC Augsburg", pref: "bund-aug" },
+    { id: 122, name: "FC Cologne", pref: "bund-col" },
+    { id: 598, name: "FC Union Berlin", pref: "bund-fcub" },
+    { id: 129, name: "Hertha Berlin", pref: "bund-hert" },
+    { id: 2950, name: "Mainz", pref: "bund-main" },
+    { id: 11420, name: "RB Leipzig", pref: "bund-lei" },
+    { id: 126, name: "SC Freiburg", pref: "bund-frei" },
+    { id: 133, name: "Schalke 04", pref: "bund-scha" },
+    { id: 7911, name: "TSG Hoffenheim", pref: "bund-hof" },
+    { id: 134, name: "VfB Stuttgart", pref: "bund-stu" },
+    { id: 138, name: "VfL Wolfsburg", pref: "bund-wolf" },
+    { id: 137, name: "Werder Bremen", pref: "bund-wer" }
+  ],
   EPL: [
     { id: 359, name: "Arsenal", pref: "epl-ars" },
     { id: 362, name: "Aston Villa", pref: "epl-avl" },

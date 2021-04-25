@@ -120,6 +120,82 @@
       </object>
     </child>
     <child>
+      <object class="GtkStack" id="bund-content">
+        <property name="transition-type">crossfade</property>
+        <property name="vexpand">True</property>
+        <child>
+          <object class="GtkStackPage">
+            <property name="name">main</property>
+            <property name="child">
+              <object class="GtkScrolledWindow">
+                <property name="hscrollbar-policy">never</property>
+                <child>
+                  <object class="GtkViewport">
+                    <child>
+                      <object class="GtkBox">
+                        <property name="orientation">vertical</property>
+                        <property name="halign">fill</property>
+                        <property name="margin-start">36</property>
+                        <property name="margin-end">36</property>
+                        <property name="margin-top">36</property>
+                        <property name="margin-bottom">36</property>
+                        <property name="spacing">12</property>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="halign">start</property>
+                            <property name="hexpand">True</property>
+                            <property name="label">Following</property>
+                            <attributes>
+                              <attribute name="weight" value="bold"/>
+                            </attributes>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkListBox" id="followListBund">
+                            <property name="selection-mode">none</property>
+                            <property name="show-separators">True</property>
+                            <property name="margin-bottom">24</property>
+                            <style>
+                              <class name="frame"/>
+                            </style>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="halign">start</property>
+                            <property name="hexpand">True</property>
+                            <property name="label">Teams</property>
+                            <attributes>
+                              <attribute name="weight" value="bold"/>
+                            </attributes>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkListBox" id="notFollowingListBund">
+                            <property name="selection-mode">none</property>
+                            <property name="show-separators">True</property>
+                            <property name="margin-bottom">24</property>
+                            <style>
+                              <class name="frame"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child type="tab">
+      <object class="GtkLabel" id="bund-tab">
+        <property name="label">Bundesliga</property>
+      </object>
+    </child>
+    <child>
       <object class="GtkStack" id="epl-content">
         <property name="transition-type">crossfade</property>
         <property name="vexpand">True</property>

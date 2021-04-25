@@ -9,6 +9,10 @@
             <default>false</default>
             <summary>Display only followed teams</summary>
         </key>
+        <key name="bund-enabled" type="b">
+            <default>false</default>
+            <summary>Enable Bund scoreboard</summary>
+        </key>
         <key name="epl-enabled" type="b">
             <default>false</default>
             <summary>Enable EPL scoreboard</summary>
@@ -36,6 +40,78 @@
         <key name="wnba-enabled" type="b">
             <default>false</default>
             <summary>Enable WNBA scoreboard</summary>
+        </key>
+        <key name="bund-dsc" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: Arminia Bielefeld</summary>
+        </key>
+        <key name="bund-lev" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: Bayer Leverkusen</summary>
+        </key>
+        <key name="bund-mun" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: Bayern Munich</summary>
+        </key>
+        <key name="bund-dor" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: Borussia Dortmund</summary>
+        </key>
+        <key name="bund-mon" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: Borussia Monchengladbach</summary>
+        </key>
+        <key name="bund-einf" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: Eintracht Frankfurt</summary>
+        </key>
+        <key name="bund-aug" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: FC Augsburg</summary>
+        </key>
+        <key name="bund-col" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: FC Cologne</summary>
+        </key>
+        <key name="bund-fcub" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: FC Union Berlin</summary>
+        </key>
+        <key name="bund-hert" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: Hertha Berlin</summary>
+        </key>
+        <key name="bund-main" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: Mainz</summary>
+        </key>
+        <key name="bund-lei" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: RB Leipzig</summary>
+        </key>
+        <key name="bund-frei" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: SC Freiburg</summary>
+        </key>
+        <key name="bund-scha" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: Schalke 04</summary>
+        </key>
+        <key name="bund-hof" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: TSG Hoffenheim</summary>
+        </key>
+        <key name="bund-stu" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: VfB Stuttgart</summary>
+        </key>
+        <key name="bund-wolf" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: VfL Wolfsburg</summary>
+        </key>
+        <key name="bund-wer" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: Werder Bremen</summary>
         </key>
         <key name="epl-ars" type="b">
             <default>false</default>
