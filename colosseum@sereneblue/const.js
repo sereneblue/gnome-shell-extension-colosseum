@@ -2,6 +2,7 @@ var PREF_UPDATE_FREQ = "update-frequency";
 var PREF_FOLLOWED_ONLY = "followed-only";
 
 var PREF_LEAGUES = {
+    EPL: "epl-enabled",
     MLB: "mlb-enabled",
     NBA: "nba-enabled",
     NFL: "nfl-enabled",
@@ -10,6 +11,28 @@ var PREF_LEAGUES = {
 };
 
 var SPORTS = {
+  EPL: [
+    { id: 359, name: "Arsenal", pref: "epl-ars" },
+    { id: 362, name: "Aston Villa", pref: "epl-avl" },
+    { id: 331, name: "Brighton & Hove Albion", pref: "epl-bha" },
+    { id: 379, name: "Burnley", pref: "epl-bur" },
+    { id: 363, name: "Chelsea", pref: "epl-che" },
+    { id: 384, name: "Crystal Palace", pref: "epl-cry" },
+    { id: 368, name: "Everton", pref: "epl-eve" },
+    { id: 370, name: "Fulham", pref: "epl-ful" },
+    { id: 357, name: "Leeds United", pref: "epl-lee" },
+    { id: 375, name: "Leicester City", pref: "epl-lei" },
+    { id: 364, name: "Liverpool", pref: "epl-liv" },
+    { id: 382, name: "Manchester City", pref: "epl-mnc" },
+    { id: 360, name: "Manchester United", pref: "epl-man" },
+    { id: 361, name: "Newcastle United", pref: "epl-new" },
+    { id: 398, name: "Sheffield United", pref: "epl-shu" },
+    { id: 376, name: "Southampton", pref: "epl-sou" },
+    { id: 367, name: "Tottenham Hotspur", pref: "epl-tot" },
+    { id: 383, name: "West Bromwich Albion", pref: "epl-wba" },
+    { id: 371, name: "West Ham United", pref: "epl-whu" },
+    { id: 380, name: "Wolverhampton Wanderers", pref: "epl-wol" }
+  ],
   MLB: [
     { id: 29, name: "Arizona Diamondbacks", pref: "mlb-ari" },
     { id: 15, name: "Atlanta Braves", pref: "mlb-atl" },

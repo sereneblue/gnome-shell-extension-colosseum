@@ -9,6 +9,10 @@
             <default>false</default>
             <summary>Display only followed teams</summary>
         </key>
+        <key name="epl-enabled" type="b">
+            <default>false</default>
+            <summary>Enable EPL scoreboard</summary>
+        </key>
         <key name="mlb-enabled" type="b">
             <default>false</default>
             <summary>Enable MLB scoreboard</summary>
@@ -28,6 +32,86 @@
         <key name="wnba-enabled" type="b">
             <default>false</default>
             <summary>Enable WNBA scoreboard</summary>
+        </key>
+        <key name="epl-ars" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Arsenal</summary>
+        </key>
+        <key name="epl-avl" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Aston Villa</summary>
+        </key>
+        <key name="epl-bha" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Brighton &amp; Hove Albion</summary>
+        </key>
+        <key name="epl-bur" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Burnley</summary>
+        </key>
+        <key name="epl-che" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Chelsea</summary>
+        </key>
+        <key name="epl-cry" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Crystal Palace</summary>
+        </key>
+        <key name="epl-eve" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Everton</summary>
+        </key>
+        <key name="epl-ful" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Fulham</summary>
+        </key>
+        <key name="epl-lee" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Leeds United</summary>
+        </key>
+        <key name="epl-lei" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Leicester City</summary>
+        </key>
+        <key name="epl-liv" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Liverpool</summary>
+        </key>
+        <key name="epl-mnc" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Manchester City</summary>
+        </key>
+        <key name="epl-man" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Manchester United</summary>
+        </key>
+        <key name="epl-new" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Newcastle United</summary>
+        </key>
+        <key name="epl-shu" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Sheffield United</summary>
+        </key>
+        <key name="epl-sou" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Southampton</summary>
+        </key>
+        <key name="epl-tot" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Tottenham Hotspur</summary>
+        </key>
+        <key name="epl-wba" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: West Bromwich Albion</summary>
+        </key>
+        <key name="epl-whu" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: West Ham United</summary>
+        </key>
+        <key name="epl-wol" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Wolverhampton Wanderers</summary>
         </key>
         <key name="mlb-ari" type="b">
             <default>false</default>

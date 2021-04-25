@@ -6,7 +6,8 @@ const STATUS = {
 	FINAL: "3",
 	POSTPONED: "6",
 	END_PERIOD: "22",
-	HALFTIME: "23"
+	HALFTIME: "23",
+	FULLTIME: "28",
 };
 
 var ColosseumClient = class ColosseumClient {
@@ -25,6 +26,7 @@ var ColosseumClient = class ColosseumClient {
 
 		this.BASE_API_URL = 'https://site.api.espn.com/apis/site/v2/sports/';
 		this.API_URLS = {
+			EPL: this.BASE_API_URL + 'soccer/eng.1/scoreboard',
 			MLB: this.BASE_API_URL + 'baseball/mlb/scoreboard',
 			NBA: this.BASE_API_URL + 'basketball/nba/scoreboard',
 			NFL: this.BASE_API_URL + 'football/nfl/scoreboard',
@@ -148,7 +150,7 @@ var ColosseumClient = class ColosseumClient {
 			event.meta = this.timeFmt.format(new Date(evt.date));
 		} else if (evt.status.type.id === STATUS.FINAL) {
 			event.meta = 'Final';
-		} else if (evt.status.type.id === STATUS.IN_PROGRESS || evt.status.type.id === STATUS.END_PERIOD || evt.status.type.id === STATUS.HALFTIME) {
+		} else if (evt.status.type.id === STATUS.IN_PROGRESS || evt.status.type.id === STATUS.END_PERIOD || evt.status.type.id === STATUS.HALFTIME || evt.status.type.id === STATUS.FULLTIME) {
 			event.live = true;
 			event.meta = evt.status.type.shortDetail;
 		} else if (evt.status.type.id === STATUS.POSTPONED) {
