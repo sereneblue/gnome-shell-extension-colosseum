@@ -1,14 +1,50 @@
 const Soup = imports.gi.Soup;
 
 const STATUS = {
+	TBD: "0",
 	SCHEDULED: "1",
 	IN_PROGRESS: "2",
 	FINAL: "3",
+	FORFEIT: "4",
+	CANCELLED: "5",
 	POSTPONED: "6",
+	DELAYED: "7",
+	SUSPENDED: "8",
+	FORFEIT_HOME: "9",
+	FORFEIT_AWAY: "10",
+	RAIN_DELAY: "17",
+	BEGIN_PERIOD: "21",
 	END_PERIOD: "22",
 	HALFTIME: "23",
+	OVERTIME: "24",
+	FIRST_HALF: "25",
+	SECOND_HALF: "26",
+	ABANDONED: "27",
 	FULLTIME: "28",
-};
+	RESCHEDULED: "29",
+	START_LIST: "30",
+	INTERMEDIATE: "31",
+	UNOFFICIAL: "32",
+	MEDAL_OFFICIAL: "33",
+	GROUPINGS_OFFICIAL: "34",
+	PLAY_COMPELTE: "35",
+	OFFICIAL_EVENT_SHORTENED: "36",
+	CORRECTED_RESULT: "37",
+	RETIRED: "38",
+	BYE: "39",
+	WALKOVER: "40",
+	VOID: "41",
+	PRELIMINARY: "42",
+	GOLDEN_TIME: "43",
+	SHOOTOUT: "44",
+	FINAL_SCORE_AFTER_EXTRA_TIME: "45",
+	FINAL_SCORE_AFTER_GOLDEN_GOAL: "46",
+	FINAL_SCORE_AFTER_PENALTIES: "47",
+	END_EXTRA_TIME: "48",
+	EXTRA_TIME_HALF_TIME: "49",
+	FIXTURE_NO_LIVE_COVERAGE: "50",
+	FINAL_SCORE_ABANDONED: "51"
+};	
 
 var ColosseumClient = class ColosseumClient {
 	constructor(constants, settings) {
@@ -144,13 +180,39 @@ var ColosseumClient = class ColosseumClient {
 		event.away.isWinner = 'winner' in away ? away.winner : false;
 		event.away.isLoser = 'winner' in away ?(away.winner === false ? true : false) : false;
 
-		if (evt.status.type.id === STATUS.SCHEDULED) {
+		if (
+			evt.status.type.id === STATUS.SCHEDULED 	|| 
+			evt.status.type.id === STATUS.DELAYED 		|| 
+			evt.status.type.id === STATUS.RAIN_DELAY
+		) {
 			event.home.score = '';
 			event.away.score = '';
 			event.meta = this.timeFmt.format(new Date(evt.date));
-		} else if (evt.status.type.id === STATUS.FINAL) {
+		} else if (
+			evt.status.type.id === STATUS.FINAL 						||
+			evt.status.type.id === STATUS.FINAL_SCORE_ABANDONED 		||
+			evt.status.type.id === STATUS.FINAL_SCORE_AFTER_PENALTIES 	||
+			evt.status.type.id === STATUS.FINAL_SCORE_AFTER_EXTRA_TIME 	||
+			evt.status.type.id === STATUS.FINAL_SCORE_AFTER_GOLDEN_GOAL ||
+			evt.status.type.id === STATUS.WALKOVER		
+		) {
 			event.meta = 'Final';
-		} else if (evt.status.type.id === STATUS.IN_PROGRESS || evt.status.type.id === STATUS.END_PERIOD || evt.status.type.id === STATUS.HALFTIME || evt.status.type.id === STATUS.FULLTIME) {
+		} else if (
+			evt.status.type.id === STATUS.IN_PROGRESS   || 
+			evt.status.type.id === STATUS.BEGIN_PERIOD  || 
+			evt.status.type.id === STATUS.END_PERIOD    || 
+			evt.status.type.id === STATUS.HALFTIME 	    || 
+			evt.status.type.id === STATUS.FULLTIME		||
+			evt.status.type.id === STATUS.OVERTIME      ||
+			evt.status.type.id === STATUS.FIRST_HALF	||
+			evt.status.type.id === STATUS.SECOND_HALF   ||
+			evt.status.type.id === STATUS.SHOOTOUT 		||
+			evt.status.type.id === STATUS.GOLDEN_TIME   ||
+			evt.status.type.id === STATUS.INTERMEDIATE  ||
+			evt.status.type.id === STATUS.END_EXTRA_TIME 			||
+			evt.status.type.id === STATUS.EXTRA_TIME_HALF_TIME  	||
+			evt.status.type.id === STATUS.FIXTURE_NO_LIVE_COVERAGE
+		) {
 			event.live = true;
 			event.meta = evt.status.type.shortDetail;
 		} else if (evt.status.type.id === STATUS.POSTPONED) {
