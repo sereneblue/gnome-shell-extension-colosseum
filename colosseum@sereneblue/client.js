@@ -205,14 +205,12 @@ var ColosseumClient = class ColosseumClient {
 			evt.status.type.id === STATUS.BEGIN_PERIOD  || 
 			evt.status.type.id === STATUS.END_PERIOD    || 
 			evt.status.type.id === STATUS.HALFTIME 	    || 
-			evt.status.type.id === STATUS.FULLTIME		||
 			evt.status.type.id === STATUS.OVERTIME      ||
 			evt.status.type.id === STATUS.FIRST_HALF	||
 			evt.status.type.id === STATUS.SECOND_HALF   ||
 			evt.status.type.id === STATUS.SHOOTOUT 		||
 			evt.status.type.id === STATUS.GOLDEN_TIME   ||
 			evt.status.type.id === STATUS.INTERMEDIATE  ||
-			evt.status.type.id === STATUS.END_EXTRA_TIME 			||
 			evt.status.type.id === STATUS.EXTRA_TIME_HALF_TIME  	||
 			evt.status.type.id === STATUS.FIXTURE_NO_LIVE_COVERAGE
 		) {
@@ -222,8 +220,8 @@ var ColosseumClient = class ColosseumClient {
 			event.isComplete = true;
 			event.meta = 'Post';
 		} else {
-			event.home.score = '';
-			event.away.score = '';
+			event.home.score = event.isComplete ? home.score : '';
+			event.away.score = event.isComplete ? away.score : '';
 			event.meta = evt.status.type.shortDetail;
 		}
 
