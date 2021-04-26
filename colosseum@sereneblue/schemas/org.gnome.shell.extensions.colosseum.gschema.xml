@@ -25,6 +25,10 @@
             <default>false</default>
             <summary>Enable LaLiga scoreboard</summary>
         </key>
+        <key name="ligue1-enabled" type="b">
+            <default>false</default>
+            <summary>Enable Ligue 1 scoreboard</summary>
+        </key>
         <key name="mlb-enabled" type="b">
             <default>false</default>
             <summary>Enable MLB scoreboard</summary>
@@ -380,6 +384,86 @@
         <key name="laliga-vill" type="b">
             <default>false</default>
             <summary>Follow La Liga team: Villarreal</summary>
+        </key>
+        <key name="ligue1-mon" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: AS Monaco</summary>
+        </key>
+        <key name="ligue1-ang" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Angers</summary>
+        </key>
+        <key name="ligue1-bor" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Bordeaux</summary>
+        </key>
+        <key name="ligue1-bres" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Brest</summary>
+        </key>
+        <key name="ligue1-dijo" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Dijon FCO</summary>
+        </key>
+        <key name="ligue1-rcl" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Lens</summary>
+        </key>
+        <key name="ligue1-lill" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Lille</summary>
+        </key>
+        <key name="ligue1-lor" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Lorient</summary>
+        </key>
+        <key name="ligue1-lyon" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Lyon</summary>
+        </key>
+        <key name="ligue1-mar" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Marseille</summary>
+        </key>
+        <key name="ligue1-metz" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Metz</summary>
+        </key>
+        <key name="ligue1-mont" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Montpellier</summary>
+        </key>
+        <key name="ligue1-nant" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Nantes</summary>
+        </key>
+        <key name="ligue1-nice" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Nice</summary>
+        </key>
+        <key name="ligue1-nim" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Nimes</summary>
+        </key>
+        <key name="ligue1-psg" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Paris Saint-Germain</summary>
+        </key>
+        <key name="ligue1-asse" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Saint-Etienne</summary>
+        </key>
+        <key name="ligue1-renn" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Stade Rennes</summary>
+        </key>
+        <key name="ligue1-reim" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Stade de Reims</summary>
+        </key>
+        <key name="ligue1-stra" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Strasbourg</summary>
         </key>
         <key name="mlb-ari" type="b">
             <default>false</default>
