@@ -3,6 +3,7 @@ var PREF_FOLLOWED_ONLY = "followed-only";
 
 var PREF_LEAGUES = {
     Bund: "bund-enabled",
+    UCL: "ucl-enabled",
     EPL: "epl-enabled",
     LaLiga: "laliga-enabled",
     MLB: "mlb-enabled",
@@ -32,6 +33,33 @@ var SPORTS = {
     { id: 134, name: "VfB Stuttgart", pref: "bund-stu" },
     { id: 138, name: "VfL Wolfsburg", pref: "bund-wolf" },
     { id: 137, name: "Werder Bremen", pref: "bund-wer" }
+  ],
+  UCL: [
+    { id: 139, name: "Ajax Amsterdam", pref: "ucl-aja" },
+    { id: 105, name: "Atalanta", pref: "ucl-ata" },
+    { id: 83, name: "Barcelona", pref: "ucl-bar" },
+    { id: 132, name: "Bayern Munich", pref: "ucl-mun" },
+    { id: 124, name: "Borussia Dortmund", pref: "ucl-dor" },
+    { id: 268, name: "Borussia Monchengladbach", pref: "ucl-mon" },
+    { id: 363, name: "Chelsea", pref: "ucl-che" },
+    { id: 570, name: "Club Brugge", pref: "ucl-brug" },
+    { id: 440, name: "Dynamo Kiev", pref: "ucl-kiev" },
+    { id: 572, name: "FC Midtjylland", pref: "ucl-midt" },
+    { id: 437, name: "FC Porto", pref: "ucl-por" },
+    { id: 110, name: "Internazionale", pref: "ucl-int" },
+    { id: 111, name: "Juventus", pref: "ucl-juv" },
+    { id: 112, name: "Lazio", pref: "ucl-laz" },
+    { id: 364, name: "Liverpool", pref: "ucl-livs" },
+    { id: 442, name: "Lokomotiv Moscow", pref: "ucl-lmo" },
+    { id: 382, name: "Manchester City", pref: "ucl-mnc" },
+    { id: 360, name: "Manchester United", pref: "ucl-man" },
+    { id: 176, name: "Marseille", pref: "ucl-mar" },
+    { id: 435, name: "Olympiakos", pref: "ucl-oly" },
+    { id: 160, name: "Paris Saint-Germain", pref: "ucl-psg" },
+    { id: 86, name: "Real Madrid", pref: "ucl-mad" },
+    { id: 243, name: "Sevilla FC", pref: "ucl-sev" },
+    { id: 493, name: "Shakhtar Donetsk", pref: "ucl-shk" },
+    { id: 169, name: "Stade Rennes", pref: "ucl-renn" }
   ],
   EPL: [
     { id: 359, name: "Arsenal", pref: "epl-ars" },

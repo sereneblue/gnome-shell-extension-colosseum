@@ -13,6 +13,10 @@
             <default>false</default>
             <summary>Enable Bund scoreboard</summary>
         </key>
+        <key name="ucl-enabled" type="b">
+            <default>false</default>
+            <summary>Enable UCL scoreboard</summary>
+        </key>
         <key name="epl-enabled" type="b">
             <default>false</default>
             <summary>Enable EPL scoreboard</summary>
@@ -112,6 +116,106 @@
         <key name="bund-wer" type="b">
             <default>false</default>
             <summary>Follow Bund team: Werder Bremen</summary>
+        </key>
+        <key name="ucl-aja" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Ajax Amsterdam</summary>
+        </key>
+        <key name="ucl-ata" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Atalanta</summary>
+        </key>
+        <key name="ucl-bar" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Barcelona</summary>
+        </key>
+        <key name="ucl-mun" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Bayern Munich</summary>
+        </key>
+        <key name="ucl-dor" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Borussia Dortmund</summary>
+        </key>
+        <key name="ucl-mon" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Borussia Monchengladbach</summary>
+        </key>
+        <key name="ucl-che" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Chelsea</summary>
+        </key>
+        <key name="ucl-brug" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Club Brugge</summary>
+        </key>
+        <key name="ucl-kiev" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Dynamo Kiev</summary>
+        </key>
+        <key name="ucl-midt" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: FC Midtjylland</summary>
+        </key>
+        <key name="ucl-por" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: FC Porto</summary>
+        </key>
+        <key name="ucl-int" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Internazionale</summary>
+        </key>
+        <key name="ucl-juv" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Juventus</summary>
+        </key>
+        <key name="ucl-laz" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Lazio</summary>
+        </key>
+        <key name="ucl-livs" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Liverpool</summary>
+        </key>
+        <key name="ucl-lmo" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Lokomotiv Moscow</summary>
+        </key>
+        <key name="ucl-mnc" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Manchester City</summary>
+        </key>
+        <key name="ucl-man" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Manchester United</summary>
+        </key>
+        <key name="ucl-mar" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Marseille</summary>
+        </key>
+        <key name="ucl-oly" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Olympiakos</summary>
+        </key>
+        <key name="ucl-psg" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Paris Saint-Germain</summary>
+        </key>
+        <key name="ucl-mad" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Real Madrid</summary>
+        </key>
+        <key name="ucl-sev" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Sevilla FC</summary>
+        </key>
+        <key name="ucl-shk" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Shakhtar Donetsk</summary>
+        </key>
+        <key name="ucl-renn" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Stade Rennes</summary>
         </key>
         <key name="epl-ars" type="b">
             <default>false</default>
