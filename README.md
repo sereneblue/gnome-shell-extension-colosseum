@@ -1,10 +1,10 @@
 # colosseum
 
-![colosseum version](https://img.shields.io/badge/version-2-brightgreen.svg)
+![colosseum version](https://img.shields.io/badge/version-3-brightgreen.svg)
 ![GPL v3 License](https://img.shields.io/badge/license-GPL%20v3-blue.svg)
 
 <p align="center">
-	<img src="https://user-images.githubusercontent.com/14242625/115166165-9cfc4000-a07f-11eb-99df-400550fad124.png">
+	<img src="https://user-images.githubusercontent.com/14242625/116025529-b1f84680-a61e-11eb-9a5b-e93e1272cb08.png">
 </p>
 
 A gnome-shell extension to view live scores for your favorite sports teams.
@@ -35,13 +35,19 @@ $ mv colosseum@sereneblue $HOME/.local/share/gnome-shell/extensions/colosseum@se
 
 #### Leagues
 
-There are 5 supported sports leagues:
+There are 11 supported sports leagues:
 
-	MLB
-	NBA
-	NFL
-	NHL
-	WNBA
+	Bundesliga
+	English Premier League
+	La Liga
+	Ligue 1
+	Major League Baseball
+	National Basketball Association
+	National Football League
+	National Hockey League
+	Serie A
+	UEFA Champions League
+	Women's National Basketball Association
 
 # Update
 
