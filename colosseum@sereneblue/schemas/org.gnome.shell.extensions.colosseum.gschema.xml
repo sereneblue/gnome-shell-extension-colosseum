@@ -41,6 +41,10 @@
             <default>false</default>
             <summary>Enable NHL scoreboard</summary>
         </key>
+        <key name="seriea-enabled" type="b">
+            <default>false</default>
+            <summary>Enable Serie A scoreboard</summary>
+        </key>
         <key name="wnba-enabled" type="b">
             <default>false</default>
             <summary>Enable WNBA scoreboard</summary>
@@ -868,6 +872,86 @@
         <key name="nhl-wpg" type="b">
             <default>false</default>
             <summary>Follow NHL team: Winnipeg Jets</summary>
+        </key>
+        <key name="seriea-mil" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: AC Milan</summary>
+        </key>
+        <key name="seriea-roma" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: AS Roma</summary>
+        </key>
+        <key name="seriea-ata" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Atalanta</summary>
+        </key>
+        <key name="seriea-ben" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Benevento</summary>
+        </key>
+        <key name="seriea-bol" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Bologna</summary>
+        </key>
+        <key name="seriea-cag" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Cagliari</summary>
+        </key>
+        <key name="seriea-cro" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Crotone</summary>
+        </key>
+        <key name="seriea-fio" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Fiorentina</summary>
+        </key>
+        <key name="seriea-gen" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Genoa</summary>
+        </key>
+        <key name="seriea-ver" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Hellas Verona</summary>
+        </key>
+        <key name="seriea-int" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Internazionale</summary>
+        </key>
+        <key name="seriea-juv" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Juventus</summary>
+        </key>
+        <key name="seriea-laz" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Lazio</summary>
+        </key>
+        <key name="seriea-nap" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Napoli</summary>
+        </key>
+        <key name="seriea-par" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Parma</summary>
+        </key>
+        <key name="seriea-samp" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Sampdoria</summary>
+        </key>
+        <key name="seriea-sas" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Sassuolo</summary>
+        </key>
+        <key name="seriea-spez" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Spezia</summary>
+        </key>
+        <key name="seriea-tor" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Torino</summary>
+        </key>
+        <key name="seriea-udn" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Udinese</summary>
         </key>
         <key name="wnba-atl" type="b">
             <default>false</default>

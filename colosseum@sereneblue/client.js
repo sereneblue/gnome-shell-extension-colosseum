@@ -70,6 +70,7 @@ var ColosseumClient = class ColosseumClient {
 			NBA: this.BASE_API_URL + 'basketball/nba/scoreboard',
 			NFL: this.BASE_API_URL + 'football/nfl/scoreboard',
 			NHL: this.BASE_API_URL + 'hockey/nhl/scoreboard',
+			"Serie A": this.BASE_API_URL + 'soccer/ita.1/scoreboard',
 			WNBA: this.BASE_API_URL + 'basketball/wnba/scoreboard'
 		}
 

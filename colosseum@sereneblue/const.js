@@ -10,6 +10,7 @@ var PREF_LEAGUES = {
     NBA: "nba-enabled",
     NFL: "nfl-enabled",
     NHL: "nhl-enabled",
+    "Serie A": "seriea-enabled",
     WNBA: "wnba-enabled"
 };
 
@@ -235,6 +236,28 @@ var SPORTS = {
     { id: 37, name: "Vegas Golden Knights", pref: "nhl-vgs" },
     { id: 23, name: "Washington Capitals", pref: "nhl-wsh" },
     { id: 28, name: "Winnipeg Jets", pref: "nhl-wpg" }
+  ],
+  "Serie A": [
+    { id: 103, name: "AC Milan", pref: "seriea-mil" },
+    { id: 104, name: "AS Roma", pref: "seriea-roma" },
+    { id: 105, name: "Atalanta", pref: "seriea-ata" },
+    { id: 4059, name: "Benevento", pref: "seriea-ben" },
+    { id: 107, name: "Bologna", pref: "seriea-bol" },
+    { id: 2925, name: "Cagliari", pref: "seriea-cag" },
+    { id: 3173, name: "Crotone", pref: "seriea-cro" },
+    { id: 109, name: "Fiorentina", pref: "seriea-fio" },
+    { id: 3263, name: "Genoa", pref: "seriea-gen" },
+    { id: 119, name: "Hellas Verona", pref: "seriea-ver" },
+    { id: 110, name: "Internazionale", pref: "seriea-int" },
+    { id: 111, name: "Juventus", pref: "seriea-juv" },
+    { id: 112, name: "Lazio", pref: "seriea-laz" },
+    { id: 114, name: "Napoli", pref: "seriea-nap" },
+    { id: 115, name: "Parma", pref: "seriea-par" },
+    { id: 2734, name: "Sampdoria", pref: "seriea-samp" },
+    { id: 3997, name: "Sassuolo", pref: "seriea-sas" },
+    { id: 4056, name: "Spezia", pref: "seriea-spez" },
+    { id: 239, name: "Torino", pref: "seriea-tor" },
+    { id: 118, name: "Udinese", pref: "seriea-udn" }
   ],
   WNBA: [
     { id: 20, name: "Atlanta Dream", pref: "wnba-atl" },
