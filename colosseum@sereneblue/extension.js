@@ -30,11 +30,24 @@ const Colosseum = new Lang.Class({
         });
 
         this._client = new Client.ColosseumClient(CONSTANTS, this._settings);
+
+        this._panelBoxLayout = new St.BoxLayout();
+
+        this._icon = new St.Icon({
+            gicon : Gio.icon_new_for_string( EXTENSION.dir.get_path() + '/icon/colosseum-symbolic.svg' ),
+            icon_size: 24
+        });
+
         this._menuText = new St.Label({
-            text: "Loading...",
+            text: "",
             y_align: Clutter.ActorAlign.CENTER
         });
-        this.add_child(this._menuText);
+        
+        this._panelBoxLayout.add(this._icon);
+        this._panelBoxLayout.add(this._menuText);
+
+        this.hide();
+        this.add_child(this._panelBoxLayout);
 
         this._update();
     },
@@ -166,13 +179,13 @@ const Colosseum = new Lang.Class({
         this._scores = await this._client.getScores();
     },
     _setTopBarText: function() {
-        let totalGames = 0;
-        let completedGames = 0;
+        let remainingGames = 0;
+        let liveGames = 0;
         let labelText = "";
 
         for (let i = 0; i < this._scores.length; i++) {
-            totalGames += this._scores[i].games.length;
-            completedGames += this._scores[i].games.filter(g => g.isComplete).length;
+            remainingGames += this._scores[i].games.filter(g => !g.isComplete).length;
+            liveGames += this._scores[i].games.filter(g => g.live).length;
 
             for (let j = 0; j < this._scores[i].following.length; j++) {
                 labelText += (this._scores[i].following[j] + " ");
@@ -180,15 +193,25 @@ const Colosseum = new Lang.Class({
         }
 
         if (labelText === "") {
-            if (totalGames === 0) {
-                labelText = "No games today";
-            } else if (completedGames < totalGames) {
-                labelText = `${totalGames - completedGames} games`;
-            } else if (completedGames == totalGames) {
-                labelText = "No more games today";
+            this._icon.show();
+
+            if (remainingGames === 0) {
+                labelText = "";
+                this._panelBoxLayout.show();
+                this.hide();
+            } else if (liveGames === 0) {
+                labelText = "" + remainingGames;
+                this._panelBoxLayout.show();
+                this.show();
             } else {
-                labelText = totalGames + " game(s)";
+                labelText = `${liveGames} / ${remainingGames}`;
+                this._panelBoxLayout.show();
+                this.show();
             }
+        } else {
+            this._icon.hide();
+            this._panelBoxLayout.hide();
+            this.show();
         }
 
         this._menuText.set_text(labelText);
