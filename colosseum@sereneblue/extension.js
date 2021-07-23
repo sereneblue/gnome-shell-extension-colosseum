@@ -181,9 +181,11 @@ const Colosseum = new Lang.Class({
     _setTopBarText: function() {
         let remainingGames = 0;
         let liveGames = 0;
+        let totalGames = 0;
         let labelText = "";
 
         for (let i = 0; i < this._scores.length; i++) {
+            totalGames += this._scores[i].games.length;
             remainingGames += this._scores[i].games.filter(g => !g.isComplete).length;
             liveGames += this._scores[i].games.filter(g => g.live).length;
 
@@ -195,10 +197,11 @@ const Colosseum = new Lang.Class({
         if (labelText === "") {
             this._icon.show();
 
-            if (remainingGames === 0) {
-                labelText = "";
-                this._panelBoxLayout.show();
+            if (totalGames === 0) {
                 this.hide();
+            } else if (remainingGames === 0) {
+                this._panelBoxLayout.show();
+                this.show();
             } else if (liveGames === 0) {
                 labelText = "" + remainingGames;
                 this._panelBoxLayout.show();

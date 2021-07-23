@@ -15,6 +15,13 @@ var PREF_LEAGUES = {
     WNBA: "wnba-enabled"
 };
 
+var PREF_TOURNAMENTS = {
+  "CONCACAF Gold Cup": "concacafgold-enabled",
+  "Copa America": "conmebol-enabled",
+  "UEFA Champions League": "uefachampions-enabled",
+  "UEFA European Championship": "uefaeuro-enabled"
+};
+
 var SPORTS = {
   Bund: [
     { id: 2506, name: "Arminia Bielefeld", pref: "bund-dsc" },

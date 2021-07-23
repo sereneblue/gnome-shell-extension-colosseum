@@ -62,43 +62,88 @@ var ColosseumClient = class ColosseumClient {
 
 		this.BASE_API_URL = 'https://site.api.espn.com/apis/site/v2/sports/';
 		this.API_URLS = {
-			Bund: this.BASE_API_URL + 'soccer/ger.1/scoreboard',
-			UCL: this.BASE_API_URL + 'soccer/uefa.champions/scoreboard',
-			EPL: this.BASE_API_URL + 'soccer/eng.1/scoreboard',
-			LaLiga: this.BASE_API_URL + 'soccer/esp.1/scoreboard',
-			"Ligue 1": this.BASE_API_URL + 'soccer/fra.1/scoreboard',
-			MLB: this.BASE_API_URL + 'baseball/mlb/scoreboard',
-			NBA: this.BASE_API_URL + 'basketball/nba/scoreboard',
-			NFL: this.BASE_API_URL + 'football/nfl/scoreboard',
-			NHL: this.BASE_API_URL + 'hockey/nhl/scoreboard',
-			"Serie A": this.BASE_API_URL + 'soccer/ita.1/scoreboard',
-			WNBA: this.BASE_API_URL + 'basketball/wnba/scoreboard'
+			Bund: [
+				this.BASE_API_URL + 'soccer/ger.1/scoreboard'
+			],
+			"CONCACAF Gold Cup": [
+				this.BASE_API_URL + 'soccer/concacaf.gold/scoreboard',	
+				this.BASE_API_URL + 'soccer/concacaf.gold_qual/scoreboard'
+			],
+			"Copa America": [
+				this.BASE_API_URL + 'soccer/conmebol.america/scoreboard',
+			],
+			UCL: [
+				this.BASE_API_URL + 'soccer/uefa.champions/scoreboard'
+			],
+			EPL: [
+				this.BASE_API_URL + 'soccer/eng.1/scoreboard'
+			],
+			LaLiga: [
+				this.BASE_API_URL + 'soccer/esp.1/scoreboard'
+			],
+			"Ligue 1": [
+				this.BASE_API_URL + 'soccer/fra.1/scoreboard'
+			],
+			MLB: [
+				this.BASE_API_URL + 'baseball/mlb/scoreboard'
+			],
+			NBA: [
+				this.BASE_API_URL + 'basketball/nba/scoreboard'
+			],
+			NFL: [
+				this.BASE_API_URL + 'football/nfl/scoreboard'
+			],
+			NHL: [
+				this.BASE_API_URL + 'hockey/nhl/scoreboard'
+			],
+			"Serie A": [
+				this.BASE_API_URL + 'soccer/ita.1/scoreboard'
+			],
+			"UEFA Champions League": [
+				this.BASE_API_URL + 'soccer/uefa.champions/scoreboard',	
+				this.BASE_API_URL + 'soccer/uefa.champions_qual/scoreboard'
+			],
+			"UEFA European Championship": [
+				this.BASE_API_URL + 'soccer/uefa.euro/scoreboard',	
+				this.BASE_API_URL + 'soccer/uefa.euroq/scoreboard'
+			],
+			WNBA: [
+				this.BASE_API_URL + 'basketball/wnba/scoreboard'
+			]
 		}
 
 		this._CONSTANTS = constants;
 		this._leagues = Object.keys(this._CONSTANTS.PREF_LEAGUES);
+		this._tournaments = Object.keys(this._CONSTANTS.PREF_TOURNAMENTS);
 		this._settings = settings;
 	}
 
 	getLeagueScoreboard(league, date, cacheBuster) {
-		let url = `${this.API_URLS[league]}?limit=1000&dates=${date}&${cacheBuster}`;
-        let message = Soup.Message.new('GET', url);
+		let urls = this.API_URLS[league].map(l => `${l}?limit=1000&dates=${date}&${cacheBuster}`);
 
-	    return new Promise((resolve, reject) => {
-	        this.session.queue_message(message, () => {
-	            try {
-	                if (message.status_code === Soup.KnownStatusCode.OK) {
-	                    let result = JSON.parse(message.response_body.data);
+        let requests = [];
 
-	                    resolve(result);
-	                } else {
-	                    reject(new Error(message.status_code.toString()));
-	                }
-	            } catch (e) {
-	                reject(e);
-	            }
-	        });
-	    });
+        for (let i = 0; i < urls.length; i++) {
+        	let message = Soup.Message.new('GET', urls[i]);
+
+        	requests.push(new Promise((resolve, reject) => {
+		        this.session.queue_message(message, () => {
+		            try {
+		                if (message.status_code === Soup.KnownStatusCode.OK) {
+		                    let result = JSON.parse(message.response_body.data);
+
+		                    resolve(result);
+		                } else {
+		                    resolve([]);
+		                }
+		            } catch (e) {
+		                resolve([]);
+		            }
+		        });
+		    }))
+        }
+
+        return Promise.all(requests);
 	}
 
 	async getScores() {
@@ -113,6 +158,7 @@ var ColosseumClient = class ColosseumClient {
 		let events = [];
 
 		let leagues = this.getEnabledLeagues();
+		let tournaments = this.getEnabledTournaments();
 		let followOnlyMode = this.isFollowOnlyEnabled();
 
 		for (let i = 0; i < leagues.length; i++) {
@@ -131,21 +177,50 @@ var ColosseumClient = class ColosseumClient {
 					scoreboardDate.getTime()
 				);
 
-				for (let j = 0; j < data.events.length; j++) {
-					let e = this.parseEvent(data.events[j]);
+				for (let j = 0; j < data.length; j++) {
+					for (let k = 0; k < data[j].events.length; k++) {
+						let e = this.parseEvent(data[j].events[k]);
 
-					let isFollowedTeam = [e.home.id, e.away.id].some(t => followedTeams.indexOf(t) >= 0);
+						let isFollowedTeam = [e.home.id, e.away.id].some(t => followedTeams.indexOf(t) >= 0);
 
-					if (followOnlyMode) {
-						if (isFollowedTeam) l.games.push(e);
-					} else {
+						if (followOnlyMode) {
+							if (isFollowedTeam) l.games.push(e);
+						} else {
+							l.games.push(e);
+						}
+
+						if (isFollowedTeam && e.live) {
+							l.following.push(`${e.home.teamAbbr}  ${e.home.score} - ${e.away.score}  ${e.away.teamAbbr} [${e.meta}]`);						
+						}
+					}
+				}
+			} catch (error) {}
+
+			if (l.games.length) {
+				events.push(l);
+			}
+		}
+
+		for (let i = 0; i < tournaments.length; i++) {
+			let l = {
+				league: tournaments[i],
+				games: [],
+				following: []
+			};
+
+			try {
+				let data = await this.getLeagueScoreboard(
+					l.league, 
+					this.getDate(scoreboardDate), 
+					scoreboardDate.getTime()
+				);
+
+				for (let j = 0; j < data.length; j++) {
+					for (let k = 0; k < data[j].events.length; k++) {
+						let e = this.parseEvent(data[j].events[k]);
 						l.games.push(e);
-					}
-
-					if (isFollowedTeam && e.live) {
-						l.following.push(`${e.home.teamAbbr}  ${e.home.score} - ${e.away.score}  ${e.away.teamAbbr} [${e.meta}]`);						
-					}
-				} 
+					} 
+				}
 			} catch (error) {}
 
 			if (l.games.length) {
@@ -240,6 +315,18 @@ var ColosseumClient = class ColosseumClient {
 		}
 
 		return leagues;
+	}
+
+	getEnabledTournaments() {
+		let tournaments = [];
+
+		for (let i = 0; i < this._tournaments.length; i++) {
+			if (this._settings.get_boolean(this._CONSTANTS.PREF_TOURNAMENTS[this._tournaments[i]])) {
+				tournaments.push(this._tournaments[i]);
+			}
+		}
+
+		return tournaments;
 	}
 
 	getFollowedTeams(league) {

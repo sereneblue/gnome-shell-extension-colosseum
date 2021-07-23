@@ -53,6 +53,22 @@
             <default>false</default>
             <summary>Enable WNBA scoreboard</summary>
         </key>
+        <key name="concacafgold-enabled" type="b">
+            <default>false</default>
+            <summary>Enable CONCACAF Gold Cup scoreboard</summary>
+        </key>
+        <key name="conmebol-enabled" type="b">
+            <default>false</default>
+            <summary>Enable Copa America scoreboard</summary>
+        </key>
+        <key name="uefachampions-enabled" type="b">
+            <default>false</default>
+            <summary>Enable UEFA Champions League scoreboard</summary>
+        </key>
+        <key name="uefaeuro-enabled" type="b">
+            <default>false</default>
+            <summary>Enable UEFA European Championship scoreboard</summary>
+        </key>
         <key name="bund-dsc" type="b">
             <default>false</default>
             <summary>Follow Bund team: Arminia Bielefeld</summary>

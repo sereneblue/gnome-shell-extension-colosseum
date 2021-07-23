@@ -28,8 +28,10 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
             builder.add_from_file(EXTENSION.path + "/ui/prefs.ui")
 
             this._leagues = builder.get_object("leagues");
+            this._tournaments = builder.get_object("tournaments");
             const container = builder.get_object("container");
             const leagues = Object.keys(CONSTANTS.SPORTS);
+            const tournaments = Object.keys(CONSTANTS.PREF_TOURNAMENTS);
 
         	for (let i = 0; i < leagues.length; i++) {
         		let followed = "followList" + leagues[i].replace(' ', '');
@@ -64,6 +66,10 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
                 this._addLeague(leagues[i]);
         	}
 
+            for (let i = 0; i < tournaments.length; i++) {
+                this._addTournament(tournaments[i]);
+            }
+
             this.append(container);
 
             this._settings.bind(CONSTANTS.PREF_UPDATE_FREQ, builder.get_object("prefs_frequency"), "value", Gio.SettingsBindFlags.DEFAULT);
@@ -90,6 +96,10 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
                 this["_notFollowingList" + team.league.replace(' ', '')].append(row);
                 this.total[team.league].notFollowing += 1;
             }
+        }
+
+        _addTournament(tournament) {
+            this._tournaments.append(new TournamentRow(tournament, this._settings));
         }
 
         _toggleTabVisibility(league, wasEnabled) {
@@ -201,6 +211,28 @@ const LeagueRow = GObject.registerClass({
         let enabled = state.get_active();
 
         this._switchCallback(this._league, enabled);
+    }
+});
+
+
+const TournamentRow = GObject.registerClass({
+    GTypeName: 'TournamentRow',
+    Template: 'file:///' + EXTENSION.path + "/ui/tournament-row.ui",
+    InternalChildren: [
+        'tournamentLabel',
+        'tournamentSwitch'
+    ],
+}, class Row extends Gtk.ListBoxRow {
+    _init(tournament, settings) {
+        super._init();
+
+        this._app = Gio.Application.get_default();
+        this._settings = settings;
+
+        this._tournament = tournament;
+        this._tournamentLabel.label = tournament;
+
+        this._settings.bind(CONSTANTS.PREF_TOURNAMENTS[tournament], this._tournamentSwitch, "active", Gio.SettingsBindFlags.DEFAULT);
     }
 });
 
