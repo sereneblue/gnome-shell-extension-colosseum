@@ -296,6 +296,9 @@ var ColosseumClient = class ColosseumClient {
 		} else if (evt.status.type.id === STATUS.POSTPONED) {
 			event.isComplete = true;
 			event.meta = 'Post';
+		} else if (evt.status.type.id === STATUS.SUSPENDED) {
+			event.isComplete = true;
+			event.meta = 'Susp';
 		} else {
 			event.home.score = event.isComplete ? home.score : '';
 			event.away.score = event.isComplete ? away.score : '';
