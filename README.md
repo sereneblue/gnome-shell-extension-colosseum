@@ -35,7 +35,7 @@ $ mv colosseum@sereneblue $HOME/.local/share/gnome-shell/extensions/colosseum@se
 ![colosseum preferences](https://user-images.githubusercontent.com/14242625/126881524-a9443361-12e1-4075-9cbc-8d257930cab6.png)
 
 
-- The top panel can display `N (# of remaining games)` or the `A (# of live games] / B (# of remaining games)`. 
+- The top panel can display `N (# of remaining games)` or the `A (# of live games) / B (# of remaining games)`. 
 
 - Compact mode reduces the number of clicks needed to display scores from a league with only one game (as shown in the screen shot for NBA). 
 
