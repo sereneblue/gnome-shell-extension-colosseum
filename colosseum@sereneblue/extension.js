@@ -213,7 +213,7 @@ const Colosseum = new Lang.Class({
             }
         } else {
             this._icon.hide();
-            this._panelBoxLayout.hide();
+            this._panelBoxLayout.show();
             this.show();
         }
 
