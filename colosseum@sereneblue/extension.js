@@ -182,6 +182,7 @@ const Colosseum = new Lang.Class({
         let remainingGames = 0;
         let liveGames = 0;
         let totalGames = 0;
+        let following = 0;
         let labelText = "";
 
         for (let i = 0; i < this._scores.length; i++) {
@@ -190,7 +191,11 @@ const Colosseum = new Lang.Class({
             liveGames += this._scores[i].games.filter(g => g.live).length;
 
             for (let j = 0; j < this._scores[i].following.length; j++) {
-                labelText += (this._scores[i].following[j] + " ");
+                if (following < 2) {
+                    labelText += (this._scores[i].following[j] + " ");
+                }
+
+                following += 1;
             }
         }
 
