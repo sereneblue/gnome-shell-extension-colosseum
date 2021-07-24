@@ -1,11 +1,11 @@
 # colosseum
 
 ![GNOME 40+](https://img.shields.io/badge/gnome-40%2B-blueviolet)
-![colosseum version](https://img.shields.io/badge/version-4-brightgreen.svg)
+![colosseum version](https://img.shields.io/badge/version-5-brightgreen.svg)
 ![GPL v3 License](https://img.shields.io/badge/license-GPL%20v3-blue.svg)
 
 <p align="center">
-	<img src="https://user-images.githubusercontent.com/14242625/115166165-9cfc4000-a07f-11eb-99df-400550fad124.png">
+	<img src="https://user-images.githubusercontent.com/14242625/126881502-035c4601-686c-4a42-803b-ca817ad56ea4.png">
 </p>
 
 A gnome-shell extension to view live scores for your favorite sports teams.
@@ -32,7 +32,13 @@ $ mv colosseum@sereneblue $HOME/.local/share/gnome-shell/extensions/colosseum@se
 
 # Configuration
 
-![colosseum preferences](https://user-images.githubusercontent.com/14242625/116025529-b1f84680-a61e-11eb-9a5b-e93e1272cb08.png)
+![colosseum preferences](https://user-images.githubusercontent.com/14242625/126881524-a9443361-12e1-4075-9cbc-8d257930cab6.png)
+
+
+- The top panel can display `N (# of remaining games)` or the `A (# of live games] / B (# of remaining games)`. 
+
+- Compact mode reduces the number of clicks needed to display scores from a league with only one game (as shown in the screen shot for NBA). 
+
 
 #### Leagues
 
