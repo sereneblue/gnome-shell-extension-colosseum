@@ -81,6 +81,28 @@
                                 </layout>
                               </object>
                             </child>
+                            <child>
+                              <object class="GtkLabel" id="prefs_label_compact_mode">
+                                <property name="can_focus">0</property>
+                                <property name="label">Compact mode</property>
+                                <property name="halign">start</property>
+                                <layout>
+                                  <property name="column">0</property>
+                                  <property name="row">2</property>
+                                </layout>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkSwitch" id="prefs_compact_mode">
+                                <property name="valign">center</property>
+                                <property name="halign">end</property>
+                                <property name="hexpand">false</property>
+                                <layout>
+                                  <property name="column">1</property>
+                                  <property name="row">2</property>
+                                </layout>
+                              </object>
+                            </child>
                           </object>
                         </child>
                         <child>

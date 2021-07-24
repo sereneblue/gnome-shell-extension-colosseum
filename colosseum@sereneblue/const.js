@@ -1,5 +1,6 @@
 var PREF_UPDATE_FREQ = "update-frequency";
 var PREF_FOLLOWED_ONLY = "followed-only";
+var PREF_COMPACT_MODE = "compact-mode";
 
 var PREF_LEAGUES = {
     Bund: "bund-enabled",

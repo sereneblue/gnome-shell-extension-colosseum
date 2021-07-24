@@ -9,6 +9,10 @@
             <default>false</default>
             <summary>Display only followed teams</summary>
         </key>
+        <key name="compact-mode" type="b">
+            <default>false</default>
+            <summary>Enable compact mode</summary>
+        </key>
         <key name="bund-enabled" type="b">
             <default>false</default>
             <summary>Enable Bund scoreboard</summary>
