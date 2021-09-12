@@ -121,29 +121,29 @@ var ColosseumClient = class ColosseumClient {
 	getLeagueScoreboard(league, date, cacheBuster) {
 		let urls = this.API_URLS[league].map(l => `${l}?limit=1000&dates=${date}&${cacheBuster}`);
 
-        let requests = [];
+        	let requests = [];
 
-        for (let i = 0; i < urls.length; i++) {
-        	let message = Soup.Message.new('GET', urls[i]);
+		for (let i = 0; i < urls.length; i++) {
+			let message = Soup.Message.new('GET', urls[i]);
 
-        	requests.push(new Promise((resolve, reject) => {
-		        this.session.queue_message(message, () => {
-		            try {
-		                if (message.status_code === Soup.KnownStatusCode.OK) {
-		                    let result = JSON.parse(message.response_body.data);
+			requests.push(new Promise((resolve, reject) => {
+				this.session.queue_message(message, () => {
+				    try {
+					if (message.status_code === Soup.KnownStatusCode.OK) {
+					    let result = JSON.parse(message.response_body.data);
 
-		                    resolve(result);
-		                } else {
-		                    resolve([]);
-		                }
-		            } catch (e) {
-		                resolve([]);
-		            }
-		        });
-		    }))
-        }
+					    resolve(result);
+					} else {
+					    resolve([]);
+					}
+				    } catch (e) {
+					resolve([]);
+				    }
+				});
+			}))
+		}
 
-        return Promise.all(requests);
+		return Promise.all(requests);
 	}
 
 	async getScores() {
