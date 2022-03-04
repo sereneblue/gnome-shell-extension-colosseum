@@ -3,6 +3,6 @@
 	"description": "View live scores for your favorite sports teams.",
 	"url": "https://github.com/sereneblue/gnome-shell-extension-colosseum",
 	"uuid": "colosseum@sereneblue",
-	"version": 6,
-	"shell-version": [ "40", "41" ]
+	"version": 7,
+	"shell-version": [ "40", "41", "42" ]
 }
