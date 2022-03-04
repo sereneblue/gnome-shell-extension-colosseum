@@ -109,7 +109,7 @@
                           <object class="GtkLabel">
                             <property name="halign">start</property>
                             <property name="hexpand">True</property>
-                            <property name="label">Enabled Leagues</property>
+                            <property name="label">Leagues</property>
                             <property name="margin-top">10</property>
                             <attributes>
                               <attribute name="weight" value="bold"/>
@@ -130,7 +130,7 @@
                           <object class="GtkLabel">
                             <property name="halign">start</property>
                             <property name="hexpand">True</property>
-                            <property name="label">Enabled Tournaments</property>
+                            <property name="label">Tournaments</property>
                             <property name="margin-top">10</property>
                             <attributes>
                               <attribute name="weight" value="bold"/>
