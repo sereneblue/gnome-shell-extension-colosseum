@@ -16,13 +16,7 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
 
             this.total = {};
 
-            const schemaSource = Gio.SettingsSchemaSource.new_from_directory(
-                EXTENSION.dir.get_child('schemas').get_path(), Gio.SettingsSchemaSource.get_default(), false
-            );
-
-            this._settings = new Gio.Settings({ 
-                settings_schema: schemaSource.lookup("org.gnome.shell.extensions.colosseum", true) 
-            });
+            this._settings = ExtensionUtils.getSettings("org.gnome.shell.extensions.colosseum");
 
             const builder = new Gtk.Builder();
             builder.add_from_file(EXTENSION.path + "/ui/prefs.ui")

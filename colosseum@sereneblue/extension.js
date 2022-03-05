@@ -20,13 +20,7 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
             this._scores = [];
             this._timeout = null;
 
-            const schemaSource = Gio.SettingsSchemaSource.new_from_directory(
-                EXTENSION.dir.get_child('schemas').get_path(), Gio.SettingsSchemaSource.get_default(), false
-            );
-
-            this._settings = new Gio.Settings({ 
-                settings_schema: schemaSource.lookup("org.gnome.shell.extensions.colosseum", true) 
-            });
+            this._settings = ExtensionUtils.getSettings("org.gnome.shell.extensions.colosseum");
 
             this._client = new Client.ColosseumClient(CONSTANTS, this._settings);
 
@@ -335,4 +329,5 @@ function enable() {
 
 function disable() {
     scores.destroy();
+    scores = null;
 }
