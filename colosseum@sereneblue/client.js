@@ -65,6 +65,9 @@ var ColosseumClient = class ColosseumClient {
 			Bund: [
 				this.BASE_API_URL + 'soccer/ger.1/scoreboard'
 			],
+			Bund2:[
+				this.BASE_API_URL + 'soccer/ger.2/scoreboard'
+			],
 			"CONCACAF Gold Cup": [
 				this.BASE_API_URL + 'soccer/concacaf.gold/scoreboard',	
 				this.BASE_API_URL + 'soccer/concacaf.gold_qual/scoreboard'
@@ -121,7 +124,7 @@ var ColosseumClient = class ColosseumClient {
 	getLeagueScoreboard(league, date, cacheBuster) {
 		let urls = this.API_URLS[league].map(l => `${l}?limit=1000&dates=${date}&${cacheBuster}`);
 
-        	let requests = [];
+		let requests = [];
 
 		for (let i = 0; i < urls.length; i++) {
 			let message = Soup.Message.new('GET', urls[i]);
