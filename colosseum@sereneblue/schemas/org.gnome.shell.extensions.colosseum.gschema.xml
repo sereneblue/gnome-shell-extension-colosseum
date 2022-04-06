@@ -17,6 +17,10 @@
             <default>false</default>
             <summary>Enable Bund scoreboard</summary>
         </key>
+        <key name="bund2-enabled" type="b">
+            <default>false</default>
+            <summary>Enable Bund2 scoreboard</summary>
+        </key>
         <key name="ucl-enabled" type="b">
             <default>false</default>
             <summary>Enable UCL scoreboard</summary>

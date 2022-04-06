@@ -39,11 +39,13 @@ var SPORTS = {
     { id: 2950, name: "Mainz", pref: "bund-main" },
     { id: 11420, name: "RB Leipzig", pref: "bund-lei" },
     { id: 126, name: "SC Freiburg", pref: "bund-frei" },
+    // { id: 133, name: "Schalke 04", pref: "bund-scha" },
     { id: 3070, name: "SpVgg Greuther Furth", pref: "bund-spgf" },
     { id: 7911, name: "TSG Hoffenheim", pref: "bund-hof" },
     { id: 134, name: "VfB Stuttgart", pref: "bund-stu" },
     { id: 121, name: "VfL Bochum", pref: "bund-boch" },
     { id: 138, name: "VfL Wolfsburg", pref: "bund-wolf" },
+    // { id: 137, name: "Werder Bremen", pref: "bund-wer" }
   ],
   Bund2: [
     { id: 137, name: "Werder Bremen", pref: "bund2-wer" },
