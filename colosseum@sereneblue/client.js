@@ -65,6 +65,9 @@ var ColosseumClient = class ColosseumClient {
 			Bund: [
 				this.BASE_API_URL + 'soccer/ger.1/scoreboard'
 			],
+			Bund2:[
+				this.BASE_API_URL + 'soccer/ger.2/scoreboard'
+			],
 			"CONCACAF Gold Cup": [
 				this.BASE_API_URL + 'soccer/concacaf.gold/scoreboard',	
 				this.BASE_API_URL + 'soccer/concacaf.gold_qual/scoreboard'
