@@ -81,6 +81,9 @@ var ColosseumClient = class ColosseumClient {
 			EPL: [
 				this.BASE_API_URL + 'soccer/eng.1/scoreboard'
 			],
+			"FIFA World Cup": [
+				this.BASE_API_URL + 'soccer/fifa.world/scoreboard'
+			],
 			LaLiga: [
 				this.BASE_API_URL + 'soccer/esp.1/scoreboard'
 			],

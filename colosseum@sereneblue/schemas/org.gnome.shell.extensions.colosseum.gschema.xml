@@ -69,6 +69,10 @@
             <default>false</default>
             <summary>Enable Copa America scoreboard</summary>
         </key>
+        <key name="fifawc-enabled" type="b">
+            <default>false</default>
+            <summary>Enable FIFA World Cup scoreboard</summary>
+        </key>
         <key name="uefachampions-enabled" type="b">
             <default>false</default>
             <summary>Enable UEFA Champions League scoreboard</summary>
