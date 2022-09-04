@@ -1,4 +1,9 @@
+const GLib = imports.gi.GLib;
 const Soup = imports.gi.Soup;
+
+const Config = imports.misc.config;
+const [major] = Config.PACKAGE_VERSION.split('.');
+const SHELL_VER = Number.parseInt(major);
 
 const STATUS = {
 	TBD: "0",
@@ -122,6 +127,10 @@ var ColosseumClient = class ColosseumClient {
 		this._leagues = Object.keys(this._CONSTANTS.PREF_LEAGUES);
 		this._tournaments = Object.keys(this._CONSTANTS.PREF_TOURNAMENTS);
 		this._settings = settings;
+
+        if (SHELL_VER >= 43) {
+            this._decoder = new TextDecoder();
+        }
 	}
 
 	getLeagueScoreboard(league, date, cacheBuster) {
@@ -133,19 +142,36 @@ var ColosseumClient = class ColosseumClient {
 			let message = Soup.Message.new('GET', urls[i]);
 
 			requests.push(new Promise((resolve, reject) => {
-				this.session.queue_message(message, () => {
-				    try {
-					if (message.status_code === Soup.KnownStatusCode.OK) {
-					    let result = JSON.parse(message.response_body.data);
+                if (SHELL_VER <= 42) {
+					this.session.queue_message(message, () => {
+					    try {
+							if (message.status_code === Soup.KnownStatusCode.OK) {
+								let result = JSON.parse(message.response_body.data);
 
-					    resolve(result);
-					} else {
-					    resolve([]);
-					}
-				    } catch (e) {
-					resolve([]);
-				    }
-				});
+							    resolve(result);
+							} else {
+								resolve([]);
+							}
+					    } catch (e) {
+							resolve([]);
+					    }
+					});
+				} else {
+					this.session.send_and_read_async(message, GLib.PRIORITY_DEFAULT, null, function (session, res) {
+                        let data = session.send_and_read_finish(res);
+
+                        if (data) {
+                        	try {
+	                            data = this._decoder.decode(data.toArray())
+							    resolve(JSON.parse(data));
+                        	} catch (e) {
+                        		resolve([]);
+                        	}
+                        } else {
+                        	resolve([])
+                        }
+                    }.bind(this));
+				}
 			}))
 		}
 
