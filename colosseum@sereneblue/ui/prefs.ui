@@ -103,6 +103,32 @@
                                 </layout>
                               </object>
                             </child>
+                             <child>
+                              <object class="GtkLabel" id="prefs_label_position_topbar">
+                                <property name="can_focus">0</property>
+                                <property name="label">Position in Top Bar</property>
+                                <property name="halign">start</property>
+                                <layout>
+                                  <property name="column">0</property>
+                                  <property name="row">3</property>
+                                </layout>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkComboBoxText" id="prefs_position_topbar">
+                                <items>
+                                  <item id="0">Left</item>
+                                  <item id="1">Right</item>
+                                </items>
+                                <property name="valign">center</property>
+                                <property name="halign">end</property>
+                                <property name="hexpand">false</property>
+                                <layout>
+                                  <property name="column">1</property>
+                                  <property name="row">3</property>
+                                </layout>
+                              </object>
+                            </child>
                           </object>
                         </child>
                         <child>

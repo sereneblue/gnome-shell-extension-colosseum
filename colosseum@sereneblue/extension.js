@@ -21,6 +21,7 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
             this._timeout = null;
 
             this._settings = ExtensionUtils.getSettings("org.gnome.shell.extensions.colosseum");
+            this._settings.connect('changed::' + CONSTANTS.PREF_POSITION_TOPBAR, this._updatePositionInPanel.bind(this))
 
             this._client = new Client.ColosseumClient(CONSTANTS, this._settings);
 
@@ -304,6 +305,19 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
             this._menuText.set_text(labelText);
         }
 
+        _updatePositionInPanel(){
+            this.container.get_parent().remove_actor(this.container);
+
+            let boxes = {
+                left: Main.panel._leftBox,
+                center: Main.panel._centerBox,
+                right: Main.panel._rightBox
+            };
+
+            let position = this._settings.get_int(CONSTANTS.PREF_POSITION_TOPBAR) == 0 ? "left" : "right";
+            boxes[position].insert_child_at_index(this.container, 1);
+        }
+
         destroy() {
             this._client.session.abort();
 
@@ -324,7 +338,7 @@ function init() {}
 
 function enable() {
     scores = new Colosseum;
-    Main.panel.addToStatusArea('colosseum', scores);
+    Main.panel.addToStatusArea('colosseum', scores, 1, scores._settings.get_int(CONSTANTS.PREF_POSITION_TOPBAR) == 0 ? "left" : "right" );
 }
 
 function disable() {

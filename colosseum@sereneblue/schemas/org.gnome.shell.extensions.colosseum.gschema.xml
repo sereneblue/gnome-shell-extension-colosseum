@@ -13,6 +13,10 @@
             <default>false</default>
             <summary>Enable compact mode</summary>
         </key>
+        <key name="position-in-topbar" type="i">
+            <default>1</default>
+            <summary>Position of extension in Top Bar (0 for Left, 1 for Right)</summary>
+        </key>
         <key name="bund-enabled" type="b">
             <default>false</default>
             <summary>Enable Bund scoreboard</summary>
