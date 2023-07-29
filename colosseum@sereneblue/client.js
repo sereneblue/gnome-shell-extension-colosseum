@@ -83,6 +83,9 @@ var ColosseumClient = class ColosseumClient {
 			UCL: [
 				this.BASE_API_URL + 'soccer/uefa.champions/scoreboard'
 			],
+			"English League Championship": [
+				this.BASE_API_URL + 'soccer/eng.2/scoreboard'
+			],
 			EPL: [
 				this.BASE_API_URL + 'soccer/eng.1/scoreboard'
 			],

@@ -21,6 +21,7 @@ var PREF_LEAGUES = {
 var PREF_TOURNAMENTS = {
   "CONCACAF Gold Cup": "concacafgold-enabled",
   "Copa America": "conmebol-enabled",
+  "English League Championship": "elc-enabled",
   "FIFA World Cup": "fifawc-enabled",
   "UEFA Champions League": "uefachampions-enabled",
   "UEFA European Championship": "uefaeuro-enabled"

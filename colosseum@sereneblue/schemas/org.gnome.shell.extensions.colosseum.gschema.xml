@@ -73,6 +73,10 @@
             <default>false</default>
             <summary>Enable Copa America scoreboard</summary>
         </key>
+        <key name="elc-enabled" type="b">
+            <default>false</default>
+            <summary>Enable English League Championship scoreboard</summary>
+        </key>
         <key name="fifawc-enabled" type="b">
             <default>false</default>
             <summary>Enable FIFA World Cup scoreboard</summary>
