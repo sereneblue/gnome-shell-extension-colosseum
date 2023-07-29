@@ -349,6 +349,10 @@
             <default>false</default>
             <summary>Follow EPL team: Aston Villa</summary>
         </key>
+        <key name="epl-bou" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Bournemouth</summary>
+        </key>
         <key name="epl-bre" type="b">
             <default>false</default>
             <summary>Follow EPL team: Brentford</summary>
@@ -389,6 +393,10 @@
             <default>false</default>
             <summary>Follow EPL team: Liverpool</summary>
         </key>
+        <key name="epl-ltn" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Luton Town</summary>
+        </key>
         <key name="epl-mnc" type="b">
             <default>false</default>
             <summary>Follow EPL team: Manchester City</summary>
@@ -404,6 +412,10 @@
         <key name="epl-nor" type="b">
             <default>false</default>
             <summary>Follow EPL team: Norwich City</summary>
+        </key>
+        <key name="epl-nfo" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Nottingham Forest</summary>
         </key>
         <key name="epl-shu" type="b">
             <default>false</default>
