@@ -89,6 +89,10 @@
             <default>false</default>
             <summary>Enable UEFA European Championship scoreboard</summary>
         </key>
+        <key name="bund-hdh" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: 1. FC Heidenheim</summary>
+        </key>
         <key name="bund-dsc" type="b">
             <default>false</default>
             <summary>Follow Bund team: Arminia Bielefeld</summary>
@@ -149,6 +153,10 @@
             <default>false</default>
             <summary>Follow Bund team: Schalke 04</summary>
         </key>
+        <key name="bund-svd" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: SV Darmstadt 98</summary>
+        </key>
         <key name="bund-hof" type="b">
             <default>false</default>
             <summary>Follow Bund team: TSG Hoffenheim</summary>
@@ -169,6 +177,78 @@
             <default>false</default>
             <summary>Follow Bund team: Werder Bremen</summary>
         </key>
+        <key name="bund2-fcm" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: 1. FC Magdeburg</summary>
+        </key>
+        <key name="bund2-fcn" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: FC Nürnberg</summary>
+        </key>
+        <key name="bund2-f95" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: Fortuna Dusseldorf</summary>
+        </key>
+        <key name="bund2-hsv" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: Hamburg SV</summary>
+        </key>
+        <key name="bund2-h96" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: Hannover 96</summary>
+        </key>
+        <key name="bund2-fch" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: Hansa Rostock</summary>
+        </key>
+        <key name="bund2-hert" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: Hertha Berlin</summary>
+        </key>
+        <key name="bund2-kie" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: Holstein Kiel</summary>
+        </key>
+        <key name="bund2-fck" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: Kaiserslautern</summary>
+        </key>
+        <key name="bund2-ksc" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: Karlsruher SC</summary>
+        </key>
+        <key name="bund2-scp" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: SC Paderborn 07</summary>
+        </key>
+        <key name="bund2-scha" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: Schalke 04</summary>
+        </key>
+        <key name="bund2-spgf" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: SpVgg Greuther Furth</summary>
+        </key>
+        <key name="bund2-stp" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: St. Pauli</summary>
+        </key>
+        <key name="bund2-elv" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: SV 07 Elversberg</summary>
+        </key>
+        <key name="bund2-weh" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: SV Wehen Wiesbaden</summary>
+        </key>
+        <key name="bund2-ebs" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: TSV Eintracht Braunschweig</summary>
+        </key>
+        <key name="bund2-osn" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: VfL Osnabruck</summary>
+        </key>
         <key name="bund2-wer" type="b">
             <default>false</default>
             <summary>Follow Bund2 team: Werder Bremen</summary>
@@ -177,53 +257,13 @@
             <default>false</default>
             <summary>Follow Bund2 team: SV Darmstadt</summary>
         </key>
-        <key name="bund2-stp" type="b">
-            <default>false</default>
-            <summary>Follow Bund2 team: St. Pauli</summary>
-        </key>
-        <key name="bund2-scha" type="b">
-            <default>false</default>
-            <summary>Follow Bund2 team: Schalke 04</summary>
-        </key>
-        <key name="bund2-fcn" type="b">
-            <default>false</default>
-            <summary>Follow Bund2 team: FC Nürnberg</summary>
-        </key>
-        <key name="bund2-hsv" type="b">
-            <default>false</default>
-            <summary>Follow Bund2 team: Hamburg SV</summary>
-        </key>
         <key name="bund2-hdh" type="b">
             <default>false</default>
             <summary>Follow Bund2 team: FC Heidenheim</summary>
         </key>
-        <key name="bund2-scp" type="b">
-            <default>false</default>
-            <summary>Follow Bund2 team: SC Paderborn 07</summary>
-        </key>
-        <key name="bund2-ksc" type="b">
-            <default>false</default>
-            <summary>Follow Bund2 team: Karlsruher SC</summary>
-        </key>
         <key name="bund2-ssv" type="b">
             <default>false</default>
             <summary>Follow Bund2 team: SSV Jahn Regensburg</summary>
-        </key>
-        <key name="bund2-fch" type="b">
-            <default>false</default>
-            <summary>Follow Bund2 team: Hansa Rostock</summary>
-        </key>
-        <key name="bund2-kie" type="b">
-            <default>false</default>
-            <summary>Follow Bund2 team: Holstein Kiel</summary>
-        </key>
-        <key name="bund2-f95" type="b">
-            <default>false</default>
-            <summary>Follow Bund2 team: Fortuna Dusseldorf</summary>
-        </key>
-        <key name="bund2-h96" type="b">
-            <default>false</default>
-            <summary>Follow Bund2 team: Hannover 96</summary>
         </key>
         <key name="bund2-svs" type="b">
             <default>false</default>
