@@ -28,9 +28,9 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
             const tournaments = Object.keys(CONSTANTS.PREF_TOURNAMENTS);
 
         	for (let i = 0; i < leagues.length; i++) {
-        		let followed = "followList" + leagues[i].replace(' ', '');
-        		let notFollowing = "notFollowingList" + leagues[i].replace(' ', '');
-                let tabContent = leagues[i].replace(' ', '').toLowerCase() + "-content";
+        		let followed = "followList" + leagues[i].replaceAll(' ', '');
+        		let notFollowing = "notFollowingList" + leagues[i].replaceAll(' ', '');
+                let tabContent = leagues[i].replaceAll(' ', '').toLowerCase() + "-content";
 
                 this.total[leagues[i]] = {
                     followed: 0,
@@ -45,7 +45,7 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
                 this["_" + notFollowing].set_sort_func(this._sortList.bind(this));
                 this["_" + tabContent].set_visible(false);
 
-                this["_label" + leagues[i].replace(' ', '')] = builder.get_object(leagues[i].replace(' ', '').toLowerCase() + "-tab");
+                this["_label" + leagues[i].replaceAll(' ', '')] = builder.get_object(leagues[i].replaceAll(' ', '').toLowerCase() + "-tab");
 
                 for (let j = 0; j < CONSTANTS.SPORTS[leagues[i]].length; j++) {
                     this._addTeam(
@@ -76,7 +76,7 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
             let row = new LeagueRow(league, this._settings, this._toggleTabVisibility.bind(this));
 
             if (row.enabled) {
-                this["_" + league.replace(' ', '').toLowerCase() + "-content"].set_visible(true);
+                this["_" + league.replaceAll(' ', '').toLowerCase() + "-content"].set_visible(true);
             }
 
             this._leagues.append(row);
@@ -86,10 +86,10 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
             let row = new TeamRow(team, this._settings, this._moveRow.bind(this));
 
             if (row.enabled) {
-                this["_followList" + team.league.replace(' ', '')].append(row);
+                this["_followList" + team.league.replaceAll(' ', '')].append(row);
                 this.total[team.league].followed += 1;
             } else {
-                this["_notFollowingList" + team.league.replace(' ', '')].append(row);
+                this["_notFollowingList" + team.league.replaceAll(' ', '')].append(row);
                 this.total[team.league].notFollowing += 1;
             }
         }
@@ -99,12 +99,12 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
         }
 
         _toggleTabVisibility(league, wasEnabled) {
-            this["_" + league.replace(' ', '').toLowerCase() + "-content"].set_visible(wasEnabled);
+            this["_" + league.replaceAll(' ', '').toLowerCase() + "-content"].set_visible(wasEnabled);
         }
 
         _moveRow(data, wasEnabled) {
-    		let followed = "_followList" + data.league.replace(' ', '');
-    		let notFollowing = "_notFollowingList" + data.league.replace(' ', '');
+    		let followed = "_followList" + data.league.replaceAll(' ', '');
+    		let notFollowing = "_notFollowingList" + data.league.replaceAll(' ', '');
 
             let row = [
                 ...this[followed],
@@ -131,7 +131,7 @@ const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
         }
 
         _updateTabLabel(league) {
-            this["_label" + league.replace(' ', '')].set_text(league + (this.total[league].followed ? ` (${this.total[league].followed})` : ""));
+            this["_label" + league.replaceAll(' ', '')].set_text(league + (this.total[league].followed ? ` (${this.total[league].followed})` : ""));
         }
 
         _sortList(a, b) {

@@ -29,6 +29,10 @@
             <default>false</default>
             <summary>Enable UCL scoreboard</summary>
         </key>
+        <key name="elc-enabled" type="b">
+            <default>false</default>
+            <summary>Enable English League Championship scoreboard</summary>
+        </key>
         <key name="epl-enabled" type="b">
             <default>false</default>
             <summary>Enable EPL scoreboard</summary>
@@ -84,10 +88,6 @@
         <key name="conmebol-enabled" type="b">
             <default>false</default>
             <summary>Enable Copa America scoreboard</summary>
-        </key>
-        <key name="elc-enabled" type="b">
-            <default>false</default>
-            <summary>Enable English League Championship scoreboard</summary>
         </key>
         <key name="fifawc-enabled" type="b">
             <default>false</default>
@@ -392,6 +392,102 @@
         <key name="ucl-renn" type="b">
             <default>false</default>
             <summary>Follow UCL team: Stade Rennes</summary>
+        </key>
+        <key name="elc-bir" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Birmingham City</summary>
+        </key>
+        <key name="elc-blk" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Blackburn Rovers</summary>
+        </key>
+        <key name="elc-brc" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Bristol City</summary>
+        </key>
+        <key name="elc-car" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Cardiff City</summary>
+        </key>
+        <key name="elc-cov" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Coventry City</summary>
+        </key>
+        <key name="elc-hud" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Huddersfield Town</summary>
+        </key>
+        <key name="elc-hul" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Hull City</summary>
+        </key>
+        <key name="elc-ips" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Ipswich Town</summary>
+        </key>
+        <key name="elc-lee" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Leeds United</summary>
+        </key>
+        <key name="elc-lei" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Leicester City</summary>
+        </key>
+        <key name="elc-mid" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Middlesbrough</summary>
+        </key>
+        <key name="elc-mil" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Millwall</summary>
+        </key>
+        <key name="elc-nor" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Norwich City</summary>
+        </key>
+        <key name="elc-ply" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Plymouth Argyle</summary>
+        </key>
+        <key name="elc-pne" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Preston North End</summary>
+        </key>
+        <key name="elc-qpr" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Queens Park Rangers</summary>
+        </key>
+        <key name="elc-rot" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Rotherham United</summary>
+        </key>
+        <key name="elc-shw" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Sheffield Wednesday</summary>
+        </key>
+        <key name="elc-sou" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Southampton</summary>
+        </key>
+        <key name="elc-stk" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Stoke City</summary>
+        </key>
+        <key name="elc-sun" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Sunderland</summary>
+        </key>
+        <key name="elc-swa" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Swansea City</summary>
+        </key>
+        <key name="elc-wat" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Watford</summary>
+        </key>
+        <key name="elc-wba" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: West Bromwich Albion</summary>
         </key>
         <key name="epl-ars" type="b">
             <default>false</default>

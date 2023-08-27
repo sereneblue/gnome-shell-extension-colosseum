@@ -42,10 +42,11 @@ $ mv colosseum@sereneblue $HOME/.local/share/gnome-shell/extensions/colosseum@se
 
 #### Leagues
 
-There are 15 supported sports leagues:
+There are 16 supported sports leagues:
 
 	Bundesliga
 	2. Bundesliga
+	English Football League Championship
 	English Premier League
 	La Liga
 	Ligue 1
@@ -62,11 +63,10 @@ There are 15 supported sports leagues:
 
 #### Tournaments
 
-There are 6 supported tournaments:
+There are 5 supported tournaments:
 
 	CONCACAF Gold Cup
 	Copa America
-	English League Championship
 	FIFA World Cup
 	UEFA Champions League
 	UEFA European Championship

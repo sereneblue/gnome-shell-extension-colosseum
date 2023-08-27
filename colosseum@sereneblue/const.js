@@ -7,6 +7,7 @@ var PREF_LEAGUES = {
     Bund: "bund-enabled",
     Bund2: "bund2-enabled",
     UCL: "ucl-enabled",
+    "English League Championship": "elc-enabled",
     EPL: "epl-enabled",
     LaLiga: "laliga-enabled",
     "Ligue 1": "ligue1-enabled",
@@ -24,7 +25,6 @@ var PREF_LEAGUES = {
 var PREF_TOURNAMENTS = {
   "CONCACAF Gold Cup": "concacafgold-enabled",
   "Copa America": "conmebol-enabled",
-  "English League Championship": "elc-enabled",
   "FIFA World Cup": "fifawc-enabled",
   "UEFA Champions League": "uefachampions-enabled",
   "UEFA European Championship": "uefaeuro-enabled"
@@ -109,6 +109,32 @@ var SPORTS = {
     { id: 243, name: "Sevilla FC", pref: "ucl-sev" },
     { id: 493, name: "Shakhtar Donetsk", pref: "ucl-shk" },
     { id: 169, name: "Stade Rennes", pref: "ucl-renn" }
+  ],
+  "English League Championship": [
+    { id: 392, name: "Birmingham City", pref: "elc-bir"},
+    { id: 365, name: "Blackburn Rovers", pref: "elc-blk"},
+    { id: 333, name: "Bristol City", pref: "elc-brc"},
+    { id: 347, name: "Cardiff City", pref: "elc-car"},
+    { id: 388, name: "Coventry City", pref: "elc-cov"},
+    { id: 335, name: "Huddersfield Town", pref: "elc-hud"},
+    { id: 306, name: "Hull City", pref: "elc-hul"},
+    { id: 373, name: "Ipswich Town", pref: "elc-ips"},
+    { id: 357, name: "Leeds United", pref: "elc-lee"},
+    { id: 375, name: "Leicester City", pref: "elc-lei"},
+    { id: 369, name: "Middlesbrough", pref: "elc-mid"},
+    { id: 391, name: "Millwall", pref: "elc-mil"},
+    { id: 381, name: "Norwich City", pref: "elc-nor"},
+    { id: 307, name: "Plymouth Argyle", pref: "elc-ply"},
+    { id: 394, name: "Preston North End", pref: "elc-pne"},
+    { id: 334, name: "Queens Park Rangers", pref: "elc-qpr"},
+    { id: 402, name: "Rotherham United", pref: "elc-rot"},
+    { id: 399, name: "Sheffield Wednesday", pref: "elc-shw"},
+    { id: 376, name: "Southampton", pref: "elc-sou"},
+    { id: 336, name: "Stoke City", pref: "elc-stk"},
+    { id: 366, name: "Sunderland", pref: "elc-sun"},
+    { id: 318, name: "Swansea City", pref: "elc-swa"},
+    { id: 395, name: "Watford", pref: "elc-wat"},
+    { id: 383, name: "West Bromwich Albion", pref: "elc-wba"}
   ],
   EPL: [
     { id: 359, name: "Arsenal", pref: "epl-ars" },
