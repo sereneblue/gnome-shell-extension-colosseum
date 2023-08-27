@@ -104,6 +104,15 @@ var ColosseumClient = class ColosseumClient {
 			NBA: [
 				this.BASE_API_URL + 'basketball/nba/scoreboard'
 			],
+			NCAAF: [
+				this.BASE_API_URL + 'football/college-football/scoreboard'
+			],
+			NCAAM: [
+				this.BASE_API_URL + 'basketball/mens-college-basketball/scoreboard'
+			],
+			NCAAW: [
+				this.BASE_API_URL + 'basketball/womens-college-basketball/scoreboard'
+			],
 			NFL: [
 				this.BASE_API_URL + 'football/nfl/scoreboard'
 			],

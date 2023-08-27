@@ -42,7 +42,7 @@ $ mv colosseum@sereneblue $HOME/.local/share/gnome-shell/extensions/colosseum@se
 
 #### Leagues
 
-There are 12 supported sports leagues:
+There are 15 supported sports leagues:
 
 	Bundesliga
 	2. Bundesliga
@@ -53,6 +53,9 @@ There are 12 supported sports leagues:
 	National Basketball Association
 	National Football League
 	National Hockey League
+	NCAA Football
+	NCAA Men's Basketball
+	NCAA Women's Basketball
 	Serie A
 	UEFA Champions League
 	Women's National Basketball Association
