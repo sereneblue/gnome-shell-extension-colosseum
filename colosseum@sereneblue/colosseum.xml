@@ -1,0 +1,8 @@
+<gresources>
+	<gresource prefix="/org/gnome/Shell/Extensions/colosseum@sereneblue">
+		<file compressed="true" preprocess="xml-stripblanks">ui/league-row.ui</file>
+		<file compressed="true" preprocess="xml-stripblanks">ui/prefs.ui</file>
+		<file compressed="true" preprocess="xml-stripblanks">ui/team-row.ui</file>
+		<file compressed="true" preprocess="xml-stripblanks">ui/tournament-row.ui</file>
+	</gresource>
+</gresources>

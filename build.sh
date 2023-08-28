@@ -14,7 +14,12 @@ if [[ ! "$WORK_DIR" || ! -d "$WORK_DIR" ]]; then
 fi
 
 if [[ $1 = "45" ]]; then
-    echo "0"
+	cp -r colosseum@sereneblue/* $WORK_DIR
+	cp -r versions/45/* $WORK_DIR
+	pushd $WORK_DIR
+	sed -i -e 's/var/export const/g' ./const.js
+	zip -r ../colosseum_45.zip .
+	popd
 else 
 	cp -r colosseum@sereneblue/* $WORK_DIR
 	cp -r versions/pre45/* $WORK_DIR
