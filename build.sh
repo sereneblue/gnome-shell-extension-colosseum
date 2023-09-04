@@ -28,6 +28,7 @@ else
 	cp -r colosseum@sereneblue/* $WORK_DIR
 	cp -r versions/pre45/* $WORK_DIR
 	pushd $WORK_DIR
+	rm ui/*_adw.ui
 	zip -r ../colosseum_pre45.zip .
 	popd
 fi

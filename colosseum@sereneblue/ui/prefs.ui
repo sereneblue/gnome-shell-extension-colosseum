@@ -8,6 +8,7 @@
     <property name="step_increment">1</property>
   </object>
   <object class="GtkNotebook" id="container">
+    <property name="scrollable">true</property>
     <child>
       <object class="GtkStack">
         <property name="transition-type">crossfade</property>
