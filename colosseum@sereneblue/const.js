@@ -22,6 +22,25 @@ var PREF_LEAGUES = {
     WNBA: "wnba-enabled"
 };
 
+var DISPLAY_NAME = {
+  Bund: "1. Bundesliga",
+  Bund2: "2. Bundesliga",
+  UCL: "UEFA Champions League",
+  "English League Championship": "English League Championship",
+  EPL: "Premier League",
+  LaLiga: "LaLiga",
+  "Ligue 1": "Ligue 1",
+  MLB: "MLB",
+  NBA: "NBA",
+  NCAAF: "NCAA College Football",
+  NCAAM: "NCAA Men's Basketball",
+  NCAAW: "NCAA Women's Basketball",
+  NFL: "NFL",
+  NHL: "NHL",
+  "Serie A": "Serie A",
+  WNBA: "WNBA"
+}
+
 var PREF_TOURNAMENTS = {
   "CONCACAF Gold Cup": "concacafgold-enabled",
   "Copa America": "conmebol-enabled",

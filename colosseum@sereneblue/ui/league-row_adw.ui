@@ -1,0 +1,11 @@
+<interface>
+  <requires lib="gtk+" version="4.0"/>
+  <template class="LeagueRow" parent="AdwActionRow">
+    <property name="title" translatable="true"></property>
+    <child type="suffix">
+      <object class="GtkSwitch" id="leagueSwitch">
+        <property name="valign">center</property>
+      </object>
+    </child>
+  </template>
+</interface>

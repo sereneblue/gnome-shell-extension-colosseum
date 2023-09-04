@@ -1,0 +1,1319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkAdjustment" id="updateFrequency">
+    <property name="lower">1</property>
+    <property name="upper">30</property>
+    <property name="value">5</property>
+    <property name="step_increment">1</property>
+  </object>
+  <object class="AdwPreferencesPage" id="preferences_page">
+    <property name="title" translatable="true">Preferences</property>
+    <property name="icon_name">applications-system-symbolic</property>
+    <child>
+      <object class="AdwPreferencesGroup">
+        <property name="title" translatable="true">Display Options</property>
+        <child>
+          <object class="AdwActionRow" id="prefs_label_followed_only">
+            <property name="title" translatable="true">Only show followed teams</property>
+            <property name="activatable-widget">prefs_followed_only</property>
+            <child type="suffix">
+              <object class="GtkSwitch" id="prefs_followed_only">
+                <property name="halign">3</property>
+                <property name="valign">3</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="AdwActionRow" id="prefs_label_compact_mode">
+            <property name="title" translatable="true">Enable compact mode</property>
+            <property name="activatable-widget">prefs_compact_mode</property>
+            <child type="suffix">
+              <object class="GtkSwitch" id="prefs_compact_mode">
+                <property name="halign">3</property>
+                <property name="valign">3</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="AdwActionRow" id="prefs_label_position_topbar">
+            <property name="title" translatable="true">Position in Top Bar</property>
+            <child type="suffix">
+              <object class="GtkComboBoxText" id="prefs_position_topbar">
+                <items>
+                  <item id="0">Left</item>
+                  <item id="1">Right</item>
+                </items>
+                <property name="valign">center</property>
+                <property name="halign">end</property>
+                <property name="hexpand">true</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="AdwPreferencesGroup">
+        <child>
+          <object class="AdwActionRow" id="prefs_label_update">
+            <property name="title" translatable="true">Update Frequency (min)</property>
+            <child type="suffix">
+              <object class="GtkSpinButton" id="prefs_frequency">
+                <property name="text">0</property>
+                <property name="adjustment">updateFrequency</property>
+                <property name="climb_rate">1</property>
+                <property name="numeric">1</property>
+                <property name="wrap">1</property>
+                <property name="value">30</property>
+                <property name="valign">center</property>
+                <property name="halign">end</property>
+                <property name="hexpand">true</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="AdwPreferencesGroup" id="leagues">
+        <property name="title" translatable="true">Enabled Leagues</property>
+      </object>
+    </child>
+    <child>
+      <object class="AdwPreferencesGroup" id="tournaments">
+        <property name="title" translatable="true">Enabled Tournaments</property>
+      </object>
+    </child>
+  </object>
+  <object class="AdwPreferencesPage" id="teams_page">
+    <property name="title" translatable="true">Teams</property>
+    <property name="icon_name">view-list-symbolic</property>
+    <child>
+      <object class="GtkNotebook" id="teams-tab">
+        <property name="scrollable">true</property>
+        <child>
+          <object class="GtkStack" id="bund-content">
+            <property name="transition-type">crossfade</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkStackPage">
+                <property name="name">main</property>
+                <property name="child">
+                  <object class="GtkScrolledWindow">
+                    <property name="hscrollbar-policy">never</property>
+                    <child>
+                      <object class="GtkViewport">
+                        <child>
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+                            <property name="halign">fill</property>
+                            <property name="margin-start">36</property>
+                            <property name="margin-end">36</property>
+                            <property name="margin-top">36</property>
+                            <property name="margin-bottom">36</property>
+                            <property name="spacing">12</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Following</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="followListBund">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Teams</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="notFollowingListBund">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="bund-tab">
+            <property name="label">Bundesliga</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStack" id="bund2-content">
+            <property name="transition-type">crossfade</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkStackPage">
+                <property name="name">main</property>
+                <property name="child">
+                  <object class="GtkScrolledWindow">
+                    <property name="hscrollbar-policy">never</property>
+                    <child>
+                      <object class="GtkViewport">
+                        <child>
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+                            <property name="halign">fill</property>
+                            <property name="margin-start">36</property>
+                            <property name="margin-end">36</property>
+                            <property name="margin-top">36</property>
+                            <property name="margin-bottom">36</property>
+                            <property name="spacing">12</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Following</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="followListBund2">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Teams</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="notFollowingListBund2">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="bund2-tab">
+            <property name="label">2. Bundesliga</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStack" id="ucl-content">
+            <property name="transition-type">crossfade</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkStackPage">
+                <property name="name">main</property>
+                <property name="child">
+                  <object class="GtkScrolledWindow">
+                    <property name="hscrollbar-policy">never</property>
+                    <child>
+                      <object class="GtkViewport">
+                        <child>
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+                            <property name="halign">fill</property>
+                            <property name="margin-start">36</property>
+                            <property name="margin-end">36</property>
+                            <property name="margin-top">36</property>
+                            <property name="margin-bottom">36</property>
+                            <property name="spacing">12</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Following</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="followListUCL">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Teams</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="notFollowingListUCL">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="ucl-tab">
+            <property name="label">UCL</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStack" id="englishleaguechampionship-content">
+            <property name="transition-type">crossfade</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkStackPage">
+                <property name="name">main</property>
+                <property name="child">
+                  <object class="GtkScrolledWindow">
+                    <property name="hscrollbar-policy">never</property>
+                    <child>
+                      <object class="GtkViewport">
+                        <child>
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+                            <property name="halign">fill</property>
+                            <property name="margin-start">36</property>
+                            <property name="margin-end">36</property>
+                            <property name="margin-top">36</property>
+                            <property name="margin-bottom">36</property>
+                            <property name="spacing">12</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Following</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="followListEnglishLeagueChampionship">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Teams</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="notFollowingListEnglishLeagueChampionship">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="englishleaguechampionship-tab">
+            <property name="label">English League Championship</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStack" id="epl-content">
+            <property name="transition-type">crossfade</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkStackPage">
+                <property name="name">main</property>
+                <property name="child">
+                  <object class="GtkScrolledWindow">
+                    <property name="hscrollbar-policy">never</property>
+                    <child>
+                      <object class="GtkViewport">
+                        <child>
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+                            <property name="halign">fill</property>
+                            <property name="margin-start">36</property>
+                            <property name="margin-end">36</property>
+                            <property name="margin-top">36</property>
+                            <property name="margin-bottom">36</property>
+                            <property name="spacing">12</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Following</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="followListEPL">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Teams</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="notFollowingListEPL">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="epl-tab">
+            <property name="label">EPL</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStack" id="laliga-content">
+            <property name="transition-type">crossfade</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkStackPage">
+                <property name="name">main</property>
+                <property name="child">
+                  <object class="GtkScrolledWindow">
+                    <property name="hscrollbar-policy">never</property>
+                    <child>
+                      <object class="GtkViewport">
+                        <child>
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+                            <property name="halign">fill</property>
+                            <property name="margin-start">36</property>
+                            <property name="margin-end">36</property>
+                            <property name="margin-top">36</property>
+                            <property name="margin-bottom">36</property>
+                            <property name="spacing">12</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Following</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="followListLaLiga">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Teams</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="notFollowingListLaLiga">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="laliga-tab">
+            <property name="label">La Liga</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStack" id="ligue1-content">
+            <property name="transition-type">crossfade</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkStackPage">
+                <property name="name">main</property>
+                <property name="child">
+                  <object class="GtkScrolledWindow">
+                    <property name="hscrollbar-policy">never</property>
+                    <child>
+                      <object class="GtkViewport">
+                        <child>
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+                            <property name="halign">fill</property>
+                            <property name="margin-start">36</property>
+                            <property name="margin-end">36</property>
+                            <property name="margin-top">36</property>
+                            <property name="margin-bottom">36</property>
+                            <property name="spacing">12</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Following</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="followListLigue1">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Teams</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="notFollowingListLigue1">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="ligue1-tab">
+            <property name="label">Ligue 1</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStack" id="mlb-content">
+            <property name="transition-type">crossfade</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkStackPage">
+                <property name="name">main</property>
+                <property name="child">
+                  <object class="GtkScrolledWindow">
+                    <property name="hscrollbar-policy">never</property>
+                    <child>
+                      <object class="GtkViewport">
+                        <child>
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+                            <property name="halign">fill</property>
+                            <property name="margin-start">36</property>
+                            <property name="margin-end">36</property>
+                            <property name="margin-top">36</property>
+                            <property name="margin-bottom">36</property>
+                            <property name="spacing">12</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Following</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="followListMLB">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Teams</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="notFollowingListMLB">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="mlb-tab">
+            <property name="label">MLB</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStack" id="nba-content">
+            <property name="transition-type">crossfade</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkStackPage">
+                <property name="name">main</property>
+                <property name="child">
+                  <object class="GtkScrolledWindow">
+                    <property name="hscrollbar-policy">never</property>
+                    <child>
+                      <object class="GtkViewport">
+                        <property name="scroll-to-focus">True</property>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+                            <property name="halign">fill</property>
+                            <property name="margin-start">36</property>
+                            <property name="margin-end">36</property>
+                            <property name="margin-top">36</property>
+                            <property name="margin-bottom">36</property>
+                            <property name="spacing">12</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Following</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="followListNBA">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Teams</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="notFollowingListNBA">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="nba-tab">
+            <property name="label">NBA</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStack" id="ncaaf-content">
+            <property name="transition-type">crossfade</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkStackPage">
+                <property name="name">main</property>
+                <property name="child">
+                  <object class="GtkScrolledWindow">
+                    <property name="hscrollbar-policy">never</property>
+                    <child>
+                      <object class="GtkViewport">
+                        <child>
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+                            <property name="halign">fill</property>
+                            <property name="margin-start">36</property>
+                            <property name="margin-end">36</property>
+                            <property name="margin-top">36</property>
+                            <property name="margin-bottom">36</property>
+                            <property name="spacing">12</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Following</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="followListNCAAF">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Teams</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="notFollowingListNCAAF">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="ncaaf-tab">
+            <property name="label">NCAA Football</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStack" id="ncaam-content">
+            <property name="transition-type">crossfade</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkStackPage">
+                <property name="name">main</property>
+                <property name="child">
+                  <object class="GtkScrolledWindow">
+                    <property name="hscrollbar-policy">never</property>
+                    <child>
+                      <object class="GtkViewport">
+                        <child>
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+                            <property name="halign">fill</property>
+                            <property name="margin-start">36</property>
+                            <property name="margin-end">36</property>
+                            <property name="margin-top">36</property>
+                            <property name="margin-bottom">36</property>
+                            <property name="spacing">12</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Following</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="followListNCAAM">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Teams</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="notFollowingListNCAAM">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="ncaam-tab">
+            <property name="label">NCAA Men's Basketball</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStack" id="ncaaw-content">
+            <property name="transition-type">crossfade</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkStackPage">
+                <property name="name">main</property>
+                <property name="child">
+                  <object class="GtkScrolledWindow">
+                    <property name="hscrollbar-policy">never</property>
+                    <child>
+                      <object class="GtkViewport">
+                        <child>
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+                            <property name="halign">fill</property>
+                            <property name="margin-start">36</property>
+                            <property name="margin-end">36</property>
+                            <property name="margin-top">36</property>
+                            <property name="margin-bottom">36</property>
+                            <property name="spacing">12</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Following</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="followListNCAAW">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Teams</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="notFollowingListNCAAW">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="ncaaw-tab">
+            <property name="label">NCAA Women's Basketball</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStack" id="nfl-content">
+            <property name="transition-type">crossfade</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkStackPage">
+                <property name="name">main</property>
+                <property name="child">
+                  <object class="GtkScrolledWindow">
+                    <property name="hscrollbar-policy">never</property>
+                    <child>
+                      <object class="GtkViewport">
+                        <property name="scroll-to-focus">True</property>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+                            <property name="halign">fill</property>
+                            <property name="margin-start">36</property>
+                            <property name="margin-end">36</property>
+                            <property name="margin-top">36</property>
+                            <property name="margin-bottom">36</property>
+                            <property name="spacing">12</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Following</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="followListNFL">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Teams</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="notFollowingListNFL">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="nfl-tab">
+            <property name="label">NFL</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStack" id="nhl-content">
+            <property name="transition-type">crossfade</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkStackPage">
+                <property name="name">main</property>
+                <property name="child">
+                  <object class="GtkScrolledWindow">
+                    <property name="hscrollbar-policy">never</property>
+                    <child>
+                      <object class="GtkViewport">
+                        <property name="scroll-to-focus">True</property>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+                            <property name="halign">fill</property>
+                            <property name="margin-start">36</property>
+                            <property name="margin-end">36</property>
+                            <property name="margin-top">36</property>
+                            <property name="margin-bottom">36</property>
+                            <property name="spacing">12</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Following</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="followListNHL">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Teams</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="notFollowingListNHL">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="nhl-tab">
+            <property name="label">NHL</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStack" id="seriea-content">
+            <property name="transition-type">crossfade</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkStackPage">
+                <property name="name">main</property>
+                <property name="child">
+                  <object class="GtkScrolledWindow">
+                    <property name="hscrollbar-policy">never</property>
+                    <child>
+                      <object class="GtkViewport">
+                        <child>
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+                            <property name="halign">fill</property>
+                            <property name="margin-start">36</property>
+                            <property name="margin-end">36</property>
+                            <property name="margin-top">36</property>
+                            <property name="margin-bottom">36</property>
+                            <property name="spacing">12</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Following</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="followListSerieA">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Teams</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="notFollowingListSerieA">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="seriea-tab">
+            <property name="label">Serie A</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStack" id="wnba-content">
+            <property name="transition-type">crossfade</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkStackPage">
+                <property name="name">main</property>
+                <property name="child">
+                  <object class="GtkScrolledWindow">
+                    <property name="hscrollbar-policy">never</property>
+                    <child>
+                      <object class="GtkViewport">
+                        <child>
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+                            <property name="halign">fill</property>
+                            <property name="margin-start">36</property>
+                            <property name="margin-end">36</property>
+                            <property name="margin-top">36</property>
+                            <property name="margin-bottom">36</property>
+                            <property name="spacing">12</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Following</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="followListWNBA">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Teams</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkListBox" id="notFollowingListWNBA">
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame"/>
+                                </style>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="wnba-tab">
+            <property name="label">WNBA</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

@@ -1,156 +1,149 @@
 import {ExtensionPreferences} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 
+import Adw from 'gi://Adw';
 import GObject from 'gi://GObject';
 import Gio from 'gi://Gio';
-
 import Gtk from 'gi://Gtk';
 
 import * as CONSTANTS from './const.js';
 
 const EXT_PATH = import.meta.url;
 
-const colosseum = GObject.registerClass({ GTypeName: 'colosseumPrefsWidget' },
-    class colosseum extends Gtk.Box {
-        _init(params) {
-            super._init(params);
+class Preferences {
+    constructor(window, settings) {
+        this._builder = new Gtk.Builder();
 
-            this.orientation = Gtk.Orientation.VERTICAL;
-            this.spacing = 0;
+        this.total = {};
+        this._settings = settings;
 
-            this.total = {};
-            this._settings = null;
-        }
+        this._builder.add_from_file(EXT_PATH.replace('prefs.js', "ui/prefs.ui").replace('file://', ''))
+        this._leagues = this._builder.get_object("leagues");
+        this._tournaments = this._builder.get_object("tournaments");
+        this._prefsPage = this._builder.get_object("preferences_page");
+        this._teamsPage = this._builder.get_object("teams_page");
 
-        _bootstrap(settings) {
-            let _resource = Gio.Resource.load(EXT_PATH.replace('prefs.js', "colosseum.gresource").replace('file://', ''));
-            _resource._register();
+        this._settings.bind(CONSTANTS.PREF_UPDATE_FREQ, this._builder.get_object("prefs_frequency"), "value", Gio.SettingsBindFlags.DEFAULT);
+        this._settings.bind(CONSTANTS.PREF_FOLLOWED_ONLY, this._builder.get_object("prefs_followed_only"), "active", Gio.SettingsBindFlags.DEFAULT);
+        this._settings.bind(CONSTANTS.PREF_COMPACT_MODE, this._builder.get_object("prefs_compact_mode"), "active", Gio.SettingsBindFlags.DEFAULT);
+        this._settings.bind(CONSTANTS.PREF_POSITION_TOPBAR, this._builder.get_object("prefs_position_topbar"), "active", Gio.SettingsBindFlags.DEFAULT);
 
-            const builder = new Gtk.Builder();
-            builder.add_from_file(EXT_PATH.replace('prefs.js', "ui/prefs.ui"))
+        this._bootstrap();
 
-            this._settings = settings;
+        window.add(this._prefsPage);
+        window.add(this._teamsPage);
+    }
 
-            this._settings.bind(CONSTANTS.PREF_UPDATE_FREQ, builder.get_object("prefs_frequency"), "value", Gio.SettingsBindFlags.DEFAULT);
-            this._settings.bind(CONSTANTS.PREF_FOLLOWED_ONLY, builder.get_object("prefs_followed_only"), "active", Gio.SettingsBindFlags.DEFAULT);
-            this._settings.bind(CONSTANTS.PREF_COMPACT_MODE, builder.get_object("prefs_compact_mode"), "active", Gio.SettingsBindFlags.DEFAULT);
-            this._settings.bind(CONSTANTS.PREF_POSITION_TOPBAR, builder.get_object("prefs_position_topbar"), "active", Gio.SettingsBindFlags.DEFAULT);
+    _bootstrap() {
+        const leagues = Object.keys(CONSTANTS.SPORTS);
+        const tournaments = Object.keys(CONSTANTS.PREF_TOURNAMENTS);
 
-            this._leagues = builder.get_object("leagues");
-            this._tournaments = builder.get_object("tournaments");
-            const container = builder.get_object("container");
-            const leagues = Object.keys(CONSTANTS.SPORTS);
-            const tournaments = Object.keys(CONSTANTS.PREF_TOURNAMENTS);
+        for (let i = 0; i < leagues.length; i++) {
+            let followed = "followList" + leagues[i].replaceAll(' ', '');
+            let notFollowing = "notFollowingList" + leagues[i].replaceAll(' ', '');
+            let tabContent = leagues[i].replaceAll(' ', '').toLowerCase() + "-content";
 
-            for (let i = 0; i < leagues.length; i++) {
-                let followed = "followList" + leagues[i].replaceAll(' ', '');
-                let notFollowing = "notFollowingList" + leagues[i].replaceAll(' ', '');
-                let tabContent = leagues[i].replaceAll(' ', '').toLowerCase() + "-content";
+            this.total[leagues[i]] = {
+                followed: 0,
+                notFollowing: 0
+            };
 
-                this.total[leagues[i]] = {
-                    followed: 0,
-                    notFollowing: 0
-                };
+            this["_" + followed] = this._builder.get_object(followed);
+            this["_" + notFollowing] = this._builder.get_object(notFollowing);
+            this["_" + tabContent] = this._builder.get_object(tabContent);
 
-                this["_" + followed] = builder.get_object(followed);
-                this["_" + notFollowing] = builder.get_object(notFollowing);
-                this["_" + tabContent] = builder.get_object(tabContent);
+            this["_" + followed].set_sort_func(this._sortList.bind(this));
+            this["_" + notFollowing].set_sort_func(this._sortList.bind(this));
+            this["_" + tabContent].set_visible(false);
 
-                this["_" + followed].set_sort_func(this._sortList.bind(this));
-                this["_" + notFollowing].set_sort_func(this._sortList.bind(this));
-                this["_" + tabContent].set_visible(false);
+            this["_label" + leagues[i].replaceAll(' ', '')] = this._builder.get_object(leagues[i].replaceAll(' ', '').toLowerCase() + "-tab");
 
-                this["_label" + leagues[i].replaceAll(' ', '')] = builder.get_object(leagues[i].replaceAll(' ', '').toLowerCase() + "-tab");
-
-                for (let j = 0; j < CONSTANTS.SPORTS[leagues[i]].length; j++) {
-                    this._addTeam(
-                        {
-                            league: leagues[i],
-                            team: CONSTANTS.SPORTS[leagues[i]][j]
-                        }
-                    );
-                }
-
-                this._updateTabLabel(leagues[i]);
-                this._addLeague(leagues[i]);
+            for (let j = 0; j < CONSTANTS.SPORTS[leagues[i]].length; j++) {
+                this._addTeam(
+                    {
+                        league: leagues[i],
+                        team: CONSTANTS.SPORTS[leagues[i]][j]
+                    }
+                );
             }
 
-            for (let i = 0; i < tournaments.length; i++) {
-                this._addTournament(tournaments[i]);
-            }
-
-            this.append(container);
+            this._updateTabLabel(leagues[i]);
+            this._addLeague(leagues[i]);
         }
 
-        _addLeague(league) {
-            let row = new LeagueRow(league, this._settings, this._toggleTabVisibility.bind(this));
+        for (let i = 0; i < tournaments.length; i++) {
+            this._addTournament(tournaments[i]);
+        }
+    }
 
-            if (row.enabled) {
-                this["_" + league.replaceAll(' ', '').toLowerCase() + "-content"].set_visible(true);
-            }
+    _addLeague(league) {
+        let row = new LeagueRow(league, this._settings, this._toggleTabVisibility.bind(this));
 
-            this._leagues.append(row);
+        if (row.enabled) {
+            this["_" + league.replaceAll(' ', '').toLowerCase() + "-content"].set_visible(true);
         }
 
-        _addTeam(team) {
-            let row = new TeamRow(team, this._settings, this._moveRow.bind(this));
+        this._leagues.add(row);
+    }
 
-            if (row.enabled) {
-                this["_followList" + team.league.replaceAll(' ', '')].append(row);
-                this.total[team.league].followed += 1;
+    _addTeam(team) {
+        let row = new TeamRow(team, this._settings, this._moveRow.bind(this));
+
+        if (row.enabled) {
+            this["_followList" + team.league.replaceAll(' ', '')].append(row);
+            this.total[team.league].followed += 1;
+        } else {
+            this["_notFollowingList" + team.league.replaceAll(' ', '')].append(row);
+            this.total[team.league].notFollowing += 1;
+        }
+    }
+
+    _addTournament(tournament) {
+        this._tournaments.add(new TournamentRow(tournament, this._settings));
+    }
+
+    _toggleTabVisibility(league, wasEnabled) {
+        this["_" + league.replaceAll(' ', '').toLowerCase() + "-content"].set_visible(wasEnabled);
+    }
+
+    _moveRow(data, wasEnabled) {
+		let followed = "_followList" + data.league.replaceAll(' ', '');
+		let notFollowing = "_notFollowingList" + data.league.replaceAll(' ', '');
+
+        let row = [
+            ...this[followed],
+            ...this[notFollowing],
+        ].find(t => t.name === data.team.name);
+
+        if (row) {
+            row.get_parent().remove(row);
+
+            if (wasEnabled) {
+                this[followed].append(row);
+
+                this.total[data.league].followed += 1;
+                this.total[data.league].notFollowing -= 1;
             } else {
-                this["_notFollowingList" + team.league.replaceAll(' ', '')].append(row);
-                this.total[team.league].notFollowing += 1;
+                this[notFollowing].append(row);
+
+                this.total[data.league].followed -= 1;
+                this.total[data.league].notFollowing += 1;
             }
+
+            this._updateTabLabel(data.league);
         }
+    }
 
-        _addTournament(tournament) {
-            this._tournaments.append(new TournamentRow(tournament, this._settings));
-        }
+    _updateTabLabel(league) {
+        this["_label" + league.replaceAll(' ', '')].set_text(league + (this.total[league].followed ? ` (${this.total[league].followed})` : ""));
+    }
 
-        _toggleTabVisibility(league, wasEnabled) {
-            this["_" + league.replaceAll(' ', '').toLowerCase() + "-content"].set_visible(wasEnabled);
-        }
-
-        _moveRow(data, wasEnabled) {
-    		let followed = "_followList" + data.league.replaceAll(' ', '');
-    		let notFollowing = "_notFollowingList" + data.league.replaceAll(' ', '');
-
-            let row = [
-                ...this[followed],
-                ...this[notFollowing],
-            ].find(t => t.name === data.team.name);
-
-            if (row) {
-                row.get_parent().remove(row);
-
-                if (wasEnabled) {
-                    this[followed].append(row);
-
-                    this.total[data.league].followed += 1;
-                    this.total[data.league].notFollowing -= 1;
-                } else {
-                    this[notFollowing].append(row);
-
-                    this.total[data.league].followed -= 1;
-                    this.total[data.league].notFollowing += 1;
-                }
-
-                this._updateTabLabel(data.league);
-            }
-        }
-
-        _updateTabLabel(league) {
-            this["_label" + league.replaceAll(' ', '')].set_text(league + (this.total[league].followed ? ` (${this.total[league].followed})` : ""));
-        }
-
-        _sortList(a, b) {
-            return a.name.localeCompare(b.name);
-        }
-    });
+    _sortList(a, b) {
+        return a.name.localeCompare(b.name);
+    }
+};
 
 const TeamRow = GObject.registerClass({
     GTypeName: 'TeamRow',
-    // Template: "resource:///org/gnome/Shell/Extensions/colosseum@sereneblue/ui/team-row.ui",
     Template: EXT_PATH.replace('prefs.js', "ui/team-row.ui"),
     InternalChildren: [
         'teamLabel',
@@ -160,7 +153,6 @@ const TeamRow = GObject.registerClass({
     _init(data, settings, callback) {
         super._init();
 
-        this._app = Gio.Application.get_default();
         this._data = data;
         this._settings = settings;
         this._switchCallback = callback;
@@ -190,21 +182,19 @@ const LeagueRow = GObject.registerClass({
     GTypeName: 'LeagueRow',
     Template: EXT_PATH.replace('prefs.js', "ui/league-row.ui"),
     InternalChildren: [
-        'leagueLabel',
         'leagueSwitch'
     ],
-}, class Row extends Gtk.ListBoxRow {
+}, class Row extends Adw.ActionRow {
     _init(league, settings, callback) {
         super._init();
 
-        this._app = Gio.Application.get_default();
-        this._settings = settings;
         this._switchCallback = callback;
 
+        this.set_title(CONSTANTS.DISPLAY_NAME[league]);
         this._league = league;
-        this._leagueLabel.label = league;
         this._leagueSwitch.connect("notify::active", this._onSwitchChanged.bind(this));
 
+        this._settings = settings;
         this._settings.bind(CONSTANTS.PREF_LEAGUES[league], this._leagueSwitch, "active", Gio.SettingsBindFlags.DEFAULT);
     }
 
@@ -223,29 +213,21 @@ const TournamentRow = GObject.registerClass({
     GTypeName: 'TournamentRow',
     Template: EXT_PATH.replace('prefs.js', "ui/tournament-row.ui"),
     InternalChildren: [
-        'tournamentLabel',
         'tournamentSwitch'
     ],
-}, class Row extends Gtk.ListBoxRow {
+}, class Row extends Adw.ActionRow {
     _init(tournament, settings) {
         super._init();
 
-        this._app = Gio.Application.get_default();
+        this.set_title(tournament);
+
         this._settings = settings;
-
-        this._tournament = tournament;
-        this._tournamentLabel.label = tournament;
-
         this._settings.bind(CONSTANTS.PREF_TOURNAMENTS[tournament], this._tournamentSwitch, "active", Gio.SettingsBindFlags.DEFAULT);
     }
 });
 
 export default class ColosseumPreferences extends ExtensionPreferences {
     fillPreferencesWindow(window) {
-        let c = new colosseum();
-        c._bootstrap(this.getSettings("org.gnome.shell.extensions.colosseum"));
-        c.show();    
-
-        window.add(c);
+        let preferences = new Preferences(window, this.getSettings("org.gnome.shell.extensions.colosseum"));
     }
 }

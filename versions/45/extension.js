@@ -22,7 +22,6 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
             this._scores = [];
             this._timeout = null;
             this._settings = null;
-            this._client = new ColosseumClient(CONSTANTS, this._settings);
 
             this._panelBoxLayout = new St.BoxLayout();
 
@@ -41,13 +40,12 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
 
             this.hide();
             this.add_child(this._panelBoxLayout);
-
-            this._update();
         }
 
         setSettings(settings) {
             this._settings = settings;
             this._settings.connect('changed::' + CONSTANTS.PREF_POSITION_TOPBAR, this._updatePositionInPanel.bind(this))
+            this._client = new ColosseumClient(CONSTANTS, this._settings);
         }
 
         _addGamesToGrid(grid, games, offset = 0, league = null) {
@@ -255,7 +253,7 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
                 this._timeout = null;
             }
 
-            this._timeout = GLib.timeout_add_seconds(this._getUpdateSec(), this._update.bind(this));
+            this._timeout = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, this._getUpdateSec(), this._update.bind(this));
         }
 
         async _loadData() {
@@ -337,11 +335,11 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
 });
 
 export default class ColosseumExtension extends Extension {
-    init() {}
-
     enable() {
         this.scores = new Colosseum;
         this.scores.setSettings(this.getSettings("org.gnome.shell.extensions.colosseum"))
+        this.scores._update();
+
         Main.panel.addToStatusArea('colosseum', this.scores, 1, this.scores._settings.get_int(CONSTANTS.PREF_POSITION_TOPBAR) == 0 ? "left" : "right" );
     }
 
