@@ -85,11 +85,17 @@ export default class ColosseumClient {
 			EPL: [
 				this.BASE_API_URL + 'soccer/eng.1/scoreboard'
 			],
+			"FA Cup": [
+				this.BASE_API_URL + 'soccer/eng.fa/scoreboard'
+			],
 			"FIFA World Cup": [
 				this.BASE_API_URL + 'soccer/fifa.world/scoreboard'
 			],
 			LaLiga: [
 				this.BASE_API_URL + 'soccer/esp.1/scoreboard'
+			],
+			"Leagues Cup": [
+				this.BASE_API_URL + 'soccer/concacaf.leagues.cup/scoreboard'
 			],
 			"Ligue 1": [
 				this.BASE_API_URL + 'soccer/fra.1/scoreboard'
@@ -119,12 +125,23 @@ export default class ColosseumClient {
 				this.BASE_API_URL + 'soccer/ita.1/scoreboard'
 			],
 			"UEFA Champions League": [
-				this.BASE_API_URL + 'soccer/uefa.champions/scoreboard',	
+				this.BASE_API_URL + 'soccer/uefa.champions/scoreboard',
 				this.BASE_API_URL + 'soccer/uefa.champions_qual/scoreboard'
 			],
+			"UEFA Europa Conference League": [
+				this.BASE_API_URL + 'soccer/uefa.europa.conf/scoreboard',
+				this.BASE_API_URL + 'soccer/uefa.europa.conf_qual/scoreboard'
+			],
+			"UEFA Europa League": [
+				this.BASE_API_URL + 'soccer/uefa.europa/scoreboard',
+				this.BASE_API_URL + 'soccer/uefa.europa_qual/scoreboard'
+			],
 			"UEFA European Championship": [
-				this.BASE_API_URL + 'soccer/uefa.euro/scoreboard',	
+				this.BASE_API_URL + 'soccer/uefa.euro/scoreboard',
 				this.BASE_API_URL + 'soccer/uefa.euroq/scoreboard'
+			],
+			"UEFA Women's Champions League": [
+				this.BASE_API_URL + 'soccer/uefa.wchampions/scoreboard'
 			],
 			WNBA: [
 				this.BASE_API_URL + 'basketball/wnba/scoreboard'
