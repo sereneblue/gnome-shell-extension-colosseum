@@ -7285,6 +7285,10 @@
             <default>false</default>
             <summary>Follow NHL team: San Jose Sharks</summary>
         </key>
+        <key name="nhl-sea" type="b">
+            <default>false</default>
+            <summary>Follow NHL team: Seattle Kraken</summary>
+        </key>
         <key name="nhl-stl" type="b">
             <default>false</default>
             <summary>Follow NHL team: St. Louis Blues</summary>
