@@ -1,7 +1,7 @@
 # colosseum
 
 ![GNOME 40+](https://img.shields.io/badge/gnome-40%2B-blueviolet)
-![colosseum version](https://img.shields.io/badge/version-21-brightgreen.svg)
+![colosseum version](https://img.shields.io/badge/version-22-brightgreen.svg)
 ![GPL v3 License](https://img.shields.io/badge/license-GPL%20v3-blue.svg)
 
 <p align="center">
@@ -63,13 +63,17 @@ There are 16 supported sports leagues:
 
 #### Tournaments
 
-There are 5 supported tournaments:
+There are 9 supported tournaments:
 
 	CONCACAF Gold Cup
 	Copa America
+	FA Cup
 	FIFA World Cup
-	UEFA Champions League
+	Leagues Cup
+	UEFA Europa Conference League
+	UEFA Europa League
 	UEFA European Championship
+	UEFA Women's Champions League
 
 # Update
 
