@@ -49,6 +49,10 @@
             <default>false</default>
             <summary>Enable MLB scoreboard</summary>
         </key>
+        <key name="mls-enabled" type="b">
+            <default>false</default>
+            <summary>Enable MLS scoreboard</summary>
+        </key>
         <key name="nba-enabled" type="b">
             <default>false</default>
             <summary>Enable NBA scoreboard</summary>
@@ -968,6 +972,118 @@
         <key name="mlb-wsh" type="b">
             <default>false</default>
             <summary>Follow MLB team: Washington Nationals</summary>
+        </key>
+        <key name="mls-atl" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: Atlanta United FC</summary>
+        </key>
+        <key name="mls-atx" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: Austin FC</summary>
+        </key>
+        <key name="mls-mtl" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: CF Montréal</summary>
+        </key>
+        <key name="mls-clt" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: Charlotte FC</summary>
+        </key>
+        <key name="mls-chi" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: Chicago Fire FC</summary>
+        </key>
+        <key name="mls-col" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: Colorado Rapids</summary>
+        </key>
+        <key name="mls-clb" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: Columbus Crew</summary>
+        </key>
+        <key name="mls-dc" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: D.C. United</summary>
+        </key>
+        <key name="mls-cin" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: FC Cincinnati</summary>
+        </key>
+        <key name="mls-dal" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: FC Dallas</summary>
+        </key>
+        <key name="mls-hou" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: Houston Dynamo FC</summary>
+        </key>
+        <key name="mls-mia" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: Inter Miami CF</summary>
+        </key>
+        <key name="mls-la" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: LA Galaxy</summary>
+        </key>
+        <key name="mls-lafc" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: LAFC</summary>
+        </key>
+        <key name="mls-min" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: Minnesota United FC</summary>
+        </key>
+        <key name="mls-nsh" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: Nashville SC</summary>
+        </key>
+        <key name="mls-ne" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: New England Revolution</summary>
+        </key>
+        <key name="mls-nyc" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: New York City FC</summary>
+        </key>
+        <key name="mls-orl" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: Orlando City SC</summary>
+        </key>
+        <key name="mls-phi" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: Philadelphia Union</summary>
+        </key>
+        <key name="mls-por" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: Portland Timbers</summary>
+        </key>
+        <key name="mls-rsl" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: Real Salt Lake</summary>
+        </key>
+        <key name="mls-sj" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: San Jose Earthquakes</summary>
+        </key>
+        <key name="mls-sea" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: Seattle Sounders FC</summary>
+        </key>
+        <key name="mls-skc" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: Sporting Kansas City</summary>
+        </key>
+        <key name="mls-stl" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: St. Louis CITY SC</summary>
+        </key>
+        <key name="mls-tor" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: Toronto FC</summary>
+        </key>
+        <key name="mls-van" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: Vancouver Whitecaps</summary>
         </key>
         <key name="nba-atl" type="b">
             <default>false</default>

@@ -103,6 +103,9 @@ export default class ColosseumClient {
 			MLB: [
 				this.BASE_API_URL + 'baseball/mlb/scoreboard'
 			],
+			MLS: [
+				this.BASE_API_URL + 'soccer/usa.1/scoreboard'
+			],
 			NBA: [
 				this.BASE_API_URL + 'basketball/nba/scoreboard'
 			],
