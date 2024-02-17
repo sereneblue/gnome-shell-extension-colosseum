@@ -1,7 +1,8 @@
-const Gio = imports.gi.Gio;
 const Clutter = imports.gi.Clutter;
-const St = imports.gi.St;
+const Gio = imports.gi.Gio;
 const GObject = imports.gi.GObject;
+const Meta = imports.gi.Meta;
+const St = imports.gi.St;
 const Mainloop = imports.mainloop;
 const Main = imports.ui.main;
 const PanelMenu = imports.ui.panelMenu;
@@ -11,6 +12,62 @@ const ExtensionUtils = imports.misc.extensionUtils;
 const EXTENSION = ExtensionUtils.getCurrentExtension();
 const CONSTANTS = EXTENSION.imports.const;
 const Client = EXTENSION.imports.client;
+
+const GameLink = GObject.registerClass(
+    class GameLink extends St.Label {
+        _init(link = '') {
+            super._init({
+                reactive: true,
+                style_class: 'shell-link',
+                y_expand: true,
+                x_align: Clutter.ActorAlign.END,
+                y_align: Clutter.ActorAlign.CENTER 
+            });
+
+            this._url = link;
+            this.clutter_text.set_markup(`<span><u>Visit</u></span>`);
+        }
+
+        vfunc_button_press_event(event) {
+            if (!this.visible || this.get_paint_opacity() === 0)
+                return Clutter.EVENT_PROPAGATE;
+
+            return true;
+        }
+
+        vfunc_button_release_event(event) {
+            if (!this.visible || this.get_paint_opacity() === 0)
+                return Clutter.EVENT_PROPAGATE;
+
+            Gio.app_info_launch_default_for_uri(this._url, global.create_app_launch_context(0, -1));
+            
+            return Clutter.EVENT_STOP;
+        }
+
+        vfunc_motion_event(event) {
+            if (!this.visible || this.get_paint_opacity() === 0)
+                return Clutter.EVENT_PROPAGATE;
+
+            if (!this._cursorChanged) {
+                global.display.set_cursor(Meta.Cursor.POINTING_HAND);
+                this._cursorChanged = true;
+            }
+
+            return Clutter.EVENT_PROPAGATE;
+        }
+
+        vfunc_leave_event(event) {
+            if (!this.visible || this.get_paint_opacity() === 0)
+                return Clutter.EVENT_PROPAGATE;
+
+            if (this._cursorChanged) {
+                this._cursorChanged = false;
+                global.display.set_cursor(Meta.Cursor.DEFAULT);
+            }
+
+            return super.vfunc_leave_event(event);
+        }
+});
 
 const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
     class Colosseum extends PanelMenu.Button {
@@ -120,10 +177,13 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
                     y_expand: true,
                     y_align: Clutter.ActorAlign.CENTER 
                 });
-
+                
+                let gameLink = new GameLink(games[j].link);
+               
                 grid.attach(awayLabel, 0, awayRow, 1, 1);
                 grid.attach(awayScore, 1, awayRow, 1, 1);
-                
+                grid.attach(gameLink, 2, awayRow, 1, 1);
+
                 let div = new St.Label({ 
                     text: "",
                     style_class: 'divider',

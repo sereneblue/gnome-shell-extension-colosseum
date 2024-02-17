@@ -306,7 +306,10 @@ var ColosseumClient = class ColosseumClient {
 
 		let event = {};
 
+		let gameLink = evt.links.filter(l => l.text === "Gamecast" || l.text === "Summary")[0];
+
 		event.live = false;
+		event.link = gameLink ? gameLink.href : null;
 		event.isComplete = evt.status.type.completed;
 		event.home = {};
 		event.home.id = home.id;
