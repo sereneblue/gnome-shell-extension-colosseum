@@ -79,6 +79,8 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
 
             this._settings = ExtensionUtils.getSettings("org.gnome.shell.extensions.colosseum");
             this._settings.connect('changed::' + CONSTANTS.PREF_POSITION_TOPBAR, this._updatePositionInPanel.bind(this))
+            this._settings.connect('changed::' + CONSTANTS.PREF_FOLLOWED_ONLY, this._update.bind(this));
+            this._settings.connect('changed::' + CONSTANTS.PREF_COMPACT_MODE, this._update.bind(this));
 
             this._client = new Client.ColosseumClient(CONSTANTS, this._settings);
 
@@ -177,9 +179,9 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
                     y_expand: true,
                     y_align: Clutter.ActorAlign.CENTER 
                 });
-                
+
                 let gameLink = new GameLink(games[j].link);
-               
+
                 grid.attach(awayLabel, 0, awayRow, 1, 1);
                 grid.attach(awayScore, 1, awayRow, 1, 1);
                 grid.attach(gameLink, 2, awayRow, 1, 1);
