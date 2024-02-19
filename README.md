@@ -1,7 +1,7 @@
 # colosseum
 
 ![GNOME 40+](https://img.shields.io/badge/gnome-40%2B-blueviolet)
-![colosseum version](https://img.shields.io/badge/version-26-brightgreen.svg)
+![colosseum version](https://img.shields.io/badge/version-30-brightgreen.svg)
 ![GPL v3 License](https://img.shields.io/badge/license-GPL%20v3-blue.svg)
 
 <p align="center">
@@ -16,18 +16,26 @@ A gnome-shell extension to view live scores for your favorite sports teams.
 
 Visit [extensions.gnome.org](https://extensions.gnome.org/extension/4207/colosseum/) and click on the switch to install colosseum. 
 
-### Using the install script
-```
-$ wget -O install.sh https://raw.githubusercontent.com/sereneblue/gnome-shell-extension-colosseum/master/install.sh
-$ chmod +x install.sh
-$ ./install.sh
-```
+### From source
 
-### From source code
 ```
 $ git clone https://github.com/sereneblue/gnome-shell-extension-colosseum.git
 $ cd gnome-shell-extension-colosseum
-$ mv colosseum@sereneblue $HOME/.local/share/gnome-shell/extensions/colosseum@sereneblue
+```
+
+GNOME 45+:
+```
+$ ./build.sh 45
+```
+
+GNOME 40 - 44:
+```
+$ ./build.sh
+```
+
+Extract the contents of the newly created zip file into:
+```
+~/.local/share/gnome-shell/extensions/colosseum@sereneblue
 ```
 
 # Configuration
@@ -75,7 +83,3 @@ There are 9 supported tournaments:
 	UEFA Europa League
 	UEFA European Championship
 	UEFA Women's Champions League
-
-# Update
-
-If you want to update the extension, install it by following the process above. Your settings will be preserved (excluding any deprecated options). You may need to restart your session for changes to appear.
