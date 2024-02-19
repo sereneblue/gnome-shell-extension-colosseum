@@ -93,8 +93,8 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
                 y_align: Clutter.ActorAlign.CENTER
             });
             
-            this._panelBoxLayout.add(this._icon);
-            this._panelBoxLayout.add(this._menuText);
+            this._panelBoxLayout.add_child(this._icon);
+            this._panelBoxLayout.add_child(this._menuText);
 
             this.hide();
             this.add_child(this._panelBoxLayout);
@@ -261,7 +261,7 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
 
                     this._addGamesToGrid(grid, this._scores[i].games);
 
-                    baseMenuItem.add_actor(g);
+                    baseMenuItem.add_child(g);
                     submenu.menu.addMenuItem(baseMenuItem);
                     menus.push(submenu);
                 }
