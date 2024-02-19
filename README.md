@@ -1,7 +1,7 @@
 # colosseum
 
 ![GNOME 40+](https://img.shields.io/badge/gnome-40%2B-blueviolet)
-![colosseum version](https://img.shields.io/badge/version-30-brightgreen.svg)
+![colosseum version](https://img.shields.io/badge/version-31-brightgreen.svg)
 ![GPL v3 License](https://img.shields.io/badge/license-GPL%20v3-blue.svg)
 
 <p align="center">
