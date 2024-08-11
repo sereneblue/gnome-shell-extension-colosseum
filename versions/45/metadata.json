@@ -4,5 +4,5 @@
 	"url": "https://github.com/sereneblue/gnome-shell-extension-colosseum",
 	"uuid": "colosseum@sereneblue",
 	"version": 30,
-	"shell-version": [ "45", "46" ]
+	"shell-version": [ "45", "46", "47" ]
 }
