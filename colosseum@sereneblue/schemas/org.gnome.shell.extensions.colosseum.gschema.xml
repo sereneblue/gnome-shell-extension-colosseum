@@ -581,6 +581,10 @@
             <default>false</default>
             <summary>Follow English League Championship team: Bristol City</summary>
         </key>
+        <key name="elc-bur" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Burnley</summary>
+        </key>
         <key name="elc-car" type="b">
             <default>false</default>
             <summary>Follow English League Championship team: Cardiff City</summary>
@@ -588,6 +592,10 @@
         <key name="elc-cov" type="b">
             <default>false</default>
             <summary>Follow English League Championship team: Coventry City</summary>
+        </key>
+        <key name="elc-der" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Derby County</summary>
         </key>
         <key name="elc-hud" type="b">
             <default>false</default>
@@ -609,6 +617,10 @@
             <default>false</default>
             <summary>Follow English League Championship team: Leicester City</summary>
         </key>
+        <key name="elc-ltn" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Luton Town</summary>
+        </key>
         <key name="elc-mid" type="b">
             <default>false</default>
             <summary>Follow English League Championship team: Middlesbrough</summary>
@@ -621,9 +633,17 @@
             <default>false</default>
             <summary>Follow English League Championship team: Norwich City</summary>
         </key>
+        <key name="elc-oxf" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Oxford United</summary>
+        </key>
         <key name="elc-ply" type="b">
             <default>false</default>
             <summary>Follow English League Championship team: Plymouth Argyle</summary>
+        </key>
+        <key name="elc-por" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Portsmouth</summary>
         </key>
         <key name="elc-pne" type="b">
             <default>false</default>
@@ -636,6 +656,10 @@
         <key name="elc-rot" type="b">
             <default>false</default>
             <summary>Follow English League Championship team: Rotherham United</summary>
+        </key>
+        <key name="elc-shu" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Sheffield United</summary>
         </key>
         <key name="elc-shw" type="b">
             <default>false</default>
