@@ -217,13 +217,17 @@
             <default>false</default>
             <summary>Follow Bund team: Werder Bremen</summary>
         </key>
+        <key name="bund2-col" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: FC Cologne</summary>
+        </key>
         <key name="bund2-fcm" type="b">
             <default>false</default>
             <summary>Follow Bund2 team: 1. FC Magdeburg</summary>
         </key>
         <key name="bund2-fcn" type="b">
             <default>false</default>
-            <summary>Follow Bund2 team: FC Nürnberg</summary>
+            <summary>Follow Bund2 team: 1. FC Nürnberg</summary>
         </key>
         <key name="bund2-f95" type="b">
             <default>false</default>
@@ -256,6 +260,10 @@
         <key name="bund2-ksc" type="b">
             <default>false</default>
             <summary>Follow Bund2 team: Karlsruher SC</summary>
+        </key>
+        <key name="bund2-prm" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: Preußen Münster</summary>
         </key>
         <key name="bund2-scp" type="b">
             <default>false</default>
@@ -320,6 +328,10 @@
         <key name="bund2-fci" type="b">
             <default>false</default>
             <summary>Follow Bund2 team: FC Ingolstadt 04</summary>
+        </key>
+        <key name="bund2-ulm" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: SSV Ulm 1846</summary>
         </key>
         <key name="ucl-fcu" type="b">
             <default>false</default>
