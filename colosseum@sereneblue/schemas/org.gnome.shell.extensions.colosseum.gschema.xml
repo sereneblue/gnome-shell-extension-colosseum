@@ -341,6 +341,10 @@
             <default>false</default>
             <summary>Follow UCL team: AC Milan</summary>
         </key>
+        <key name="ucl-monaco" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: AS Monaco</summary>
+        </key>
         <key name="ucl-aja" type="b">
             <default>false</default>
             <summary>Follow UCL team: Ajax Amsterdam</summary>
@@ -352,6 +356,10 @@
         <key name="ucl-ars" type="b">
             <default>false</default>
             <summary>Follow UCL team: Arsenal</summary>
+        </key>
+        <key name="ucl-avl" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Aston Villa</summary>
         </key>
         <key name="ucl-ata" type="b">
             <default>false</default>
@@ -365,6 +373,10 @@
             <default>false</default>
             <summary>Follow UCL team: Barcelona</summary>
         </key>
+        <key name="ucl-b04" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Bayer Leverkusen</summary>
+        </key>
         <key name="ucl-mun" type="b">
             <default>false</default>
             <summary>Follow UCL team: Bayern Munich</summary>
@@ -372,6 +384,10 @@
         <key name="ucl-ben" type="b">
             <default>false</default>
             <summary>Follow UCL team: Benfica</summary>
+        </key>
+        <key name="ucl-bol" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Bologna</summary>
         </key>
         <key name="ucl-dor" type="b">
             <default>false</default>
@@ -385,6 +401,10 @@
             <default>false</default>
             <summary>Follow UCL team: Braga</summary>
         </key>
+        <key name="ucl-bre" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Brest</summary>
+        </key>
         <key name="ucl-cel" type="b">
             <default>false</default>
             <summary>Follow UCL team: Celtic</summary>
@@ -396,6 +416,10 @@
         <key name="ucl-brug" type="b">
             <default>false</default>
             <summary>Follow UCL team: Club Brugge</summary>
+        </key>
+        <key name="ucl-dzg" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Dinamo Zagreb</summary>
         </key>
         <key name="ucl-kiev" type="b">
             <default>false</default>
@@ -425,6 +449,10 @@
             <default>false</default>
             <summary>Follow UCL team: Galatasaray</summary>
         </key>
+        <key name="ucl-gir" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Girona</summary>
+        </key>
         <key name="ucl-int" type="b">
             <default>false</default>
             <summary>Follow UCL team: Internazionale</summary>
@@ -440,6 +468,10 @@
         <key name="ucl-rcl" type="b">
             <default>false</default>
             <summary>Follow UCL team: Lens</summary>
+        </key>
+        <key name="ucl-lill" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Lille</summary>
         </key>
         <key name="ucl-livs" type="b">
             <default>false</default>
@@ -485,6 +517,10 @@
             <default>false</default>
             <summary>Follow UCL team: RB Leipzig</summary>
         </key>
+        <key name="ucl-rbslz" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: RB Salzburg</summary>
+        </key>
         <key name="ucl-mad" type="b">
             <default>false</default>
             <summary>Follow UCL team: Real Madrid</summary>
@@ -497,6 +533,10 @@
             <default>false</default>
             <summary>Follow UCL team: Red Star Belgrade</summary>
         </key>
+        <key name="ucl-stg" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: SK Sturm Graz</summary>
+        </key>
         <key name="ucl-sev" type="b">
             <default>false</default>
             <summary>Follow UCL team: Sevilla FC</summary>
@@ -505,9 +545,25 @@
             <default>false</default>
             <summary>Follow UCL team: Shakhtar Donetsk</summary>
         </key>
+        <key name="ucl-slb" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Slovan Bratislava</summary>
+        </key>
+        <key name="ucl-spp" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Sparta Prague</summary>
+        </key>
+        <key name="ucl-scp" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: Sporting CP</summary>
+        </key>
         <key name="ucl-renn" type="b">
             <default>false</default>
             <summary>Follow UCL team: Stade Rennes</summary>
+        </key>
+        <key name="ucl-vfb" type="b">
+            <default>false</default>
+            <summary>Follow UCL team: VfB Stuttgart</summary>
         </key>
         <key name="ucl-yb" type="b">
             <default>false</default>
