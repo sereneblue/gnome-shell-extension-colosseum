@@ -699,7 +699,7 @@
         </key>
         <key name="epl-bou" type="b">
             <default>false</default>
-            <summary>Follow EPL team: Bournemouth</summary>
+            <summary>Follow EPL team: AFC Bournemouth</summary>
         </key>
         <key name="epl-bre" type="b">
             <default>false</default>
@@ -728,6 +728,10 @@
         <key name="epl-ful" type="b">
             <default>false</default>
             <summary>Follow EPL team: Fulham</summary>
+        </key>
+        <key name="epl-ips" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Ipswich Town</summary>
         </key>
         <key name="epl-lee" type="b">
             <default>false</default>
