@@ -7601,9 +7601,17 @@
             <default>false</default>
             <summary>Follow Serie A team: Cagliari</summary>
         </key>
+        <key name="seriea-como" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Como</summary>
+        </key>
         <key name="seriea-cro" type="b">
             <default>false</default>
             <summary>Follow Serie A team: Crotone</summary>
+        </key>
+        <key name="seriea-emp" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Empoli</summary>
         </key>
         <key name="seriea-fio" type="b">
             <default>false</default>
@@ -7628,6 +7636,14 @@
         <key name="seriea-laz" type="b">
             <default>false</default>
             <summary>Follow Serie A team: Lazio</summary>
+        </key>
+        <key name="seriea-lec" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Lecce</summary>
+        </key>
+        <key name="seriea-mon" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Monza</summary>
         </key>
         <key name="seriea-nap" type="b">
             <default>false</default>
@@ -7656,6 +7672,10 @@
         <key name="seriea-udn" type="b">
             <default>false</default>
             <summary>Follow Serie A team: Udinese</summary>
+        </key>
+        <key name="seriea-ven" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Venezia</summary>
         </key>
         <key name="wnba-atl" type="b">
             <default>false</default>
