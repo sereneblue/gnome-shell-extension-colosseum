@@ -4483,7 +4483,7 @@
         </key>
         <key name="ncaam-app" type="b">
             <default>false</default>
-            <summary>Follow NCAAM team: Appalachian State Mountaineers</summary>
+            <summary>Follow NCAAM team: App State Mountaineers</summary>
         </key>
         <key name="ncaam-asu" type="b">
             <default>false</default>
@@ -4903,7 +4903,7 @@
         </key>
         <key name="ncaam-iupu" type="b">
             <default>false</default>
-            <summary>Follow NCAAM team: IUPUI Jaguars</summary>
+            <summary>Follow NCAAM team: IU Indianapolis Jaguars</summary>
         </key>
         <key name="ncaam-idst" type="b">
             <default>false</default>
@@ -5001,6 +5001,10 @@
             <default>false</default>
             <summary>Follow NCAAM team: Lamar Cardinals</summary>
         </key>
+        <key name="ncaam-lem" type="b">
+            <default>false</default>
+            <summary>Follow NCAAM team: Le Moyne Dolphins</summary>
+        </key>
         <key name="ncaam-leh" type="b">
             <default>false</default>
             <summary>Follow NCAAM team: Lehigh Mountain Hawks</summary>
@@ -5096,6 +5100,10 @@
         <key name="ncaam-mer" type="b">
             <default>false</default>
             <summary>Follow NCAAM team: Mercer Bears</summary>
+        </key>
+        <key name="ncaam-merc" type="b">
+            <default>false</default>
+            <summary>Follow NCAAM team: Mercyhurst Lakers</summary>
         </key>
         <key name="ncaam-mrmk" type="b">
             <default>false</default>
@@ -5820,6 +5828,10 @@
         <key name="ncaam-web" type="b">
             <default>false</default>
             <summary>Follow NCAAM team: Weber State Wildcats</summary>
+        </key>
+        <key name="ncaam-wga" type="b">
+            <default>false</default>
+            <summary>Follow NCAAM team: West Georgia Wolves</summary>
         </key>
         <key name="ncaam-wvu" type="b">
             <default>false</default>
