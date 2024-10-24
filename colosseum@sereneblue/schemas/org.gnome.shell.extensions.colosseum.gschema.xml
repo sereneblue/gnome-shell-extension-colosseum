@@ -1185,6 +1185,10 @@
             <default>false</default>
             <summary>Follow MLS team: New York City FC</summary>
         </key>
+        <key name="mls-ny" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: New York Red Bulls</summary>
+        </key>
         <key name="mls-orl" type="b">
             <default>false</default>
             <summary>Follow MLS team: Orlando City SC</summary>

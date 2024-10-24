@@ -339,6 +339,7 @@ var SPORTS = {
     { id: 18986, name: "Nashville SC", pref: "mls-nsh" },
     { id: 189, name: "New England Revolution", pref: "mls-ne" },
     { id: 17606, name: "New York City FC", pref: "mls-nyc" },
+    { id: 190, name: "New York Red Bulls", pref: "mls-ny" },
     { id: 12011, name: "Orlando City SC", pref: "mls-orl" },
     { id: 10739, name: "Philadelphia Union", pref: "mls-phi" },
     { id: 9723, name: "Portland Timbers", pref: "mls-por" },
