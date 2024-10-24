@@ -2062,7 +2062,7 @@ var SPORTS = {
   ],
   NHL: [
     { id: 25, name: "Anaheim Ducks", pref: "nhl-ana" },
-    { id: 24, name: "Arizona Coyotes", pref: "nhl-ari" },
+    // { id: 24, name: "Arizona Coyotes", pref: "nhl-ari" },
     { id: 1, name: "Boston Bruins", pref: "nhl-bos" },
     { id: 2, name: "Buffalo Sabres", pref: "nhl-buf" },
     { id: 3, name: "Calgary Flames", pref: "nhl-cgy" },
@@ -2089,6 +2089,7 @@ var SPORTS = {
     { id: 19, name: "St. Louis Blues", pref: "nhl-stl" },
     { id: 20, name: "Tampa Bay Lightning", pref: "nhl-tb" },
     { id: 21, name: "Toronto Maple Leafs", pref: "nhl-tor" },
+    { id: 129764, name: "Utah Hockey Club", pref: "nhl-uta" },
     { id: 22, name: "Vancouver Canucks", pref: "nhl-van" },
     { id: 37, name: "Vegas Golden Knights", pref: "nhl-vgs" },
     { id: 23, name: "Washington Capitals", pref: "nhl-wsh" },

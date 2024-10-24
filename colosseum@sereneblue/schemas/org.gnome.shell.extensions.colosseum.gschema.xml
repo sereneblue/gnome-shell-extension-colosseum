@@ -7561,6 +7561,10 @@
             <default>false</default>
             <summary>Follow NHL team: Toronto Maple Leafs</summary>
         </key>
+        <key name="nhl-uta" type="b">
+            <default>false</default>
+            <summary>Follow NHL team: Utah Hockey Club</summary>
+        </key>
         <key name="nhl-van" type="b">
             <default>false</default>
             <summary>Follow NHL team: Vancouver Canucks</summary>
