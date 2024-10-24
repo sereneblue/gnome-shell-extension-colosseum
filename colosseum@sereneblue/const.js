@@ -296,7 +296,7 @@ var SPORTS = {
     { id: 16, name: "Chicago Cubs", pref: "mlb-chc" },
     { id: 4, name: "Chicago White Sox", pref: "mlb-chw" },
     { id: 17, name: "Cincinnati Reds", pref: "mlb-cin" },
-    { id: 5, name: "Cleveland Indians", pref: "mlb-cle" },
+    { id: 5, name: "Cleveland Guardians", pref: "mlb-cle" },
     { id: 27, name: "Colorado Rockies", pref: "mlb-col" },
     { id: 6, name: "Detroit Tigers", pref: "mlb-det" },
     { id: 18, name: "Houston Astros", pref: "mlb-hou" },

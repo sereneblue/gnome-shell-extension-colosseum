@@ -1023,7 +1023,7 @@
         </key>
         <key name="mlb-cle" type="b">
             <default>false</default>
-            <summary>Follow MLB team: Cleveland Indians</summary>
+            <summary>Follow MLB team: Cleveland Guardians</summary>
         </key>
         <key name="mlb-col" type="b">
             <default>false</default>
