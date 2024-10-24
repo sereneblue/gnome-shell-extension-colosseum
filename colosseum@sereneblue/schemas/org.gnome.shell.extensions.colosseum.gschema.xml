@@ -825,9 +825,17 @@
             <default>false</default>
             <summary>Follow La Liga team: Elche</summary>
         </key>
+        <key name="laliga-esp" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Espanyol</summary>
+        </key>
         <key name="laliga-get" type="b">
             <default>false</default>
             <summary>Follow La Liga team: Getafe</summary>
+        </key>
+        <key name="laliga-gir" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Girona</summary>
         </key>
         <key name="laliga-gcf" type="b">
             <default>false</default>
@@ -837,13 +845,29 @@
             <default>false</default>
             <summary>Follow La Liga team: Huesca</summary>
         </key>
+        <key name="laliga-lpa" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Las Palmas</summary>
+        </key>
+        <key name="laliga-leg" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Leganés</summary>
+        </key>
         <key name="laliga-lev" type="b">
             <default>false</default>
             <summary>Follow La Liga team: Levante</summary>
         </key>
+        <key name="laliga-mll" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Mallorca</summary>
+        </key>
         <key name="laliga-osa" type="b">
             <default>false</default>
             <summary>Follow La Liga team: Osasuna</summary>
+        </key>
+        <key name="laliga-ray" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Rayo Vallecano</summary>
         </key>
         <key name="laliga-bet" type="b">
             <default>false</default>
