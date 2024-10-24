@@ -5915,7 +5915,7 @@
         </key>
         <key name="ncaaw-app" type="b">
             <default>false</default>
-            <summary>Follow NCAAW team: Appalachian State Mountaineers</summary>
+            <summary>Follow NCAAW team: App State Mountaineers</summary>
         </key>
         <key name="ncaaw-asu" type="b">
             <default>false</default>
@@ -6335,7 +6335,7 @@
         </key>
         <key name="ncaaw-iupu" type="b">
             <default>false</default>
-            <summary>Follow NCAAW team: IUPUI Jaguars</summary>
+            <summary>Follow NCAAW team: IU Indianapolis Jaguars</summary>
         </key>
         <key name="ncaaw-idst" type="b">
             <default>false</default>
