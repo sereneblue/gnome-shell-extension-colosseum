@@ -901,6 +901,10 @@
             <default>false</default>
             <summary>Follow La Liga team: Villarreal</summary>
         </key>
+        <key name="ligue1-aux" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: AJ Auxerre</summary>
+        </key>
         <key name="ligue1-mon" type="b">
             <default>false</default>
             <summary>Follow Ligue 1 team: AS Monaco</summary>
@@ -920,6 +924,10 @@
         <key name="ligue1-dijo" type="b">
             <default>false</default>
             <summary>Follow Ligue 1 team: Dijon FCO</summary>
+        </key>
+        <key name="ligue1-hac" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Le Havre AC</summary>
         </key>
         <key name="ligue1-rcl" type="b">
             <default>false</default>
@@ -980,6 +988,10 @@
         <key name="ligue1-stra" type="b">
             <default>false</default>
             <summary>Follow Ligue 1 team: Strasbourg</summary>
+        </key>
+        <key name="ligue1-tou" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Toulouse</summary>
         </key>
         <key name="mlb-ari" type="b">
             <default>false</default>
