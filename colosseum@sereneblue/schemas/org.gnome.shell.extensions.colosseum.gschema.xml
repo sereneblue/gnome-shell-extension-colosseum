@@ -37,6 +37,10 @@
             <default>false</default>
             <summary>Enable EPL scoreboard</summary>
         </key>
+        <key name="isr-enabled" type="b">
+            <default>false</default>
+            <summary>Enable Israeli Premier League scoreboard</summary>
+        </key>
         <key name="laliga-enabled" type="b">
             <default>false</default>
             <summary>Enable LaLiga scoreboard</summary>
@@ -796,6 +800,62 @@
         <key name="epl-wol" type="b">
             <default>false</default>
             <summary>Follow EPL team: Wolverhampton Wanderers</summary>
+        </key>
+        <key name="isr-bje" type="b">
+            <default>false</default>
+            <summary>Follow Israeli Premier League team: Beitar Jerusalem</summary>
+        </key>
+        <key name="isr-bsa" type="b">
+            <default>false</default>
+            <summary>Follow Israeli Premier League team: Bnei Sakhnin</summary>
+        </key>
+        <key name="isr-hbe" type="b">
+            <default>false</default>
+            <summary>Follow Israeli Premier League team: Hapoel Be'er</summary>
+        </key>
+        <key name="isr-had" type="b">
+            <default>false</default>
+            <summary>Follow Israeli Premier League team: Hapoel Hadera</summary>
+        </key>
+        <key name="isr-hah" type="b">
+            <default>false</default>
+            <summary>Follow Israeli Premier League team: Hapoel Haifa</summary>
+        </key>
+        <key name="isr-hje" type="b">
+            <default>false</default>
+            <summary>Follow Israeli Premier League team: Hapoel Jerusalem</summary>
+        </key>
+        <key name="isr-hha" type="b">
+            <default>false</default>
+            <summary>Follow Israeli Premier League team: Hapoel Kiryat Shmona</summary>
+        </key>
+        <key name="isr-itb" type="b">
+            <default>false</default>
+            <summary>Follow Israeli Premier League team: Ironi Tiberias</summary>
+        </key>
+        <key name="isr-hai" type="b">
+            <default>false</default>
+            <summary>Follow Israeli Premier League team: Maccabi Haifa</summary>
+        </key>
+        <key name="isr-net" type="b">
+            <default>false</default>
+            <summary>Follow Israeli Premier League team: Maccabi Netanya</summary>
+        </key>
+        <key name="isr-mpt" type="b">
+            <default>false</default>
+            <summary>Follow Israeli Premier League team: Maccabi Petah-Tikva</summary>
+        </key>
+        <key name="isr-rai" type="b">
+            <default>false</default>
+            <summary>Follow Israeli Premier League team: Maccabi Raina</summary>
+        </key>
+        <key name="isr-mta" type="b">
+            <default>false</default>
+            <summary>Follow Israeli Premier League team: Maccabi Tel-Aviv</summary>
+        </key>
+        <key name="isr-mos" type="b">
+            <default>false</default>
+            <summary>Follow Israeli Premier League team: Moadon Sport Ashdod</summary>
         </key>
         <key name="laliga-alv" type="b">
             <default>false</default>
