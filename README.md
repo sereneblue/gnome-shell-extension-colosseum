@@ -1,7 +1,7 @@
 # colosseum
 
 ![GNOME 40+](https://img.shields.io/badge/gnome-40%2B-blueviolet)
-![colosseum version](https://img.shields.io/badge/version-32-brightgreen.svg)
+![colosseum version](https://img.shields.io/badge/version-33-brightgreen.svg)
 ![GPL v3 License](https://img.shields.io/badge/license-GPL%20v3-blue.svg)
 
 <p align="center">
@@ -14,7 +14,7 @@ A gnome-shell extension to view live scores for your favorite sports teams.
 
 ### From extensions.gnome.org
 
-Visit [extensions.gnome.org](https://extensions.gnome.org/extension/4207/colosseum/) and click on the switch to install colosseum. 
+Visit [extensions.gnome.org](https://extensions.gnome.org/extension/4207/colosseum/) and click on the switch to install colosseum.
 
 ### From source
 
@@ -43,19 +43,20 @@ Extract the contents of the newly created zip file into:
 ![colosseum preferences](https://user-images.githubusercontent.com/14242625/126881524-a9443361-12e1-4075-9cbc-8d257930cab6.png)
 
 
-- The top panel can display `N (# of remaining games)` or the `A (# of live games) / B (# of remaining games)`. 
+- The top panel can display `N (# of remaining games)` or the `A (# of live games) / B (# of remaining games)`.
 
-- Compact mode reduces the number of clicks needed to display scores from a league with only one game (as shown in the screen shot for NBA). 
+- Compact mode reduces the number of clicks needed to display scores from a league with only one game (as shown in the screen shot for NBA).
 
 
 #### Leagues
 
-There are 17 supported sports leagues:
+There are 18 supported sports leagues:
 
 	Bundesliga
 	2. Bundesliga
 	English Football League Championship
 	English Premier League
+	Israeli Premier League
 	La Liga
 	Ligue 1
 	Major League Baseball

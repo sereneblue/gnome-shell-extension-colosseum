@@ -1,8 +1,8 @@
 {
-	"name": "Colosseum",
-	"description": "View live scores for your favorite sports teams.",
-	"url": "https://github.com/sereneblue/gnome-shell-extension-colosseum",
-	"uuid": "colosseum@sereneblue",
-	"version": 31,
-	"shell-version": [ "40", "41", "42", "43", "44" ]
+  "name": "Colosseum",
+  "description": "View live scores for your favorite sports teams.",
+  "url": "https://github.com/sereneblue/gnome-shell-extension-colosseum",
+  "uuid": "colosseum@sereneblue",
+  "version": 33,
+  "shell-version": ["40", "41", "42", "43", "44"]
 }
