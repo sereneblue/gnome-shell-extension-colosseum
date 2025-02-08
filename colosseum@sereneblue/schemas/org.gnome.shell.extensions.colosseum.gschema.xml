@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <schemalist>
-    <schema id="org.gnome.shell.extensions.colosseum" path="/org/gnome/shell/extensions/colosseum/">
+    <schema
+        id="org.gnome.shell.extensions.colosseum"
+        path="/org/gnome/shell/extensions/colosseum/"
+    >
         <key name="update-frequency" type="i">
             <default>5</default>
             <summary>Live score update frequency</summary>
@@ -15,7 +18,8 @@
         </key>
         <key name="position-in-topbar" type="i">
             <default>1</default>
-            <summary>Position of extension in Top Bar (0 for Left, 1 for Right)</summary>
+            <summary
+            >Position of extension in Top Bar (0 for Left, 1 for Right)</summary>
         </key>
         <key name="bund-enabled" type="b">
             <default>false</default>
@@ -127,7 +131,7 @@
         </key>
         <key name="bund-hdh" type="b">
             <default>false</default>
-            <summary>Follow Bund team: 1. FC Heidenheim</summary>
+            <summary>Follow Bund team: 1. FC Heidenheim 1846</summary>
         </key>
         <key name="bund-dsc" type="b">
             <default>false</default>
@@ -163,7 +167,7 @@
         </key>
         <key name="bund-fcub" type="b">
             <default>false</default>
-            <summary>Follow Bund team: FC Union Berlin</summary>
+            <summary>Follow Bund team: 1. FC Union Berlin</summary>
         </key>
         <key name="bund-hert" type="b">
             <default>false</default>
@@ -235,7 +239,7 @@
         </key>
         <key name="bund2-f95" type="b">
             <default>false</default>
-            <summary>Follow Bund2 team: Fortuna Dusseldorf</summary>
+            <summary>Follow Bund2 team: Fortuna Düsseldorf</summary>
         </key>
         <key name="bund2-hsv" type="b">
             <default>false</default>
@@ -371,7 +375,7 @@
         </key>
         <key name="ucl-atm" type="b">
             <default>false</default>
-            <summary>Follow UCL team: Atletico Madrid</summary>
+            <summary>Follow UCL team: Atlético Madrid</summary>
         </key>
         <key name="ucl-bar" type="b">
             <default>false</default>
@@ -575,15 +579,18 @@
         </key>
         <key name="elc-bir" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Birmingham City</summary>
+            <summary
+            >Follow English League Championship team: Birmingham City</summary>
         </key>
         <key name="elc-blk" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Blackburn Rovers</summary>
+            <summary
+            >Follow English League Championship team: Blackburn Rovers</summary>
         </key>
         <key name="elc-brc" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Bristol City</summary>
+            <summary
+            >Follow English League Championship team: Bristol City</summary>
         </key>
         <key name="elc-bur" type="b">
             <default>false</default>
@@ -591,43 +598,53 @@
         </key>
         <key name="elc-car" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Cardiff City</summary>
+            <summary
+            >Follow English League Championship team: Cardiff City</summary>
         </key>
         <key name="elc-cov" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Coventry City</summary>
+            <summary
+            >Follow English League Championship team: Coventry City</summary>
         </key>
         <key name="elc-der" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Derby County</summary>
+            <summary
+            >Follow English League Championship team: Derby County</summary>
         </key>
         <key name="elc-hud" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Huddersfield Town</summary>
+            <summary
+            >Follow English League Championship team: Huddersfield Town</summary>
         </key>
         <key name="elc-hul" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Hull City</summary>
+            <summary
+            >Follow English League Championship team: Hull City</summary>
         </key>
         <key name="elc-ips" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Ipswich Town</summary>
+            <summary
+            >Follow English League Championship team: Ipswich Town</summary>
         </key>
         <key name="elc-lee" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Leeds United</summary>
+            <summary
+            >Follow English League Championship team: Leeds United</summary>
         </key>
         <key name="elc-lei" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Leicester City</summary>
+            <summary
+            >Follow English League Championship team: Leicester City</summary>
         </key>
         <key name="elc-ltn" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Luton Town</summary>
+            <summary
+            >Follow English League Championship team: Luton Town</summary>
         </key>
         <key name="elc-mid" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Middlesbrough</summary>
+            <summary
+            >Follow English League Championship team: Middlesbrough</summary>
         </key>
         <key name="elc-mil" type="b">
             <default>false</default>
@@ -635,55 +652,68 @@
         </key>
         <key name="elc-nor" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Norwich City</summary>
+            <summary
+            >Follow English League Championship team: Norwich City</summary>
         </key>
         <key name="elc-oxf" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Oxford United</summary>
+            <summary
+            >Follow English League Championship team: Oxford United</summary>
         </key>
         <key name="elc-ply" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Plymouth Argyle</summary>
+            <summary
+            >Follow English League Championship team: Plymouth Argyle</summary>
         </key>
         <key name="elc-por" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Portsmouth</summary>
+            <summary
+            >Follow English League Championship team: Portsmouth</summary>
         </key>
         <key name="elc-pne" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Preston North End</summary>
+            <summary
+            >Follow English League Championship team: Preston North End</summary>
         </key>
         <key name="elc-qpr" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Queens Park Rangers</summary>
+            <summary
+            >Follow English League Championship team: Queens Park Rangers</summary>
         </key>
         <key name="elc-rot" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Rotherham United</summary>
+            <summary
+            >Follow English League Championship team: Rotherham United</summary>
         </key>
         <key name="elc-shu" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Sheffield United</summary>
+            <summary
+            >Follow English League Championship team: Sheffield United</summary>
         </key>
         <key name="elc-shw" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Sheffield Wednesday</summary>
+            <summary
+            >Follow English League Championship team: Sheffield Wednesday</summary>
         </key>
         <key name="elc-sou" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Southampton</summary>
+            <summary
+            >Follow English League Championship team: Southampton</summary>
         </key>
         <key name="elc-stk" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Stoke City</summary>
+            <summary
+            >Follow English League Championship team: Stoke City</summary>
         </key>
         <key name="elc-sun" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Sunderland</summary>
+            <summary
+            >Follow English League Championship team: Sunderland</summary>
         </key>
         <key name="elc-swa" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: Swansea City</summary>
+            <summary
+            >Follow English League Championship team: Swansea City</summary>
         </key>
         <key name="elc-wat" type="b">
             <default>false</default>
@@ -691,7 +721,8 @@
         </key>
         <key name="elc-wba" type="b">
             <default>false</default>
-            <summary>Follow English League Championship team: West Bromwich Albion</summary>
+            <summary
+            >Follow English League Championship team: West Bromwich Albion</summary>
         </key>
         <key name="epl-ars" type="b">
             <default>false</default>
@@ -803,7 +834,8 @@
         </key>
         <key name="isr-bje" type="b">
             <default>false</default>
-            <summary>Follow Israeli Premier League team: Beitar Jerusalem</summary>
+            <summary
+            >Follow Israeli Premier League team: Beitar Jerusalem</summary>
         </key>
         <key name="isr-bsa" type="b">
             <default>false</default>
@@ -823,15 +855,18 @@
         </key>
         <key name="isr-hje" type="b">
             <default>false</default>
-            <summary>Follow Israeli Premier League team: Hapoel Jerusalem</summary>
+            <summary
+            >Follow Israeli Premier League team: Hapoel Jerusalem</summary>
         </key>
         <key name="isr-hha" type="b">
             <default>false</default>
-            <summary>Follow Israeli Premier League team: Hapoel Kiryat Shmona</summary>
+            <summary
+            >Follow Israeli Premier League team: Hapoel Kiryat Shmona</summary>
         </key>
         <key name="isr-itb" type="b">
             <default>false</default>
-            <summary>Follow Israeli Premier League team: Ironi Tiberias</summary>
+            <summary
+            >Follow Israeli Premier League team: Ironi Tiberias</summary>
         </key>
         <key name="isr-hai" type="b">
             <default>false</default>
@@ -839,11 +874,13 @@
         </key>
         <key name="isr-net" type="b">
             <default>false</default>
-            <summary>Follow Israeli Premier League team: Maccabi Netanya</summary>
+            <summary
+            >Follow Israeli Premier League team: Maccabi Netanya</summary>
         </key>
         <key name="isr-mpt" type="b">
             <default>false</default>
-            <summary>Follow Israeli Premier League team: Maccabi Petah-Tikva</summary>
+            <summary
+            >Follow Israeli Premier League team: Maccabi Petah-Tikva</summary>
         </key>
         <key name="isr-rai" type="b">
             <default>false</default>
@@ -851,11 +888,13 @@
         </key>
         <key name="isr-mta" type="b">
             <default>false</default>
-            <summary>Follow Israeli Premier League team: Maccabi Tel-Aviv</summary>
+            <summary
+            >Follow Israeli Premier League team: Maccabi Tel-Aviv</summary>
         </key>
         <key name="isr-mos" type="b">
             <default>false</default>
-            <summary>Follow Israeli Premier League team: Moadon Sport Ashdod</summary>
+            <summary
+            >Follow Israeli Premier League team: Moadon Sport Ashdod</summary>
         </key>
         <key name="laliga-alv" type="b">
             <default>false</default>
@@ -863,11 +902,11 @@
         </key>
         <key name="laliga-ath" type="b">
             <default>false</default>
-            <summary>Follow La Liga team: Athletic Bilbao</summary>
+            <summary>Follow La Liga team: Athletic Club</summary>
         </key>
         <key name="laliga-atl" type="b">
             <default>false</default>
-            <summary>Follow La Liga team: Atletico Madrid</summary>
+            <summary>Follow La Liga team: Atlético Madrid</summary>
         </key>
         <key name="laliga-bar" type="b">
             <default>false</default>
@@ -951,7 +990,7 @@
         </key>
         <key name="laliga-sev" type="b">
             <default>false</default>
-            <summary>Follow La Liga team: Sevilla FC</summary>
+            <summary>Follow La Liga team: Sevilla</summary>
         </key>
         <key name="laliga-val" type="b">
             <default>false</default>
@@ -1039,7 +1078,7 @@
         </key>
         <key name="ligue1-renn" type="b">
             <default>false</default>
-            <summary>Follow Ligue 1 team: Stade Rennes</summary>
+            <summary>Follow Ligue 1 team: Stade Rennais</summary>
         </key>
         <key name="ligue1-reim" type="b">
             <default>false</default>
@@ -1131,7 +1170,7 @@
         </key>
         <key name="mlb-oak" type="b">
             <default>false</default>
-            <summary>Follow MLB team: Oakland Athletics</summary>
+            <summary>Follow MLB team: Athletics</summary>
         </key>
         <key name="mlb-phi" type="b">
             <default>false</default>
@@ -1264,6 +1303,10 @@
         <key name="mls-rsl" type="b">
             <default>false</default>
             <summary>Follow MLS team: Real Salt Lake</summary>
+        </key>
+        <key name="mls-sd" type="b">
+            <default>false</default>
+            <summary>Follow MLS team: San Diego FC</summary>
         </key>
         <key name="mls-sj" type="b">
             <default>false</default>
@@ -1495,7 +1538,8 @@
         </key>
         <key name="ncaaf-aic" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: American International Yellow Jackets</summary>
+            <summary
+            >Follow NCAAF team: American International Yellow Jackets</summary>
         </key>
         <key name="ncaaf-amherst" type="b">
             <default>false</default>
@@ -1547,11 +1591,13 @@
         </key>
         <key name="ncaaf-arkmontcel" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Arkansas-Monticello Boll Weevils</summary>
+            <summary
+            >Follow NCAAF team: Arkansas-Monticello Boll Weevils</summary>
         </key>
         <key name="ncaaf-uapb" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Arkansas-Pine Bluff Golden Lions</summary>
+            <summary
+            >Follow NCAAF team: Arkansas-Pine Bluff Golden Lions</summary>
         </key>
         <key name="ncaaf-army" type="b">
             <default>false</default>
@@ -1579,7 +1625,8 @@
         </key>
         <key name="ncaaf-augustansd" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Augustana University (SD) Vikings</summary>
+            <summary
+            >Follow NCAAF team: Augustana University (SD) Vikings</summary>
         </key>
         <key name="ncaaf-aurora" type="b">
             <default>false</default>
@@ -1691,7 +1738,8 @@
         </key>
         <key name="ncaaf-betw" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Bethel University Tennessee Wildcats</summary>
+            <summary
+            >Follow NCAAF team: Bethel University Tennessee Wildcats</summary>
         </key>
         <key name="ncaaf-bcu" type="b">
             <default>false</default>
@@ -1707,7 +1755,8 @@
         </key>
         <key name="ncaaf-blackhills" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Black Hills State Yellow Jackets</summary>
+            <summary
+            >Follow NCAAF team: Black Hills State Yellow Jackets</summary>
         </key>
         <key name="ncaaf-bla" type="b">
             <default>false</default>
@@ -1811,7 +1860,8 @@
         </key>
         <key name="ncaaf-calluthera" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: California Lutheran University Kingsmen</summary>
+            <summary
+            >Follow NCAAF team: California Lutheran University Kingsmen</summary>
         </key>
         <key name="ncaaf-calvin" type="b">
             <default>false</default>
@@ -1823,7 +1873,8 @@
         </key>
         <key name="ncaaf-cmpbvil" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Campbellsville University Tigers</summary>
+            <summary
+            >Follow NCAAF team: Campbellsville University Tigers</summary>
         </key>
         <key name="ncaaf-capital" type="b">
             <default>false</default>
@@ -1839,7 +1890,8 @@
         </key>
         <key name="ncaaf-carrollwis" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Carroll University (WI) Pioneers</summary>
+            <summary
+            >Follow NCAAF team: Carroll University (WI) Pioneers</summary>
         </key>
         <key name="ncaaf-carsnwman" type="b">
             <default>false</default>
@@ -1875,7 +1927,8 @@
         </key>
         <key name="ncaaf-ccsu" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Central Connecticut Blue Devils</summary>
+            <summary
+            >Follow NCAAF team: Central Connecticut Blue Devils</summary>
         </key>
         <key name="ncaaf-cene" type="b">
             <default>false</default>
@@ -1903,7 +1956,8 @@
         </key>
         <key name="ncaaf-cenc" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Centre College Kentucky Colonels</summary>
+            <summary
+            >Follow NCAAF team: Centre College Kentucky Colonels</summary>
         </key>
         <key name="ncaaf-cha" type="b">
             <default>false</default>
@@ -1951,7 +2005,8 @@
         </key>
         <key name="ncaaf-cla" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Claremont-Mudd-Scripps College Stags</summary>
+            <summary
+            >Follow NCAAF team: Claremont-Mudd-Scripps College Stags</summary>
         </key>
         <key name="ncaaf-clarion" type="b">
             <default>false</default>
@@ -1995,7 +2050,8 @@
         </key>
         <key name="ncaaf-fch" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: College of Faith - Charlotte Saints</summary>
+            <summary
+            >Follow NCAAF team: College of Faith - Charlotte Saints</summary>
         </key>
         <key name="ncaaf-faiw" type="b">
             <default>false</default>
@@ -2019,7 +2075,8 @@
         </key>
         <key name="ncaaf-colm" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Colorado School of Mines Orediggers</summary>
+            <summary
+            >Follow NCAAF team: Colorado School of Mines Orediggers</summary>
         </key>
         <key name="ncaaf-csu" type="b">
             <default>false</default>
@@ -2031,7 +2088,8 @@
         </key>
         <key name="ncaaf-con" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Concord University Mountain Lions</summary>
+            <summary
+            >Follow NCAAF team: Concord University Mountain Lions</summary>
         </key>
         <key name="ncaaf-conh" type="b">
             <default>false</default>
@@ -2043,7 +2101,8 @@
         </key>
         <key name="ncaaf-concc" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Concordia College (MI) Cardinals</summary>
+            <summary
+            >Follow NCAAF team: Concordia College (MI) Cardinals</summary>
         </key>
         <key name="ncaaf-concrdiamn" type="b">
             <default>false</default>
@@ -2051,15 +2110,18 @@
         </key>
         <key name="ncaaf-conco" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Concordia University Chicago Cougars</summary>
+            <summary
+            >Follow NCAAF team: Concordia University Chicago Cougars</summary>
         </key>
         <key name="ncaaf-concone" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Concordia University Nebraska Clippers</summary>
+            <summary
+            >Follow NCAAF team: Concordia University Nebraska Clippers</summary>
         </key>
         <key name="ncaaf-concrdiasp" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Concordia University St Paul Golden Bears</summary>
+            <summary
+            >Follow NCAAF team: Concordia University St Paul Golden Bears</summary>
         </key>
         <key name="ncaaf-concmi" type="b">
             <default>false</default>
@@ -2087,7 +2149,8 @@
         </key>
         <key name="ncaaf-cul" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Culver-Stockton College Wildcats</summary>
+            <summary
+            >Follow NCAAF team: Culver-Stockton College Wildcats</summary>
         </key>
         <key name="ncaaf-cumbp" type="b">
             <default>false</default>
@@ -2103,7 +2166,8 @@
         </key>
         <key name="ncaaf-daks" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Dakota State Trojans</summary>
+            <summary
+            >Follow NCAAF team: Dakota State University Trojans</summary>
         </key>
         <key name="ncaaf-dakw" type="b">
             <default>false</default>
@@ -2123,7 +2187,8 @@
         </key>
         <key name="ncaaf-def" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Defiance College Yellow Jackets</summary>
+            <summary
+            >Follow NCAAF team: Defiance College Yellow Jackets</summary>
         </key>
         <key name="ncaaf-delf" type="b">
             <default>false</default>
@@ -2159,7 +2224,8 @@
         </key>
         <key name="ncaaf-dic" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Dickinson State University Blue Hawks</summary>
+            <summary
+            >Follow NCAAF team: Dickinson State University Blue Hawks</summary>
         </key>
         <key name="ncaaf-drke" type="b">
             <default>false</default>
@@ -2199,15 +2265,18 @@
         </key>
         <key name="ncaaf-easw" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: East Stroudsburg University Warriors</summary>
+            <summary
+            >Follow NCAAF team: East Stroudsburg University Warriors</summary>
         </key>
         <key name="ncaaf-etsu" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: East Tennessee State Buccaneers</summary>
+            <summary
+            >Follow NCAAF team: East Tennessee State Buccaneers</summary>
         </key>
         <key name="ncaaf-easb" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: East Texas Baptist University Tigers</summary>
+            <summary
+            >Follow NCAAF team: East Texas Baptist University Tigers</summary>
         </key>
         <key name="ncaaf-eiu" type="b">
             <default>false</default>
@@ -2239,7 +2308,8 @@
         </key>
         <key name="ncaaf-edi" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Edinboro University Fighting Scots</summary>
+            <summary
+            >Follow NCAAF team: Edinboro University Fighting Scots</summary>
         </key>
         <key name="ncaaf-eau" type="b">
             <default>false</default>
@@ -2263,11 +2333,13 @@
         </key>
         <key name="ncaaf-emo" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Emory &amp; Henry College Wasps</summary>
+            <summary
+            >Follow NCAAF team: Emory &amp; Henry College Wasps</summary>
         </key>
         <key name="ncaaf-emp" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Emporia State University Hornets</summary>
+            <summary
+            >Follow NCAAF team: Emporia State University Hornets</summary>
         </key>
         <key name="ncaaf-end" type="b">
             <default>false</default>
@@ -2339,7 +2411,8 @@
         </key>
         <key name="ncaaf-flamemrl" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Florida Memorial University Lions</summary>
+            <summary
+            >Follow NCAAF team: Florida Memorial University Lions</summary>
         </key>
         <key name="ncaaf-fsu" type="b">
             <default>false</default>
@@ -2367,7 +2440,8 @@
         </key>
         <key name="ncaaf-fr-m" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Franklin &amp; Marshall Diplomats</summary>
+            <summary
+            >Follow NCAAF team: Franklin &amp; Marshall Diplomats</summary>
         </key>
         <key name="ncaaf-frnk" type="b">
             <default>false</default>
@@ -2415,11 +2489,13 @@
         </key>
         <key name="ncaaf-gmu" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: George Mason University Patriots</summary>
+            <summary
+            >Follow NCAAF team: George Mason University Patriots</summary>
         </key>
         <key name="ncaaf-gtwnc" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Georgetown College Kentucky Tigers</summary>
+            <summary
+            >Follow NCAAF team: Georgetown College Kentucky Tigers</summary>
         </key>
         <key name="ncaaf-gtwn" type="b">
             <default>false</default>
@@ -2451,7 +2527,8 @@
         </key>
         <key name="ncaaf-gra" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Graceland University Yellowjackets</summary>
+            <summary
+            >Follow NCAAF team: Graceland University Yellowjackets</summary>
         </key>
         <key name="ncaaf-gram" type="b">
             <default>false</default>
@@ -2459,7 +2536,8 @@
         </key>
         <key name="ncaaf-grv" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Grand Valley State University Lakers</summary>
+            <summary
+            >Follow NCAAF team: Grand Valley State University Lakers</summary>
         </key>
         <key name="ncaaf-grvw" type="b">
             <default>false</default>
@@ -2487,11 +2565,12 @@
         </key>
         <key name="ncaaf-gui" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Guilford Quakers</summary>
+            <summary>Follow NCAAF team: Guilford College Quakers</summary>
         </key>
         <key name="ncaaf-gus" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Gustavus Adolphus Golden Gusties</summary>
+            <summary
+            >Follow NCAAF team: Gustavus Adolphus Golden Gusties</summary>
         </key>
         <key name="ncaaf-ham" type="b">
             <default>false</default>
@@ -2531,7 +2610,8 @@
         </key>
         <key name="ncaaf-has" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Haskell Indian Nations Univ Jayhawks</summary>
+            <summary
+            >Follow NCAAF team: Haskell Indian Nations Univ Jayhawks</summary>
         </key>
         <key name="ncaaf-haw" type="b">
             <default>false</default>
@@ -2643,7 +2723,8 @@
         </key>
         <key name="ncaaf-iup" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Indiana-Pennsylvania Crimson Hawks</summary>
+            <summary
+            >Follow NCAAF team: Indiana-Pennsylvania Crimson Hawks</summary>
         </key>
         <key name="ncaaf-indg" type="b">
             <default>false</default>
@@ -2683,11 +2764,13 @@
         </key>
         <key name="ncaaf-johc" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: John Carroll University Blue Streaks</summary>
+            <summary
+            >Follow NCAAF team: John Carroll University Blue Streaks</summary>
         </key>
         <key name="ncaaf-jhu" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Johns Hopkins University Blue Jays</summary>
+            <summary
+            >Follow NCAAF team: Johns Hopkins University Blue Jays</summary>
         </key>
         <key name="ncaaf-johs" type="b">
             <default>false</default>
@@ -2711,7 +2794,8 @@
         </key>
         <key name="ncaaf-kan" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Kansas Wesleyan University Coyotes</summary>
+            <summary
+            >Follow NCAAF team: Kansas Wesleyan University Coyotes</summary>
         </key>
         <key name="ncaaf-kean" type="b">
             <default>false</default>
@@ -2763,7 +2847,8 @@
         </key>
         <key name="ncaaf-kutztown" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Kutztown University Golden Bears</summary>
+            <summary
+            >Follow NCAAF team: Kutztown University Golden Bears</summary>
         </key>
         <key name="ncaaf-keyst" type="b">
             <default>false</default>
@@ -2843,7 +2928,8 @@
         </key>
         <key name="ncaaf-lewc" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Lewis &amp; Clark College Pioneers</summary>
+            <summary
+            >Follow NCAAF team: Lewis &amp; Clark College Pioneers</summary>
         </key>
         <key name="ncaaf-lib" type="b">
             <default>false</default>
@@ -2875,7 +2961,8 @@
         </key>
         <key name="ncaaf-lins" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Lindsey Wilson College Blue Raiders</summary>
+            <summary
+            >Follow NCAAF team: Lindsey Wilson College Blue Raiders</summary>
         </key>
         <key name="ncaaf-linf" type="b">
             <default>false</default>
@@ -2891,7 +2978,8 @@
         </key>
         <key name="ncaaf-lock" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Lock Haven University Bald Eagles</summary>
+            <summary
+            >Follow NCAAF team: Lock Haven University Bald Eagles</summary>
         </key>
         <key name="ncaaf-liu" type="b">
             <default>false</default>
@@ -2955,7 +3043,8 @@
         </key>
         <key name="ncaaf-mans" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Mansfield University Mountaineers</summary>
+            <summary
+            >Follow NCAAF team: Mansfield University Mountaineers</summary>
         </key>
         <key name="ncaaf-mark" type="b">
             <default>false</default>
@@ -3035,7 +3124,8 @@
         </key>
         <key name="ncaaf-merm" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Merchant Marine Academy Mariners</summary>
+            <summary
+            >Follow NCAAF team: Merchant Marine Academy Mariners</summary>
         </key>
         <key name="ncaaf-merc" type="b">
             <default>false</default>
@@ -3115,11 +3205,13 @@
         </key>
         <key name="ncaaf-minnest" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Minnesota State Mankato Mavericks</summary>
+            <summary
+            >Follow NCAAF team: Minnesota State Mankato Mavericks</summary>
         </key>
         <key name="ncaaf-mnst" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Minnesota State Moorhead Dragons</summary>
+            <summary
+            >Follow NCAAF team: Minnesota State Moorhead Dragons</summary>
         </key>
         <key name="ncaaf-mnt" type="b">
             <default>false</default>
@@ -3139,7 +3231,8 @@
         </key>
         <key name="ncaaf-mvsu" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Mississippi Valley State Delta Devils</summary>
+            <summary
+            >Follow NCAAF team: Mississippi Valley State Delta Devils</summary>
         </key>
         <key name="ncaaf-mbap" type="b">
             <default>false</default>
@@ -3203,7 +3296,8 @@
         </key>
         <key name="ncaaf-mor" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Morehouse College Maroon Tigers</summary>
+            <summary
+            >Follow NCAAF team: Morehouse College Maroon Tigers</summary>
         </key>
         <key name="ncaaf-morg" type="b">
             <default>false</default>
@@ -3235,7 +3329,8 @@
         </key>
         <key name="ncaaf-mus" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Muskingum University Fighting Muskies</summary>
+            <summary
+            >Follow NCAAF team: Muskingum University Fighting Muskies</summary>
         </key>
         <key name="ncaaf-ncsu" type="b">
             <default>false</default>
@@ -3271,7 +3366,8 @@
         </key>
         <key name="ncaaf-nebw" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Nebraska Wesleyan Prairie Wolves</summary>
+            <summary
+            >Follow NCAAF team: Nebraska Wesleyan Prairie Wolves</summary>
         </key>
         <key name="ncaaf-nk" type="b">
             <default>false</default>
@@ -3327,7 +3423,8 @@
         </key>
         <key name="ncaaf-naus" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: North American University Stallions</summary>
+            <summary
+            >Follow NCAAF team: North American University Stallions</summary>
         </key>
         <key name="ncaaf-ncat" type="b">
             <default>false</default>
@@ -3343,11 +3440,13 @@
         </key>
         <key name="ncaaf-ncwbb" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: North Carolina Wesleyan Battling Bishops</summary>
+            <summary
+            >Follow NCAAF team: North Carolina Wesleyan Battling Bishops</summary>
         </key>
         <key name="ncaaf-norc" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: North Central College Cardinals</summary>
+            <summary
+            >Follow NCAAF team: North Central College Cardinals</summary>
         </key>
         <key name="ncaaf-und" type="b">
             <default>false</default>
@@ -3407,7 +3506,8 @@
         </key>
         <key name="ncaaf-nwos" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Northwestern Oklahoma State Rangers</summary>
+            <summary
+            >Follow NCAAF team: Northwestern Oklahoma State Rangers</summary>
         </key>
         <key name="ncaaf-nwst" type="b">
             <default>false</default>
@@ -3427,7 +3527,8 @@
         </key>
         <key name="ncaaf-not" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Notre Dame College (OH) Falcons</summary>
+            <summary
+            >Follow NCAAF team: Notre Dame College (OH) Falcons</summary>
         </key>
         <key name="ncaaf-nd" type="b">
             <default>false</default>
@@ -3471,7 +3572,8 @@
         </key>
         <key name="ncaaf-okl" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Oklahoma Panhandle State Aggies</summary>
+            <summary
+            >Follow NCAAF team: Oklahoma Panhandle State Aggies</summary>
         </key>
         <key name="ncaaf-ou" type="b">
             <default>false</default>
@@ -3551,7 +3653,7 @@
         </key>
         <key name="ncaaf-pst" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Pittsburg State Gorillas</summary>
+            <summary>Follow NCAAF team: Pittsburg St Gorillas</summary>
         </key>
         <key name="ncaaf-pitt" type="b">
             <default>false</default>
@@ -3655,7 +3757,8 @@
         </key>
         <key name="ncaaf-robm" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Robert Morris University-Illinois Lakers</summary>
+            <summary
+            >Follow NCAAF team: Robert Morris University-Illinois Lakers</summary>
         </key>
         <key name="ncaaf-rock" type="b">
             <default>false</default>
@@ -3755,7 +3858,7 @@
         </key>
         <key name="ncaaf-sav" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Savannah St Tigers</summary>
+            <summary>Follow NCAAF team: Savannah State Tigers</summary>
         </key>
         <key name="ncaaf-sh" type="b">
             <default>false</default>
@@ -3839,11 +3942,13 @@
         </key>
         <key name="ncaaf-semo" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Southeast Missouri State Redhawks</summary>
+            <summary
+            >Follow NCAAF team: Southeast Missouri State Redhawks</summary>
         </key>
         <key name="ncaaf-seos" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Southeastern Oklahoma State Savage Storm</summary>
+            <summary
+            >Follow NCAAF team: Southeastern Oklahoma State Savage Storm</summary>
         </key>
         <key name="ncaaf-souu" type="b">
             <default>false</default>
@@ -3855,7 +3960,8 @@
         </key>
         <key name="ncaaf-scsu" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Southern Connecticut State Owls</summary>
+            <summary
+            >Follow NCAAF team: Southern Connecticut State Owls</summary>
         </key>
         <key name="ncaaf-siu" type="b">
             <default>false</default>
@@ -3871,7 +3977,8 @@
         </key>
         <key name="ncaaf-sn" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Southern Nazarene Crimson Storm</summary>
+            <summary
+            >Follow NCAAF team: Southern Nazarene Crimson Storm</summary>
         </key>
         <key name="ncaaf-souo" type="b">
             <default>false</default>
@@ -3891,23 +3998,28 @@
         </key>
         <key name="ncaaf-swmn" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Southwest Minnesota State Mustangs</summary>
+            <summary
+            >Follow NCAAF team: Southwest Minnesota State Mustangs</summary>
         </key>
         <key name="ncaaf-soua" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Southwestern Assemblies of God Lions</summary>
+            <summary
+            >Follow NCAAF team: Southwestern Assemblies of God Lions</summary>
         </key>
         <key name="ncaaf-souc" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Southwestern College Moundbuilders</summary>
+            <summary
+            >Follow NCAAF team: Southwestern College Moundbuilders</summary>
         </key>
         <key name="ncaaf-swok" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Southwestern Oklahoma State Bulldogs</summary>
+            <summary
+            >Follow NCAAF team: Southwestern Oklahoma State Bulldogs</summary>
         </key>
         <key name="ncaaf-su" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Southwestern University Pirates</summary>
+            <summary
+            >Follow NCAAF team: Southwestern University Pirates</summary>
         </key>
         <key name="ncaaf-spri" type="b">
             <default>false</default>
@@ -3923,7 +4035,8 @@
         </key>
         <key name="ncaaf-stf" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: St. Francis (IL) Fighting Saints</summary>
+            <summary
+            >Follow NCAAF team: St. Francis (IL) Fighting Saints</summary>
         </key>
         <key name="ncaaf-unic" type="b">
             <default>false</default>
@@ -3935,7 +4048,8 @@
         </key>
         <key name="ncaaf-sjfu" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: St. John Fisher University Cardinals</summary>
+            <summary
+            >Follow NCAAF team: St. John Fisher University Cardinals</summary>
         </key>
         <key name="ncaaf-stj" type="b">
             <default>false</default>
@@ -4055,11 +4169,12 @@
         </key>
         <key name="ncaaf-tamc" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Texas A&amp;M-Commerce Lions</summary>
+            <summary>Follow NCAAF team: East Texas A&amp;M Lions</summary>
         </key>
         <key name="ncaaf-txki" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Texas A&amp;M-Kingsville Javelinas</summary>
+            <summary
+            >Follow NCAAF team: Texas A&amp;M-Kingsville Javelinas</summary>
         </key>
         <key name="ncaaf-tc" type="b">
             <default>false</default>
@@ -4231,19 +4346,21 @@
         </key>
         <key name="ncaaf-uvaw" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: UVA Wise Highland Cavaliers</summary>
+            <summary>Follow NCAAF team: UVA Wise Cavaliers</summary>
         </key>
         <key name="ncaaf-unny" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Union (NY) Garnet Chargers</summary>
+            <summary>Follow NCAAF team: Union Garnet Chargers</summary>
         </key>
         <key name="ncaaf-charlstnwv" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: University Of Charleston (WV) Golden Eagles</summary>
+            <summary
+            >Follow NCAAF team: University Of Charleston (WV) Golden Eagles</summary>
         </key>
         <key name="ncaaf-ufth" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: University of Faith Glory Eagles</summary>
+            <summary
+            >Follow NCAAF team: University of Faith Glory Eagles</summary>
         </key>
         <key name="ncaaf-marym" type="b">
             <default>false</default>
@@ -4255,15 +4372,18 @@
         </key>
         <key name="ncaaf-umur" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: University of Mount Union Raiders</summary>
+            <summary
+            >Follow NCAAF team: University of Mount Union Raiders</summary>
         </key>
         <key name="ncaaf-roc" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: University of Rochester (NY) Yellow Jackets</summary>
+            <summary
+            >Follow NCAAF team: University of Rochester (NY) Yellow Jackets</summary>
         </key>
         <key name="ncaaf-usfc" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: University Of St Francis IN Cougars</summary>
+            <summary
+            >Follow NCAAF team: University Of St Francis IN Cougars</summary>
         </key>
         <key name="ncaaf-upp" type="b">
             <default>false</default>
@@ -4335,7 +4455,8 @@
         </key>
         <key name="ncaaf-vuld" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Virginia University Of Lynchburg Dragons</summary>
+            <summary
+            >Follow NCAAF team: Virginia University Of Lynchburg Dragons</summary>
         </key>
         <key name="ncaaf-wpi" type="b">
             <default>false</default>
@@ -4375,7 +4496,8 @@
         </key>
         <key name="ncaaf-washjeff" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Washington &amp; Jefferson Presidents</summary>
+            <summary
+            >Follow NCAAF team: Washington &amp; Jefferson Presidents</summary>
         </key>
         <key name="ncaaf-washh" type="b">
             <default>false</default>
@@ -4387,7 +4509,8 @@
         </key>
         <key name="ncaaf-wstl" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Washington University (St. Louis) Bears</summary>
+            <summary
+            >Follow NCAAF team: Washington University (St. Louis) Bears</summary>
         </key>
         <key name="ncaaf-wlee" type="b">
             <default>false</default>
@@ -4423,7 +4546,8 @@
         </key>
         <key name="ncaaf-wct" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Wesleyan University (CT) Cardinals</summary>
+            <summary
+            >Follow NCAAF team: Wesleyan University (CT) Cardinals</summary>
         </key>
         <key name="ncaaf-wesa" type="b">
             <default>false</default>
@@ -4463,11 +4587,13 @@
         </key>
         <key name="ncaaf-wstv" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: West Virginia State Yellow Jackets</summary>
+            <summary
+            >Follow NCAAF team: West Virginia State Yellow Jackets</summary>
         </key>
         <key name="ncaaf-wesv" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: West Virginia Tech Golden Bears</summary>
+            <summary
+            >Follow NCAAF team: West Virginia Tech Golden Bears</summary>
         </key>
         <key name="ncaaf-wesw" type="b">
             <default>false</default>
@@ -4499,7 +4625,8 @@
         </key>
         <key name="ncaaf-wne" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Western New England Golden Bears</summary>
+            <summary
+            >Follow NCAAF team: Western New England Golden Bears</summary>
         </key>
         <key name="ncaaf-wesnm" type="b">
             <default>false</default>
@@ -4575,11 +4702,13 @@
         </key>
         <key name="ncaaf-wilt" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Williamson Trade School Mechanics</summary>
+            <summary
+            >Follow NCAAF team: Williamson Trade School Mechanics</summary>
         </key>
         <key name="ncaaf-wilm" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Wilmington (OH) Fightin' Quakers</summary>
+            <summary
+            >Follow NCAAF team: Wilmington (OH) Fightin' Quakers</summary>
         </key>
         <key name="ncaaf-barton" type="b">
             <default>false</default>
@@ -4651,7 +4780,8 @@
         </key>
         <key name="ncaaf-wpie" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Worcester Polytechnic Institute Engineers</summary>
+            <summary
+            >Follow NCAAF team: Worcester Polytechnic Institute Engineers</summary>
         </key>
         <key name="ncaaf-worcestst" type="b">
             <default>false</default>
@@ -4727,7 +4857,8 @@
         </key>
         <key name="ncaam-uapb" type="b">
             <default>false</default>
-            <summary>Follow NCAAM team: Arkansas-Pine Bluff Golden Lions</summary>
+            <summary
+            >Follow NCAAM team: Arkansas-Pine Bluff Golden Lions</summary>
         </key>
         <key name="ncaam-army" type="b">
             <default>false</default>
@@ -4815,7 +4946,8 @@
         </key>
         <key name="ncaam-csub" type="b">
             <default>false</default>
-            <summary>Follow NCAAM team: Cal State Bakersfield Roadrunners</summary>
+            <summary
+            >Follow NCAAM team: Cal State Bakersfield Roadrunners</summary>
         </key>
         <key name="ncaam-csuf" type="b">
             <default>false</default>
@@ -4847,7 +4979,8 @@
         </key>
         <key name="ncaam-ccsu" type="b">
             <default>false</default>
-            <summary>Follow NCAAM team: Central Connecticut Blue Devils</summary>
+            <summary
+            >Follow NCAAM team: Central Connecticut Blue Devils</summary>
         </key>
         <key name="ncaam-cmu" type="b">
             <default>false</default>
@@ -4971,7 +5104,8 @@
         </key>
         <key name="ncaam-etsu" type="b">
             <default>false</default>
-            <summary>Follow NCAAM team: East Tennessee State Buccaneers</summary>
+            <summary
+            >Follow NCAAM team: East Tennessee State Buccaneers</summary>
         </key>
         <key name="ncaam-eiu" type="b">
             <default>false</default>
@@ -5051,7 +5185,8 @@
         </key>
         <key name="ncaam-gw" type="b">
             <default>false</default>
-            <summary>Follow NCAAM team: George Washington Revolutionaries</summary>
+            <summary
+            >Follow NCAAM team: George Washington Revolutionaries</summary>
         </key>
         <key name="ncaam-gtwn" type="b">
             <default>false</default>
@@ -5307,7 +5442,7 @@
         </key>
         <key name="ncaam-umes" type="b">
             <default>false</default>
-            <summary>Follow NCAAM team: Maryland-Eastern Shore Hawks</summary>
+            <summary>Follow NCAAM team: Maryland Eastern Shore Hawks</summary>
         </key>
         <key name="ncaam-mass" type="b">
             <default>false</default>
@@ -5335,7 +5470,7 @@
         </key>
         <key name="ncaam-m-oh" type="b">
             <default>false</default>
-            <summary>Follow NCAAM team: Miami (OH) Redhawks</summary>
+            <summary>Follow NCAAM team: Miami (OH) RedHawks</summary>
         </key>
         <key name="ncaam-mia" type="b">
             <default>false</default>
@@ -5367,7 +5502,8 @@
         </key>
         <key name="ncaam-mvsu" type="b">
             <default>false</default>
-            <summary>Follow NCAAM team: Mississippi Valley State Delta Devils</summary>
+            <summary
+            >Follow NCAAM team: Mississippi Valley State Delta Devils</summary>
         </key>
         <key name="ncaam-most" type="b">
             <default>false</default>
@@ -5739,7 +5875,8 @@
         </key>
         <key name="ncaam-upst" type="b">
             <default>false</default>
-            <summary>Follow NCAAM team: South Carolina Upstate Spartans</summary>
+            <summary
+            >Follow NCAAM team: South Carolina Upstate Spartans</summary>
         </key>
         <key name="ncaam-sdak" type="b">
             <default>false</default>
@@ -5755,7 +5892,8 @@
         </key>
         <key name="ncaam-semo" type="b">
             <default>false</default>
-            <summary>Follow NCAAM team: Southeast Missouri State Redhawks</summary>
+            <summary
+            >Follow NCAAM team: Southeast Missouri State Redhawks</summary>
         </key>
         <key name="ncaam-siu" type="b">
             <default>false</default>
@@ -5787,7 +5925,7 @@
         </key>
         <key name="ncaam-stmn" type="b">
             <default>false</default>
-            <summary>Follow NCAAM team: St. Thomas - Minnesota Tommies</summary>
+            <summary>Follow NCAAM team: St. Thomas-Minnesota Tommies</summary>
         </key>
         <key name="ncaam-stan" type="b">
             <default>false</default>
@@ -5843,11 +5981,12 @@
         </key>
         <key name="ncaam-tamc" type="b">
             <default>false</default>
-            <summary>Follow NCAAM team: Texas A&amp;M-Commerce Lions</summary>
+            <summary>Follow NCAAM team: East Texas A&amp;M Lions</summary>
         </key>
         <key name="ncaam-amcc" type="b">
             <default>false</default>
-            <summary>Follow NCAAM team: Texas A&amp;M-Corpus Christi Islanders</summary>
+            <summary
+            >Follow NCAAM team: Texas A&amp;M-Corpus Christi Islanders</summary>
         </key>
         <key name="ncaam-tex" type="b">
             <default>false</default>
@@ -6171,7 +6310,8 @@
         </key>
         <key name="ncaaw-uapb" type="b">
             <default>false</default>
-            <summary>Follow NCAAW team: Arkansas-Pine Bluff Golden Lions</summary>
+            <summary
+            >Follow NCAAW team: Arkansas-Pine Bluff Golden Lions</summary>
         </key>
         <key name="ncaaw-army" type="b">
             <default>false</default>
@@ -6259,7 +6399,8 @@
         </key>
         <key name="ncaaw-csub" type="b">
             <default>false</default>
-            <summary>Follow NCAAW team: Cal State Bakersfield Roadrunners</summary>
+            <summary
+            >Follow NCAAW team: Cal State Bakersfield Roadrunners</summary>
         </key>
         <key name="ncaaw-csuf" type="b">
             <default>false</default>
@@ -6291,7 +6432,8 @@
         </key>
         <key name="ncaaw-ccsu" type="b">
             <default>false</default>
-            <summary>Follow NCAAW team: Central Connecticut Blue Devils</summary>
+            <summary
+            >Follow NCAAW team: Central Connecticut Blue Devils</summary>
         </key>
         <key name="ncaaw-cmu" type="b">
             <default>false</default>
@@ -6495,7 +6637,8 @@
         </key>
         <key name="ncaaw-gw" type="b">
             <default>false</default>
-            <summary>Follow NCAAW team: George Washington Revolutionaries</summary>
+            <summary
+            >Follow NCAAW team: George Washington Revolutionaries</summary>
         </key>
         <key name="ncaaw-gtwn" type="b">
             <default>false</default>
@@ -6755,7 +6898,7 @@
         </key>
         <key name="ncaaw-umes" type="b">
             <default>false</default>
-            <summary>Follow NCAAW team: Maryland-Eastern Shore Hawks</summary>
+            <summary>Follow NCAAW team: Maryland Eastern Shore Hawks</summary>
         </key>
         <key name="ncaaw-mass" type="b">
             <default>false</default>
@@ -6779,7 +6922,7 @@
         </key>
         <key name="ncaaw-m-oh" type="b">
             <default>false</default>
-            <summary>Follow NCAAW team: Miami (OH) Redhawks</summary>
+            <summary>Follow NCAAW team: Miami (OH) RedHawks</summary>
         </key>
         <key name="ncaaw-mia" type="b">
             <default>false</default>
@@ -6811,7 +6954,8 @@
         </key>
         <key name="ncaaw-mvsu" type="b">
             <default>false</default>
-            <summary>Follow NCAAW team: Mississippi Valley State Devilettes</summary>
+            <summary
+            >Follow NCAAW team: Mississippi Valley State Devilettes</summary>
         </key>
         <key name="ncaaw-most" type="b">
             <default>false</default>
@@ -7039,7 +7183,8 @@
         </key>
         <key name="ncaaw-pv" type="b">
             <default>false</default>
-            <summary>Follow NCAAW team: Prairie View A&amp;M Lady Panthers</summary>
+            <summary
+            >Follow NCAAW team: Prairie View A&amp;M Lady Panthers</summary>
         </key>
         <key name="ncaaw-pres" type="b">
             <default>false</default>
@@ -7183,11 +7328,13 @@
         </key>
         <key name="ncaaw-scst" type="b">
             <default>false</default>
-            <summary>Follow NCAAW team: South Carolina State Lady Bulldogs</summary>
+            <summary
+            >Follow NCAAW team: South Carolina State Lady Bulldogs</summary>
         </key>
         <key name="ncaaw-scup" type="b">
             <default>false</default>
-            <summary>Follow NCAAW team: South Carolina Upstate Spartans</summary>
+            <summary
+            >Follow NCAAW team: South Carolina Upstate Spartans</summary>
         </key>
         <key name="ncaaw-sdak" type="b">
             <default>false</default>
@@ -7203,7 +7350,8 @@
         </key>
         <key name="ncaaw-semo" type="b">
             <default>false</default>
-            <summary>Follow NCAAW team: Southeast Missouri State Redhawks</summary>
+            <summary
+            >Follow NCAAW team: Southeast Missouri State Redhawks</summary>
         </key>
         <key name="ncaaw-siu" type="b">
             <default>false</default>
@@ -7211,7 +7359,8 @@
         </key>
         <key name="ncaaw-usi" type="b">
             <default>false</default>
-            <summary>Follow NCAAW team: Southern Indiana Screaming Eagles</summary>
+            <summary
+            >Follow NCAAW team: Southern Indiana Screaming Eagles</summary>
         </key>
         <key name="ncaaw-sou" type="b">
             <default>false</default>
@@ -7239,7 +7388,7 @@
         </key>
         <key name="ncaaw-stmn" type="b">
             <default>false</default>
-            <summary>Follow NCAAW team: St. Thomas - Minnesota Tommies</summary>
+            <summary>Follow NCAAW team: St. Thomas-Minnesota Tommies</summary>
         </key>
         <key name="ncaaw-stan" type="b">
             <default>false</default>
@@ -7295,11 +7444,12 @@
         </key>
         <key name="ncaaw-tamc" type="b">
             <default>false</default>
-            <summary>Follow NCAAW team: Texas A&amp;M-Commerce Lions</summary>
+            <summary>Follow NCAAW team: East Texas A&amp;M Lions</summary>
         </key>
         <key name="ncaaw-amcc" type="b">
             <default>false</default>
-            <summary>Follow NCAAW team: Texas A&amp;M-Corpus Christi Islanders</summary>
+            <summary
+            >Follow NCAAW team: Texas A&amp;M-Corpus Christi Islanders</summary>
         </key>
         <key name="ncaaw-tex" type="b">
             <default>false</default>
@@ -7932,6 +8082,10 @@
         <key name="wnba-dal" type="b">
             <default>false</default>
             <summary>Follow WNBA team: Dallas Wings</summary>
+        </key>
+        <key name="wnba-gsv" type="b">
+            <default>false</default>
+            <summary>Follow WNBA team: Golden State Valkyries</summary>
         </key>
         <key name="wnba-ind" type="b">
             <default>false</default>
