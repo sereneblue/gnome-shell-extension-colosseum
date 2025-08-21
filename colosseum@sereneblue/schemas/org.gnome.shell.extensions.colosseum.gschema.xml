@@ -169,6 +169,10 @@
             <default>false</default>
             <summary>Follow Bund team: 1. FC Union Berlin</summary>
         </key>
+        <key name="bund-hsv" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: Hamburg SV</summary>
+        </key>
         <key name="bund-hert" type="b">
             <default>false</default>
             <summary>Follow Bund team: Hertha Berlin</summary>
@@ -225,10 +229,6 @@
             <default>false</default>
             <summary>Follow Bund team: Werder Bremen</summary>
         </key>
-        <key name="bund2-col" type="b">
-            <default>false</default>
-            <summary>Follow Bund2 team: FC Cologne</summary>
-        </key>
         <key name="bund2-fcm" type="b">
             <default>false</default>
             <summary>Follow Bund2 team: 1. FC Magdeburg</summary>
@@ -236,6 +236,14 @@
         <key name="bund2-fcn" type="b">
             <default>false</default>
             <summary>Follow Bund2 team: 1. FC Nürnberg</summary>
+        </key>
+        <key name="bund2-dsc" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: Arminia Bielefeld</summary>
+        </key>
+        <key name="bund2-col" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: FC Cologne</summary>
         </key>
         <key name="bund2-f95" type="b">
             <default>false</default>
@@ -300,6 +308,10 @@
         <key name="bund2-ebs" type="b">
             <default>false</default>
             <summary>Follow Bund2 team: TSV Eintracht Braunschweig</summary>
+        </key>
+        <key name="bund2-boch" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: VfL Bochum</summary>
         </key>
         <key name="bund2-osn" type="b">
             <default>false</default>
@@ -601,6 +613,11 @@
             <summary
             >Follow English League Championship team: Cardiff City</summary>
         </key>
+        <key name="elc-cha" type="b">
+            <default>false</default>
+            <summary
+            >Follow English League Championship team: Charlton Athletic</summary>
+        </key>
         <key name="elc-cov" type="b">
             <default>false</default>
             <summary
@@ -724,6 +741,10 @@
             <summary
             >Follow English League Championship team: West Bromwich Albion</summary>
         </key>
+        <key name="elc-wxm" type="b">
+            <default>false</default>
+            <summary>Follow English League Championship team: Wrexham</summary>
+        </key>
         <key name="epl-ars" type="b">
             <default>false</default>
             <summary>Follow EPL team: Arsenal</summary>
@@ -811,6 +832,10 @@
         <key name="epl-sou" type="b">
             <default>false</default>
             <summary>Follow EPL team: Southampton</summary>
+        </key>
+        <key name="epl-sun" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Sunderland</summary>
         </key>
         <key name="epl-tot" type="b">
             <default>false</default>
@@ -980,6 +1005,10 @@
             <default>false</default>
             <summary>Follow La Liga team: Real Madrid</summary>
         </key>
+        <key name="laliga-ovi" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Real Oviedo</summary>
+        </key>
         <key name="laliga-rso" type="b">
             <default>false</default>
             <summary>Follow La Liga team: Real Sociedad</summary>
@@ -1067,6 +1096,10 @@
         <key name="ligue1-nim" type="b">
             <default>false</default>
             <summary>Follow Ligue 1 team: Nimes</summary>
+        </key>
+        <key name="ligue1-pfc" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Paris FC</summary>
         </key>
         <key name="ligue1-psg" type="b">
             <default>false</default>
@@ -2185,6 +2218,10 @@
             <default>false</default>
             <summary>Follow NCAAF team: Dayton Flyers</summary>
         </key>
+        <key name="ncaaf-dea" type="b">
+            <default>false</default>
+            <summary>Follow NCAAF team: DEAN Bulldogs</summary>
+        </key>
         <key name="ncaaf-def" type="b">
             <default>false</default>
             <summary
@@ -2760,7 +2797,7 @@
         </key>
         <key name="ncaaf-jam" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Jamestown College Jimmies</summary>
+            <summary>Follow NCAAF team: Jamestown Jimmies</summary>
         </key>
         <key name="ncaaf-johc" type="b">
             <default>false</default>
@@ -2833,10 +2870,6 @@
             <default>false</default>
             <summary>Follow NCAAF team: Kenyon Owls</summary>
         </key>
-        <key name="ncaaf-kystn" type="b">
-            <default>false</default>
-            <summary>Follow NCAAF team: Keystone Giants</summary>
-        </key>
         <key name="ncaaf-king" type="b">
             <default>false</default>
             <summary>Follow NCAAF team: Kings College (PA) Monarchs</summary>
@@ -2852,7 +2885,7 @@
         </key>
         <key name="ncaaf-keyst" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: LA PLUME Keystone</summary>
+            <summary>Follow NCAAF team: LA PLUME Giants</summary>
         </key>
         <key name="ncaaf-lkld" type="b">
             <default>false</default>
@@ -3904,6 +3937,11 @@
             <default>false</default>
             <summary>Follow NCAAF team: Simpson College (IA) Storm</summary>
         </key>
+        <key name="ncaaf-suca" type="b">
+            <default>false</default>
+            <summary
+            >Follow NCAAF team: Simpson University (Ca) Red Hawks</summary>
+        </key>
         <key name="ncaaf-sio" type="b">
             <default>false</default>
             <summary>Follow NCAAF team: Sioux Falls Cougars</summary>
@@ -4044,7 +4082,7 @@
         </key>
         <key name="ncaaf-sfpa" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: St. Francis (PA) Red Flash</summary>
+            <summary>Follow NCAAF team: St. Francis Red Flash</summary>
         </key>
         <key name="ncaaf-sjfu" type="b">
             <default>false</default>
@@ -5565,6 +5603,10 @@
             <default>false</default>
             <summary>Follow NCAAM team: New Hampshire Wildcats</summary>
         </key>
+        <key name="ncaam-nh" type="b">
+            <default>false</default>
+            <summary>Follow NCAAM team: New Haven Chargers</summary>
+        </key>
         <key name="ncaam-unm" type="b">
             <default>false</default>
             <summary>Follow NCAAM team: New Mexico Lobos</summary>
@@ -5917,7 +5959,7 @@
         </key>
         <key name="ncaam-sfpa" type="b">
             <default>false</default>
-            <summary>Follow NCAAM team: St. Francis (PA) Red Flash</summary>
+            <summary>Follow NCAAM team: St. Francis Red Flash</summary>
         </key>
         <key name="ncaam-sju" type="b">
             <default>false</default>
@@ -7017,6 +7059,10 @@
             <default>false</default>
             <summary>Follow NCAAW team: New Hampshire Wildcats</summary>
         </key>
+        <key name="ncaaw-nh" type="b">
+            <default>false</default>
+            <summary>Follow NCAAW team: New Haven Chargers</summary>
+        </key>
         <key name="ncaaw-unm" type="b">
             <default>false</default>
             <summary>Follow NCAAW team: New Mexico Lobos</summary>
@@ -7380,7 +7426,7 @@
         </key>
         <key name="ncaaw-sfpa" type="b">
             <default>false</default>
-            <summary>Follow NCAAW team: St. Francis (PA) Red Flash</summary>
+            <summary>Follow NCAAW team: St. Francis Red Flash</summary>
         </key>
         <key name="ncaaw-sju" type="b">
             <default>false</default>
@@ -7949,7 +7995,7 @@
         </key>
         <key name="nhl-uta" type="b">
             <default>false</default>
-            <summary>Follow NHL team: Utah Hockey Club</summary>
+            <summary>Follow NHL team: Utah Mammoth</summary>
         </key>
         <key name="nhl-van" type="b">
             <default>false</default>
@@ -7994,6 +8040,10 @@
         <key name="seriea-como" type="b">
             <default>false</default>
             <summary>Follow Serie A team: Como</summary>
+        </key>
+        <key name="seriea-cre" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Cremonese</summary>
         </key>
         <key name="seriea-cro" type="b">
             <default>false</default>
@@ -8042,6 +8092,10 @@
         <key name="seriea-par" type="b">
             <default>false</default>
             <summary>Follow Serie A team: Parma</summary>
+        </key>
+        <key name="seriea-pis" type="b">
+            <default>false</default>
+            <summary>Follow Serie A team: Pisa</summary>
         </key>
         <key name="seriea-samp" type="b">
             <default>false</default>
