@@ -50,11 +50,12 @@ Extract the contents of the newly created zip file into:
 
 #### Leagues
 
-There are 18 supported sports leagues:
+There are 19 supported sports leagues:
 
 	Bundesliga
 	2. Bundesliga
 	English Football League Championship
+	English League One
 	English Premier League
 	Israeli Premier League
 	La Liga
