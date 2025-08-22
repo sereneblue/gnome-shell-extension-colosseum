@@ -45,6 +45,10 @@
             <default>false</default>
             <summary>Enable Israeli Premier League scoreboard</summary>
         </key>
+        <key name="l1-enabled" type="b">
+            <default>false</default>
+            <summary>Enable English League One scoreboard</summary>
+        </key>
         <key name="laliga-enabled" type="b">
             <default>false</default>
             <summary>Enable LaLiga scoreboard</summary>
@@ -744,6 +748,103 @@
         <key name="elc-wxm" type="b">
             <default>false</default>
             <summary>Follow English League Championship team: Wrexham</summary>
+        </key>
+        <key name="l1-wim" type="b">
+            <default>false</default>
+            <summary>Follow English League One team: AFC Wimbledon</summary>
+        </key>
+        <key name="l1-bar" type="b">
+            <default>false</default>
+            <summary>Follow English League One team: Barnsley</summary>
+        </key>
+        <key name="l1-blp" type="b">
+            <default>false</default>
+            <summary>Follow English League One team: Blackpool</summary>
+        </key>
+        <key name="l1-bol" type="b">
+            <default>false</default>
+            <summary>Follow English League One team: Bolton Wanderers</summary>
+        </key>
+        <key name="l1-brd" type="b">
+            <default>false</default>
+            <summary>Follow English League One team: Bradford City</summary>
+        </key>
+        <key name="l1-brt" type="b">
+            <default>false</default>
+            <summary>Follow English League One team: Burton Albion</summary>
+        </key>
+        <key name="l1-car" type="b">
+            <default>false</default>
+            <summary>Follow English League One team: Cardiff City</summary>
+        </key>
+        <key name="l1-don" type="b">
+            <default>false</default>
+            <summary>Follow English League One team: Doncaster Rovers</summary>
+        </key>
+        <key name="l1-exe" type="b">
+            <default>false</default>
+            <summary>Follow English League One team: Exeter City</summary>
+        </key>
+        <key name="l1-hud" type="b">
+            <default>false</default>
+            <summary>Follow English League One team: Huddersfield Town</summary>
+        </key>
+        <key name="l1-ley" type="b">
+            <default>false</default>
+            <summary>Follow English League One team: Leyton Orient</summary>
+        </key>
+        <key name="l1-lcn" type="b">
+            <default>false</default>
+            <summary>Follow English League One team: Lincoln City</summary>
+        </key>
+        <key name="l1-ltn" type="b">
+            <default>false</default>
+            <summary>Follow English League One team: Luton Town</summary>
+        </key>
+        <key name="l1-mnf" type="b">
+            <default>false</default>
+            <summary>Follow English League One team: Mansfield Town</summary>
+        </key>
+        <key name="l1-nht" type="b">
+            <default>false</default>
+            <summary>Follow English League One team: Northampton Town</summary>
+        </key>
+        <key name="l1-pet" type="b">
+            <default>false</default>
+            <summary
+            >Follow English League One team: Peterborough United</summary>
+        </key>
+        <key name="l1-ply" type="b">
+            <default>false</default>
+            <summary>Follow English League One team: Plymouth Argyle</summary>
+        </key>
+        <key name="l1-ptv" type="b">
+            <default>false</default>
+            <summary>Follow English League One team: Port Vale</summary>
+        </key>
+        <key name="l1-rea" type="b">
+            <default>false</default>
+            <summary>Follow English League One team: Reading</summary>
+        </key>
+        <key name="l1-rot" type="b">
+            <default>false</default>
+            <summary>Follow English League One team: Rotherham United</summary>
+        </key>
+        <key name="l1-ste" type="b">
+            <default>false</default>
+            <summary>Follow English League One team: Stevenage</summary>
+        </key>
+        <key name="l1-sto" type="b">
+            <default>false</default>
+            <summary>Follow English League One team: Stockport County</summary>
+        </key>
+        <key name="l1-wga" type="b">
+            <default>false</default>
+            <summary>Follow English League One team: Wigan Athletic</summary>
+        </key>
+        <key name="l1-wyc" type="b">
+            <default>false</default>
+            <summary>Follow English League One team: Wycombe Wanderers</summary>
         </key>
         <key name="epl-ars" type="b">
             <default>false</default>

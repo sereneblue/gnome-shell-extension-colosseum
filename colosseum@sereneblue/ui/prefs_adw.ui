@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <interface>
-  <requires lib="gtk" version="4.0"/>
+  <requires lib="gtk" version="4.0" />
   <object class="GtkAdjustment" id="updateFrequency">
     <property name="lower">1</property>
     <property name="upper">30</property>
@@ -15,7 +15,10 @@
         <property name="title" translatable="true">Display Options</property>
         <child>
           <object class="AdwActionRow" id="prefs_label_followed_only">
-            <property name="title" translatable="true">Only show followed teams</property>
+            <property
+                            name="title"
+                            translatable="true"
+                        >Only show followed teams</property>
             <property name="activatable-widget">prefs_followed_only</property>
             <child type="suffix">
               <object class="GtkSwitch" id="prefs_followed_only">
@@ -27,7 +30,10 @@
         </child>
         <child>
           <object class="AdwActionRow" id="prefs_label_compact_mode">
-            <property name="title" translatable="true">Enable compact mode</property>
+            <property
+                            name="title"
+                            translatable="true"
+                        >Enable compact mode</property>
             <property name="activatable-widget">prefs_compact_mode</property>
             <child type="suffix">
               <object class="GtkSwitch" id="prefs_compact_mode">
@@ -39,7 +45,10 @@
         </child>
         <child>
           <object class="AdwActionRow" id="prefs_label_position_topbar">
-            <property name="title" translatable="true">Position in Top Bar</property>
+            <property
+                            name="title"
+                            translatable="true"
+                        >Position in Top Bar</property>
             <child type="suffix">
               <object class="GtkComboBoxText" id="prefs_position_topbar">
                 <items>
@@ -59,7 +68,10 @@
       <object class="AdwPreferencesGroup">
         <child>
           <object class="AdwActionRow" id="prefs_label_update">
-            <property name="title" translatable="true">Update Frequency (min)</property>
+            <property
+                            name="title"
+                            translatable="true"
+                        >Update Frequency (min)</property>
             <child type="suffix">
               <object class="GtkSpinButton" id="prefs_frequency">
                 <property name="text">0</property>
@@ -84,7 +96,10 @@
     </child>
     <child>
       <object class="AdwPreferencesGroup" id="tournaments">
-        <property name="title" translatable="true">Enabled Tournaments</property>
+        <property
+                    name="title"
+                    translatable="true"
+                >Enabled Tournaments</property>
       </object>
     </child>
   </object>
@@ -121,7 +136,7 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Following</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
@@ -131,7 +146,7 @@
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -141,17 +156,20 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Teams</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
                             <child>
-                              <object class="GtkListBox" id="notFollowingListBund">
+                              <object
+                                                                class="GtkListBox"
+                                                                id="notFollowingListBund"
+                                                            >
                                 <property name="selection-mode">none</property>
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -197,7 +215,7 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Following</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
@@ -207,7 +225,7 @@
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -217,17 +235,20 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Teams</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
                             <child>
-                              <object class="GtkListBox" id="notFollowingListBund2">
+                              <object
+                                                                class="GtkListBox"
+                                                                id="notFollowingListBund2"
+                                                            >
                                 <property name="selection-mode">none</property>
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -273,7 +294,7 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Following</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
@@ -283,7 +304,7 @@
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -293,17 +314,20 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Teams</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
                             <child>
-                              <object class="GtkListBox" id="notFollowingListUCL">
+                              <object
+                                                                class="GtkListBox"
+                                                                id="notFollowingListUCL"
+                                                            >
                                 <property name="selection-mode">none</property>
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -349,17 +373,20 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Following</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
                             <child>
-                              <object class="GtkListBox" id="followListEnglishLeagueChampionship">
+                              <object
+                                                                class="GtkListBox"
+                                                                id="followListEnglishLeagueChampionship"
+                                                            >
                                 <property name="selection-mode">none</property>
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -369,17 +396,20 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Teams</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
                             <child>
-                              <object class="GtkListBox" id="notFollowingListEnglishLeagueChampionship">
+                              <object
+                                                                class="GtkListBox"
+                                                                id="notFollowingListEnglishLeagueChampionship"
+                                                            >
                                 <property name="selection-mode">none</property>
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -396,6 +426,88 @@
         <child type="tab">
           <object class="GtkLabel" id="englishleaguechampionship-tab">
             <property name="label">English League Championship</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStack" id="englishleagueone-content">
+            <property name="transition-type">crossfade</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkStackPage">
+                <property name="name">main</property>
+                <property name="child">
+                  <object class="GtkScrolledWindow">
+                    <property name="hscrollbar-policy">never</property>
+                    <child>
+                      <object class="GtkViewport">
+                        <child>
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+                            <property name="halign">fill</property>
+                            <property name="margin-start">36</property>
+                            <property name="margin-end">36</property>
+                            <property name="margin-top">36</property>
+                            <property name="margin-bottom">36</property>
+                            <property name="spacing">12</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Following</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold" />
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object
+                                                                class="GtkListBox"
+                                                                id="followListEnglishLeagueOne"
+                                                            >
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame" />
+                                </style>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="halign">start</property>
+                                <property name="hexpand">True</property>
+                                <property name="label">Teams</property>
+                                <attributes>
+                                  <attribute name="weight" value="bold" />
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object
+                                                                class="GtkListBox"
+                                                                id="notFollowingListEnglishLeagueOne"
+                                                            >
+                                <property name="selection-mode">none</property>
+                                <property name="show-separators">True</property>
+                                <property name="margin-bottom">24</property>
+                                <style>
+                                  <class name="frame" />
+                                </style>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="englishleagueone-tab">
+            <property name="label">English League One</property>
           </object>
         </child>
         <child>
@@ -425,7 +537,7 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Following</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
@@ -435,7 +547,7 @@
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -445,17 +557,20 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Teams</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
                             <child>
-                              <object class="GtkListBox" id="notFollowingListEPL">
+                              <object
+                                                                class="GtkListBox"
+                                                                id="notFollowingListEPL"
+                                                            >
                                 <property name="selection-mode">none</property>
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -501,7 +616,7 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Following</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
@@ -511,7 +626,7 @@
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -521,17 +636,20 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Teams</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
                             <child>
-                              <object class="GtkListBox" id="notFollowingListISR">
+                              <object
+                                                                class="GtkListBox"
+                                                                id="notFollowingListISR"
+                                                            >
                                 <property name="selection-mode">none</property>
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -577,7 +695,7 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Following</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
@@ -587,7 +705,7 @@
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -597,17 +715,20 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Teams</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
                             <child>
-                              <object class="GtkListBox" id="notFollowingListLaLiga">
+                              <object
+                                                                class="GtkListBox"
+                                                                id="notFollowingListLaLiga"
+                                                            >
                                 <property name="selection-mode">none</property>
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -653,7 +774,7 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Following</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
@@ -663,7 +784,7 @@
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -673,17 +794,20 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Teams</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
                             <child>
-                              <object class="GtkListBox" id="notFollowingListLigue1">
+                              <object
+                                                                class="GtkListBox"
+                                                                id="notFollowingListLigue1"
+                                                            >
                                 <property name="selection-mode">none</property>
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -729,7 +853,7 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Following</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
@@ -739,7 +863,7 @@
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -749,17 +873,20 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Teams</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
                             <child>
-                              <object class="GtkListBox" id="notFollowingListMLB">
+                              <object
+                                                                class="GtkListBox"
+                                                                id="notFollowingListMLB"
+                                                            >
                                 <property name="selection-mode">none</property>
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -805,7 +932,7 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Following</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
@@ -815,7 +942,7 @@
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -825,17 +952,20 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Teams</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
                             <child>
-                              <object class="GtkListBox" id="notFollowingListMLS">
+                              <object
+                                                                class="GtkListBox"
+                                                                id="notFollowingListMLS"
+                                                            >
                                 <property name="selection-mode">none</property>
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -882,7 +1012,7 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Following</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
@@ -892,7 +1022,7 @@
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -902,17 +1032,20 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Teams</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
                             <child>
-                              <object class="GtkListBox" id="notFollowingListNBA">
+                              <object
+                                                                class="GtkListBox"
+                                                                id="notFollowingListNBA"
+                                                            >
                                 <property name="selection-mode">none</property>
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -958,7 +1091,7 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Following</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
@@ -968,7 +1101,7 @@
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -978,17 +1111,20 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Teams</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
                             <child>
-                              <object class="GtkListBox" id="notFollowingListNCAAF">
+                              <object
+                                                                class="GtkListBox"
+                                                                id="notFollowingListNCAAF"
+                                                            >
                                 <property name="selection-mode">none</property>
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -1034,7 +1170,7 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Following</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
@@ -1044,7 +1180,7 @@
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -1054,17 +1190,20 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Teams</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
                             <child>
-                              <object class="GtkListBox" id="notFollowingListNCAAM">
+                              <object
+                                                                class="GtkListBox"
+                                                                id="notFollowingListNCAAM"
+                                                            >
                                 <property name="selection-mode">none</property>
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -1110,7 +1249,7 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Following</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
@@ -1120,7 +1259,7 @@
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -1130,17 +1269,20 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Teams</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
                             <child>
-                              <object class="GtkListBox" id="notFollowingListNCAAW">
+                              <object
+                                                                class="GtkListBox"
+                                                                id="notFollowingListNCAAW"
+                                                            >
                                 <property name="selection-mode">none</property>
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -1187,7 +1329,7 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Following</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
@@ -1197,7 +1339,7 @@
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -1207,17 +1349,20 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Teams</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
                             <child>
-                              <object class="GtkListBox" id="notFollowingListNFL">
+                              <object
+                                                                class="GtkListBox"
+                                                                id="notFollowingListNFL"
+                                                            >
                                 <property name="selection-mode">none</property>
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -1264,7 +1409,7 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Following</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
@@ -1274,7 +1419,7 @@
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -1284,17 +1429,20 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Teams</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
                             <child>
-                              <object class="GtkListBox" id="notFollowingListNHL">
+                              <object
+                                                                class="GtkListBox"
+                                                                id="notFollowingListNHL"
+                                                            >
                                 <property name="selection-mode">none</property>
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -1340,7 +1488,7 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Following</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
@@ -1350,7 +1498,7 @@
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -1360,17 +1508,20 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Teams</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
                             <child>
-                              <object class="GtkListBox" id="notFollowingListSerieA">
+                              <object
+                                                                class="GtkListBox"
+                                                                id="notFollowingListSerieA"
+                                                            >
                                 <property name="selection-mode">none</property>
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -1416,7 +1567,7 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Following</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
@@ -1426,7 +1577,7 @@
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>
@@ -1436,17 +1587,20 @@
                                 <property name="hexpand">True</property>
                                 <property name="label">Teams</property>
                                 <attributes>
-                                  <attribute name="weight" value="bold"/>
+                                  <attribute name="weight" value="bold" />
                                 </attributes>
                               </object>
                             </child>
                             <child>
-                              <object class="GtkListBox" id="notFollowingListWNBA">
+                              <object
+                                                                class="GtkListBox"
+                                                                id="notFollowingListWNBA"
+                                                            >
                                 <property name="selection-mode">none</property>
                                 <property name="show-separators">True</property>
                                 <property name="margin-bottom">24</property>
                                 <style>
-                                  <class name="frame"/>
+                                  <class name="frame" />
                                 </style>
                               </object>
                             </child>

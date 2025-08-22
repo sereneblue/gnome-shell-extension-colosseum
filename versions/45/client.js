@@ -81,6 +81,7 @@ export default class ColosseumClient {
       "English League Championship": [
         this.BASE_API_URL + "soccer/eng.2/scoreboard",
       ],
+      "English League One": [this.BASE_API_URL + "soccer/eng.3/scoreboard"],
       EPL: [this.BASE_API_URL + "soccer/eng.1/scoreboard"],
       ISR: [this.BASE_API_URL + "soccer/isr.1/scoreboard"],
       "FA Cup": [this.BASE_API_URL + "soccer/eng.fa/scoreboard"],
