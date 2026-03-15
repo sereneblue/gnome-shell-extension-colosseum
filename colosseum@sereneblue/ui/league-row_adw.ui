@@ -1,10 +1,29 @@
 <interface>
   <requires lib="gtk+" version="4.0"/>
+  <requires lib="adw" version="1.0" />
   <template class="LeagueRow" parent="AdwActionRow">
-    <property name="title" translatable="true"></property>
+    <property name="activatable">True</property>
+    <property name="title" translatable="yes">League Name</property>
+
     <child type="suffix">
-      <object class="GtkSwitch" id="leagueSwitch">
+      <object class="GtkBox">
+        <property name="spacing">12</property>
         <property name="valign">center</property>
+
+        <child>
+          <object class="GtkLabel" id="statusLabel">
+            <style>
+              <class name="dim-label"/>
+            </style>
+            <property name="label">Active</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkImage">
+            <property name="icon-name">go-next-symbolic</property>
+          </object>
+        </child>
       </object>
     </child>
   </template>

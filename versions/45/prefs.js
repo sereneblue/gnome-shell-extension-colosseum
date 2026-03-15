@@ -13,7 +13,6 @@ class Preferences {
   constructor(window, settings) {
     this._builder = new Gtk.Builder();
 
-    this.total = {};
     this._settings = settings;
 
     this._builder.add_from_file(
@@ -21,8 +20,18 @@ class Preferences {
     );
     this._leagues = this._builder.get_object("leagues");
     this._tournaments = this._builder.get_object("tournaments");
-    this._prefsPage = this._builder.get_object("preferences_page");
-    this._teamsPage = this._builder.get_object("teams_page");
+    this._navView = this._builder.get_object("navView");
+    this._leagueDetails = this._builder.get_object("leagueDetails");
+
+    this._leagueRowContainer = this._builder.get_object("leagueRowContainer");
+    this._leagueSwitch = this._builder.get_object("leagueSwitch");
+    this._leagueSwitchBind = null;
+
+    this._followedList = this._builder.get_object("followedList");
+    this._followedList.set_sort_func(this._sortList.bind(this));
+
+    this._notFollowingList = this._builder.get_object("notFollowingList");
+    this._notFollowingList.set_sort_func(this._sortList.bind(this));
 
     this._settings.bind(
       CONSTANTS.PREF_UPDATE_FREQ,
@@ -51,8 +60,7 @@ class Preferences {
 
     this._bootstrap();
 
-    window.add(this._prefsPage);
-    window.add(this._teamsPage);
+    window.set_content(this._navView);
   }
 
   _bootstrap() {
@@ -60,37 +68,6 @@ class Preferences {
     const tournaments = Object.keys(CONSTANTS.PREF_TOURNAMENTS);
 
     for (let i = 0; i < leagues.length; i++) {
-      let followed = "followList" + leagues[i].replaceAll(" ", "");
-      let notFollowing = "notFollowingList" + leagues[i].replaceAll(" ", "");
-      let tabContent =
-        leagues[i].replaceAll(" ", "").toLowerCase() + "-content";
-
-      this.total[leagues[i]] = {
-        followed: 0,
-        notFollowing: 0,
-      };
-
-      this["_" + followed] = this._builder.get_object(followed);
-      this["_" + notFollowing] = this._builder.get_object(notFollowing);
-      this["_" + tabContent] = this._builder.get_object(tabContent);
-
-      this["_" + followed].set_sort_func(this._sortList.bind(this));
-      this["_" + notFollowing].set_sort_func(this._sortList.bind(this));
-      this["_" + tabContent].set_visible(false);
-
-      this["_label" + leagues[i].replaceAll(" ", "")] =
-        this._builder.get_object(
-          leagues[i].replaceAll(" ", "").toLowerCase() + "-tab",
-        );
-
-      for (let j = 0; j < CONSTANTS.SPORTS[leagues[i]].length; j++) {
-        this._addTeam({
-          league: leagues[i],
-          team: CONSTANTS.SPORTS[leagues[i]][j],
-        });
-      }
-
-      this._updateTabLabel(leagues[i]);
       this._addLeague(leagues[i]);
     }
 
@@ -103,15 +80,10 @@ class Preferences {
     let row = new LeagueRow(
       league,
       this._settings,
-      this._toggleTabVisibility.bind(this),
+      this._leagueDetails,
+      this._navView,
+      this._openLeaguePage.bind(this),
     );
-
-    if (row.enabled) {
-      this[
-        "_" + league.replaceAll(" ", "").toLowerCase() + "-content"
-      ].set_visible(true);
-    }
-
     this._leagues.add(row);
   }
 
@@ -119,11 +91,9 @@ class Preferences {
     let row = new TeamRow(team, this._settings, this._moveRow.bind(this));
 
     if (row.enabled) {
-      this["_followList" + team.league.replaceAll(" ", "")].append(row);
-      this.total[team.league].followed += 1;
+      this._followedList.append(row);
     } else {
-      this["_notFollowingList" + team.league.replaceAll(" ", "")].append(row);
-      this.total[team.league].notFollowing += 1;
+      this._notFollowingList.append(row);
     }
   }
 
@@ -131,46 +101,122 @@ class Preferences {
     this._tournaments.add(new TournamentRow(tournament, this._settings));
   }
 
-  _toggleTabVisibility(league, wasEnabled) {
-    this[
-      "_" + league.replaceAll(" ", "").toLowerCase() + "-content"
-    ].set_visible(wasEnabled);
+  _checkEmptyState(league) {
+    const removeAllPlaceholders = (list) => {
+      let child = list.get_first_child();
+      while (child) {
+        let next = child.get_next_sibling();
+        if (child.is_placeholder) {
+          list.remove(child);
+        }
+        child = next;
+      }
+    };
+
+    removeAllPlaceholders(this._followedList);
+    removeAllPlaceholders(this._notFollowingList);
+
+    let followedCount = 0;
+    let notFollowingCount = 0;
+
+    let child = this._followedList.get_first_child();
+    while (child) {
+      followedCount++;
+      child = child.get_next_sibling();
+    }
+
+    child = this._notFollowingList.get_first_child();
+    while (child) {
+      notFollowingCount++;
+      child = child.get_next_sibling();
+    }
+
+    if (followedCount === 0) {
+      this._followedList.append(this._createEmptyRow("No teams followed"));
+    }
+
+    if (notFollowingCount === 0) {
+      this._notFollowingList.append(this._createEmptyRow("All teams followed"));
+    }
+  }
+
+  _createEmptyRow(message) {
+    const row = new Adw.ActionRow({
+      title: message,
+      sensitive: false,
+      activatable: false,
+    });
+    row.is_placeholder = true;
+    row.add_css_class("dim-label");
+    return row;
+  }
+
+  _clearListBox(listBox) {
+    let child;
+    while ((child = listBox.get_first_child())) {
+      listBox.remove(child);
+    }
   }
 
   _moveRow(data, wasEnabled) {
-    let followed = "_followList" + data.league.replaceAll(" ", "");
-    let notFollowing = "_notFollowingList" + data.league.replaceAll(" ", "");
-
-    let row = [...this[followed], ...this[notFollowing]].find(
+    let row = [...this._followedList, ...this._notFollowingList].find(
       (t) => t.name === data.team.name,
     );
 
     if (row) {
+      const league = data.league;
       row.get_parent().remove(row);
 
       if (wasEnabled) {
-        this[followed].append(row);
-
-        this.total[data.league].followed += 1;
-        this.total[data.league].notFollowing -= 1;
+        this._followedList.append(row);
       } else {
-        this[notFollowing].append(row);
-
-        this.total[data.league].followed -= 1;
-        this.total[data.league].notFollowing += 1;
+        this._notFollowingList.append(row);
       }
 
-      this._updateTabLabel(data.league);
+      this._checkEmptyState(league);
     }
   }
 
-  _updateTabLabel(league) {
-    this["_label" + league.replaceAll(" ", "")].set_text(
-      league +
-        (this.total[league].followed
-          ? ` (${this.total[league].followed})`
-          : ""),
+  _openLeaguePage(league) {
+    this._clearListBox(this._followedList);
+    this._clearListBox(this._notFollowingList);
+
+    this._updateSwitch();
+
+    for (let j = 0; j < CONSTANTS.SPORTS[league].length; j++) {
+      this._addTeam({
+        league: league,
+        team: CONSTANTS.SPORTS[league][j],
+      });
+    }
+
+    this._checkEmptyState(league);
+
+    this._leagueDetails.title = CONSTANTS.DISPLAY_NAME[league];
+    this._leagueSwitch.active = this._settings.get_boolean(
+      CONSTANTS.PREF_LEAGUES[league],
     );
+    this._settings.bind(
+      CONSTANTS.PREF_LEAGUES[league],
+      this._leagueSwitch,
+      "active",
+      Gio.SettingsBindFlags.DEFAULT,
+    );
+  }
+
+  _updateSwitch() {
+    if (this._leagueSwitch) {
+      let parent = this._leagueSwitch.get_parent();
+      if (parent) {
+        parent.remove(this._leagueSwitch);
+      }
+    }
+
+    this._leagueSwitch = new Gtk.Switch({
+      valign: Gtk.Align.CENTER,
+    });
+
+    this._leagueRowContainer.add_suffix(this._leagueSwitch);
   }
 
   _sortList(a, b) {
@@ -226,38 +272,37 @@ const LeagueRow = GObject.registerClass(
   {
     GTypeName: "LeagueRow",
     Template: EXT_PATH.replace("prefs.js", "ui/league-row.ui"),
-    InternalChildren: ["leagueSwitch"],
+    InternalChildren: ["statusLabel"],
   },
   class Row extends Adw.ActionRow {
-    _init(league, settings, callback) {
+    _init(league, settings, leagueDetails, navView, onOpen) {
       super._init();
 
-      this._switchCallback = callback;
+      this._league = league;
+      this._leagueDetails = leagueDetails;
+      this._navView = navView;
+      this._settings = settings;
+      this._onOpen = onOpen;
 
       this.set_title(CONSTANTS.DISPLAY_NAME[league]);
-      this._league = league;
-      this._leagueSwitch.connect(
-        "notify::active",
-        this._onSwitchChanged.bind(this),
+      this._updateStatusLabel();
+
+      this._settings.connect(`changed::${CONSTANTS.PREF_LEAGUES[league]}`, () =>
+        this._updateStatusLabel(),
       );
 
-      this._settings = settings;
-      this._settings.bind(
-        CONSTANTS.PREF_LEAGUES[league],
-        this._leagueSwitch,
-        "active",
-        Gio.SettingsBindFlags.DEFAULT,
-      );
+      this.connect("activated", () => {
+        this._onOpen(this._league);
+        this._navView.push_by_tag("league-details");
+      });
     }
 
     get enabled() {
       return this._settings.get_boolean(CONSTANTS.PREF_LEAGUES[this._league]);
     }
 
-    _onSwitchChanged(state) {
-      let enabled = state.get_active();
-
-      this._switchCallback(this._league, enabled);
+    _updateStatusLabel() {
+      this._statusLabel.label = this.enabled ? "Enabled" : "";
     }
   },
 );
