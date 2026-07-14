@@ -874,6 +874,10 @@
             <default>false</default>
             <summary>Follow EPL team: Chelsea</summary>
         </key>
+        <key name="epl-cov" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Coventry City</summary>
+        </key>
         <key name="epl-cry" type="b">
             <default>false</default>
             <summary>Follow EPL team: Crystal Palace</summary>
@@ -885,6 +889,10 @@
         <key name="epl-ful" type="b">
             <default>false</default>
             <summary>Follow EPL team: Fulham</summary>
+        </key>
+        <key name="epl-hul" type="b">
+            <default>false</default>
+            <summary>Follow EPL team: Hull City</summary>
         </key>
         <key name="epl-ips" type="b">
             <default>false</default>
