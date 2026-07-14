@@ -2332,7 +2332,9 @@ var SPORTS = {
     { id: 8, name: "Minnesota Lynx", pref: "wnba-min" },
     { id: 9, name: "New York Liberty", pref: "wnba-ny" },
     { id: 11, name: "Phoenix Mercury", pref: "wnba-phx" },
+    { id: 132052, name: "Portland Fire", pref: "wnba-por" },
     { id: 14, name: "Seattle Storm", pref: "wnba-sea" },
+    { id: 131935, name: "Toronto Tempo", pref: "wnba-tor" },
     { id: 16, name: "Washington Mystics", pref: "wnba-wsh" },
   ],
 };

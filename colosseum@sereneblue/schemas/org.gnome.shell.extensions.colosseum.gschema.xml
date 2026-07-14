@@ -8266,9 +8266,17 @@
             <default>false</default>
             <summary>Follow WNBA team: Phoenix Mercury</summary>
         </key>
+        <key name="wnba-por" type="b">
+            <default>false</default>
+            <summary>Follow WNBA team: Portland Fire</summary>
+        </key>
         <key name="wnba-sea" type="b">
             <default>false</default>
             <summary>Follow WNBA team: Seattle Storm</summary>
+        </key>
+        <key name="wnba-tor" type="b">
+            <default>false</default>
+            <summary>Follow WNBA team: Toronto Tempo</summary>
         </key>
         <key name="wnba-wsh" type="b">
             <default>false</default>
