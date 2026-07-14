@@ -603,6 +603,11 @@
             <summary
             >Follow English League Championship team: Blackburn Rovers</summary>
         </key>
+        <key name="elc-bol" type="b">
+            <default>false</default>
+            <summary
+            >Follow English League Championship team: Bolton Wanderers</summary>
+        </key>
         <key name="elc-brc" type="b">
             <default>false</default>
             <summary
@@ -656,6 +661,11 @@
             <default>false</default>
             <summary
             >Follow English League Championship team: Leicester City</summary>
+        </key>
+        <key name="elc-lcn" type="b">
+            <default>false</default>
+            <summary
+            >Follow English League Championship team: Lincoln City</summary>
         </key>
         <key name="elc-ltn" type="b">
             <default>false</default>
@@ -744,6 +754,16 @@
             <default>false</default>
             <summary
             >Follow English League Championship team: West Bromwich Albion</summary>
+        </key>
+        <key name="elc-whu" type="b">
+            <default>false</default>
+            <summary
+            >Follow English League Championship team: West Ham United</summary>
+        </key>
+        <key name="elc-wol" type="b">
+            <default>false</default>
+            <summary
+            >Follow English League Championship team: Wolverhampton Wanderers</summary>
         </key>
         <key name="elc-wxm" type="b">
             <default>false</default>
