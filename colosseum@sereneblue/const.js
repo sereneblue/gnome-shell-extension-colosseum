@@ -61,7 +61,7 @@ var PREF_TOURNAMENTS = {
 
 var SPORTS = {
   Bund: [
-    { id: 6418, name: "1. FC Heidenheim 1846", pref: "bund-hdh" },
+    // { id: 6418, name: "1. FC Heidenheim 1846", pref: "bund-hdh" },
     // { id: 2506, name: "Arminia Bielefeld", pref: "bund-dsc" },
     { id: 131, name: "Bayer Leverkusen", pref: "bund-lev" },
     { id: 132, name: "Bayern Munich", pref: "bund-mun" },
@@ -77,14 +77,16 @@ var SPORTS = {
     { id: 2950, name: "Mainz", pref: "bund-main" },
     { id: 11420, name: "RB Leipzig", pref: "bund-lei" },
     { id: 126, name: "SC Freiburg", pref: "bund-frei" },
-    // { id: 133, name: "Schalke 04", pref: "bund-scha" },
+    { id: 3307, name: "SC Paderborn 07", pref: "bund-scp" },
+    { id: 10388, name: "SV Elversberg", pref: "bund-elv" },
+    { id: 133, name: "Schalke 04", pref: "bund-scha" },
     // { id: 3070, name: "SpVgg Greuther Furth", pref: "bund-spgf" },
-    { id: 270, name: "St. Pauli", pref: "bund-stp" },
+    // { id: 270, name: "St. Pauli", pref: "bund-stp" },
     // { id: 3812, name: "SV Darmstadt 98", pref: "bund-svd" },
     { id: 7911, name: "TSG Hoffenheim", pref: "bund-hof" },
     { id: 134, name: "VfB Stuttgart", pref: "bund-stu" },
     // { id: 121, name: "VfL Bochum", pref: "bund-boch" },
-    { id: 138, name: "VfL Wolfsburg", pref: "bund-wolf" },
+    // { id: 138, name: "VfL Wolfsburg", pref: "bund-wolf" },
     { id: 137, name: "Werder Bremen", pref: "bund-wer" },
   ],
   Bund2: [

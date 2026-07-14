@@ -197,13 +197,21 @@
             <default>false</default>
             <summary>Follow Bund team: SC Freiburg</summary>
         </key>
-        <key name="bund-spgf" type="b">
+        <key name="bund-scp" type="b">
             <default>false</default>
-            <summary>Follow Bund team: SpVgg Greuther Furth</summary>
+            <summary>Follow Bund team: SC Paderborn 07</summary>
+        </key>
+        <key name="bund-elv" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: SV Elversberg</summary>
         </key>
         <key name="bund-scha" type="b">
             <default>false</default>
             <summary>Follow Bund team: Schalke 04</summary>
+        </key>
+        <key name="bund-spgf" type="b">
+            <default>false</default>
+            <summary>Follow Bund team: SpVgg Greuther Furth</summary>
         </key>
         <key name="bund-stp" type="b">
             <default>false</default>
