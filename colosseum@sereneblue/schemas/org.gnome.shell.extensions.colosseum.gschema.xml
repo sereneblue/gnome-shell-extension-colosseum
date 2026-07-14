@@ -1090,6 +1090,10 @@
             <default>false</default>
             <summary>Follow La Liga team: Cádiz</summary>
         </key>
+        <key name="laliga-dep" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Deportivo La Coruña</summary>
+        </key>
         <key name="laliga-eib" type="b">
             <default>false</default>
             <summary>Follow La Liga team: Eibar</summary>
@@ -1130,6 +1134,10 @@
             <default>false</default>
             <summary>Follow La Liga team: Levante</summary>
         </key>
+        <key name="laliga-mcf" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Málaga</summary>
+        </key>
         <key name="laliga-mll" type="b">
             <default>false</default>
             <summary>Follow La Liga team: Mallorca</summary>
@@ -1137,6 +1145,10 @@
         <key name="laliga-osa" type="b">
             <default>false</default>
             <summary>Follow La Liga team: Osasuna</summary>
+        </key>
+        <key name="laliga-rac" type="b">
+            <default>false</default>
+            <summary>Follow La Liga team: Racing Santander</summary>
         </key>
         <key name="laliga-ray" type="b">
             <default>false</default>
