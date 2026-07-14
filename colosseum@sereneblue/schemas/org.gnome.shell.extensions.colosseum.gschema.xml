@@ -253,6 +253,10 @@
             <default>false</default>
             <summary>Follow Bund2 team: Arminia Bielefeld</summary>
         </key>
+        <key name="bund2-cot" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: Energie Cottbus</summary>
+        </key>
         <key name="bund2-col" type="b">
             <default>false</default>
             <summary>Follow Bund2 team: FC Cologne</summary>
@@ -328,6 +332,10 @@
         <key name="bund2-osn" type="b">
             <default>false</default>
             <summary>Follow Bund2 team: VfL Osnabruck</summary>
+        </key>
+        <key name="bund2-wob" type="b">
+            <default>false</default>
+            <summary>Follow Bund2 team: VfL Wolfsburg</summary>
         </key>
         <key name="bund2-wer" type="b">
             <default>false</default>
