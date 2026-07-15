@@ -2447,7 +2447,7 @@
         </key>
         <key name="ncaaf-erskine" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: ERSKINE Flying Fleet</summary>
+            <summary>Follow NCAAF team: Erskine Flying Fleet</summary>
         </key>
         <key name="ncaaf-ear" type="b">
             <default>false</default>
@@ -3656,7 +3656,7 @@
         </key>
         <key name="ncaaf-ng" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: North Greenville Crusaders</summary>
+            <summary>Follow NCAAF team: North Greenville Trailblazers</summary>
         </key>
         <key name="ncaaf-np" type="b">
             <default>false</default>
@@ -4865,7 +4865,7 @@
         </key>
         <key name="ncaaf-whi" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Whittier College Poets</summary>
+            <summary>Follow NCAAF team: Whittier Poets</summary>
         </key>
         <key name="ncaaf-whit" type="b">
             <default>false</default>
@@ -4915,7 +4915,7 @@
         </key>
         <key name="ncaaf-barton" type="b">
             <default>false</default>
-            <summary>Follow NCAAF team: Wilson Bulldogs</summary>
+            <summary>Follow NCAAF team: Barton Bulldogs</summary>
         </key>
         <key name="ncaaf-wingate" type="b">
             <default>false</default>
