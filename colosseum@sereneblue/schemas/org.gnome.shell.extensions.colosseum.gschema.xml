@@ -1214,6 +1214,10 @@
             <default>false</default>
             <summary>Follow Ligue 1 team: Le Havre AC</summary>
         </key>
+        <key name="ligue1-mns" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Le Mans</summary>
+        </key>
         <key name="ligue1-rcl" type="b">
             <default>false</default>
             <summary>Follow Ligue 1 team: Lens</summary>
@@ -1281,6 +1285,10 @@
         <key name="ligue1-tou" type="b">
             <default>false</default>
             <summary>Follow Ligue 1 team: Toulouse</summary>
+        </key>
+        <key name="ligue1-try" type="b">
+            <default>false</default>
+            <summary>Follow Ligue 1 team: Troyes</summary>
         </key>
         <key name="mlb-ari" type="b">
             <default>false</default>
