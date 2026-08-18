@@ -22,7 +22,7 @@ if [[ $1 = "45" ]]; then
 	mv ui/tournament-row_adw.ui ui/tournament-row.ui
 
 	sed -i -e 's/var/export const/g' ./const.js
-	zip -r ../colosseum_45.zip .
+	zip -r ../colosseum_45.zip . -x "schemas/gschemas.compiled"
 	popd
 else 
 	cp -r colosseum@sereneblue/* $WORK_DIR

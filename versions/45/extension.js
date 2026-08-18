@@ -94,6 +94,7 @@ const Colosseum = GObject.registerClass(
       this._scores = [];
       this._timeout = null;
       this._settings = null;
+      this._signalIds = [];
 
       this._panelBoxLayout = new St.BoxLayout();
 
@@ -118,18 +119,23 @@ const Colosseum = GObject.registerClass(
 
     setSettings(settings) {
       this._settings = settings;
-      this._settings.connect(
+      let positionTopbarId = this._settings.connect(
         "changed::" + CONSTANTS.PREF_POSITION_TOPBAR,
         this._updatePositionInPanel.bind(this),
       );
-      this._settings.connect(
+      this._signalIds.push(positionTopbarId);
+
+      let followedOnlyId = this._settings.connect(
         "changed::" + CONSTANTS.PREF_FOLLOWED_ONLY,
         this._update.bind(this),
       );
-      this._settings.connect(
+      this._signalIds.push(followedOnlyId);
+
+      let compactModeId = this._settings.connect(
         "changed::" + CONSTANTS.PREF_COMPACT_MODE,
         this._update.bind(this),
       );
+      this._signalIds.push(compactModeId);
 
       this._client = new ColosseumClient(CONSTANTS, this._settings);
     }
@@ -443,7 +449,7 @@ const Colosseum = GObject.registerClass(
     }
 
     destroy() {
-      this._client.session.abort();
+      this._client.destroy();
 
       if (this._timeout) {
         GLib.source_remove(this._timeout);
@@ -451,6 +457,13 @@ const Colosseum = GObject.registerClass(
 
         this.menu.removeAll();
       }
+
+      for (const signal of this._signalIds) {
+        if (this._settings && signal) {
+          this._settings.disconnect(signal);
+        }
+      }
+      this._signalIds = [];
 
       super.destroy();
     }
