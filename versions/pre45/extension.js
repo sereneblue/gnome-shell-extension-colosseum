@@ -3,10 +3,10 @@ const Gio = imports.gi.Gio;
 const GObject = imports.gi.GObject;
 const Meta = imports.gi.Meta;
 const St = imports.gi.St;
-const Mainloop = imports.mainloop;
 const Main = imports.ui.main;
 const PanelMenu = imports.ui.panelMenu;
 const PopupMenu = imports.ui.popupMenu;
+const { GLib } = imports.gi;
 
 const ExtensionUtils = imports.misc.extensionUtils;
 const EXTENSION = ExtensionUtils.getCurrentExtension();
@@ -21,7 +21,7 @@ const GameLink = GObject.registerClass(
                 style_class: 'shell-link',
                 y_expand: true,
                 x_align: Clutter.ActorAlign.END,
-                y_align: Clutter.ActorAlign.CENTER 
+                y_align: Clutter.ActorAlign.CENTER
             });
 
             this._url = link;
@@ -40,7 +40,7 @@ const GameLink = GObject.registerClass(
                 return Clutter.EVENT_PROPAGATE;
 
             Gio.app_info_launch_default_for_uri(this._url, global.create_app_launch_context(0, -1));
-            
+
             return Clutter.EVENT_STOP;
         }
 
@@ -75,12 +75,19 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
             super._init(0.0, "colosseum", false);
 
             this._scores = [];
+            this._signalIds = [];
             this._timeout = null;
 
             this._settings = ExtensionUtils.getSettings("org.gnome.shell.extensions.colosseum");
-            this._settings.connect('changed::' + CONSTANTS.PREF_POSITION_TOPBAR, this._updatePositionInPanel.bind(this))
-            this._settings.connect('changed::' + CONSTANTS.PREF_FOLLOWED_ONLY, this._update.bind(this));
-            this._settings.connect('changed::' + CONSTANTS.PREF_COMPACT_MODE, this._update.bind(this));
+
+            let positionTopbarId = this._settings.connect('changed::' + CONSTANTS.PREF_POSITION_TOPBAR, this._updatePositionInPanel.bind(this))
+            this._signalIds.push(positionTopbarId);
+
+            let followedOnlyId = this._settings.connect('changed::' + CONSTANTS.PREF_FOLLOWED_ONLY, this._update.bind(this));
+            this._signalIds.push(followedOnlyId);
+
+            let compactModeId = this._settings.connect('changed::' + CONSTANTS.PREF_COMPACT_MODE, this._update.bind(this));
+            this._signalIds.push(compactModeId);
 
             this._client = new Client.ColosseumClient(CONSTANTS, this._settings);
 
@@ -95,7 +102,7 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
                 text: "",
                 y_align: Clutter.ActorAlign.CENTER
             });
-            
+
             this._panelBoxLayout.add(this._icon);
             this._panelBoxLayout.add(this._menuText);
 
@@ -112,11 +119,11 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
                 grid.insert_column(offset);
                 grid.insert_column(offset);
 
-                let leagueName = new St.Label({ 
+                let leagueName = new St.Label({
                     text: league,
                     y_expand: true,
                     x_align: Clutter.ActorAlign.CENTER,
-                    y_align: Clutter.ActorAlign.CENTER 
+                    y_align: Clutter.ActorAlign.CENTER
                 })
 
                 grid.attach(leagueName, 0, offset, 3, 1);
@@ -141,43 +148,43 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
                 let homeSuffix = games[j].home.isWinner ? '--winner' : games[j].home.isLoser ? '--loser' : '';
                 let awaySuffix = games[j].away.isWinner ? '--winner' : games[j].away.isLoser ? '--loser' : '';
 
-                let homeLabel = new St.Label({ 
+                let homeLabel = new St.Label({
                     text: games[j].home.team,
                     style_class: 'team' + homeSuffix,
                     y_expand: true,
-                    y_align: Clutter.ActorAlign.CENTER 
+                    y_align: Clutter.ActorAlign.CENTER
                 });
 
-                let homeScore = new St.Label({ 
+                let homeScore = new St.Label({
                     text: games[j].home.score,
                     style_class: 'score' + homeSuffix,
                     y_expand: true,
-                    y_align: Clutter.ActorAlign.CENTER 
+                    y_align: Clutter.ActorAlign.CENTER
                 });
 
-                let gameMeta = new St.Label({ 
+                let gameMeta = new St.Label({
                     text: games[j].meta,
                     style_class: 'meta',
                     y_expand: true,
-                    y_align: Clutter.ActorAlign.CENTER 
+                    y_align: Clutter.ActorAlign.CENTER
                 });
-                
+
                 grid.attach(homeLabel, 0, homeRow, 1, 1);
                 grid.attach(homeScore, 1, homeRow, 1, 1);
                 grid.attach(gameMeta, 2, homeRow, 1, 1);
 
-                let awayLabel = new St.Label({ 
+                let awayLabel = new St.Label({
                     text: games[j].away.team,
                     style_class: 'team' + awaySuffix,
                     y_expand: true,
-                    y_align: Clutter.ActorAlign.CENTER 
+                    y_align: Clutter.ActorAlign.CENTER
                 });
 
-                let awayScore = new St.Label({ 
+                let awayScore = new St.Label({
                     text: games[j].away.score,
                     style_class: 'score' + awaySuffix,
                     y_expand: true,
-                    y_align: Clutter.ActorAlign.CENTER 
+                    y_align: Clutter.ActorAlign.CENTER
                 });
 
                 let gameLink = new GameLink(games[j].link);
@@ -186,11 +193,11 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
                 grid.attach(awayScore, 1, awayRow, 1, 1);
                 grid.attach(gameLink, 2, awayRow, 1, 1);
 
-                let div = new St.Label({ 
+                let div = new St.Label({
                     text: "",
                     style_class: 'divider',
                     y_expand: true,
-                    y_align: Clutter.ActorAlign.CENTER 
+                    y_align: Clutter.ActorAlign.CENTER
                 });
 
                 if (divider_row) {
@@ -202,10 +209,10 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
                 grid.insert_row(pos + 1);
                 grid.insert_column(pos + 1);
 
-                grid.attach(new St.Label({ 
+                grid.attach(new St.Label({
                     text: "",
                     y_expand: true,
-                    y_align: Clutter.ActorAlign.CENTER 
+                    y_align: Clutter.ActorAlign.CENTER
                 }), 0, pos + 1, 1, 1);
             }
 
@@ -246,7 +253,7 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
                     let grid = new Clutter.GridLayout();
                     grid.set_row_homogeneous(false);
                     grid.set_orientation(Clutter.Orientation.VERTICAL);
-                    
+
                     let g = new St.Widget({
                         style_class: 'scoreboard',
                         can_focus: false,
@@ -268,7 +275,7 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
                     hover: false,
                     activate: false
                 });
-                const scrollView = new St.ScrollView({ 
+                const scrollView = new St.ScrollView({
                     width: 295,
                     hscrollbar_policy: St.PolicyType.NEVER,
                     vscrollbar_policy: St.PolicyType.AUTOMATIC,
@@ -303,17 +310,17 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
             this.menu.removeAll();
 
             for (let i = 0; i < menus.length; i++) {
-                this.menu.addMenuItem(menus[i]);   
+                this.menu.addMenuItem(menus[i]);
             }
 
             this._setTopBarText();
 
             if (this._timeout) {
-                Mainloop.source_remove(this._timeout);
+                GLib.source_remove(this._timeout);
                 this._timeout = null;
             }
 
-            this._timeout = Mainloop.timeout_add_seconds(this._getUpdateSec(), this._update.bind(this));
+            this._timeout = GLib.timeout_add_seconds(this._getUpdateSec(), this._update.bind(this));
         }
 
         async _loadData() {
@@ -381,14 +388,21 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
         }
 
         destroy() {
-            this._client.session.abort();
+            this._client.destroy();
 
             if (this._timeout) {
-                Mainloop.source_remove(this._timeout);
+                GLib.source_remove(this._timeout);
                 this._timeout = undefined;
 
                 this.menu.removeAll();
             }
+
+            for (let signal of this._signalIds) {
+                if (this._settings && signal) {
+                    this._settings.disconnect(signal);
+                }
+            }
+            this._signalIds = [];
 
             super.destroy();
         }

@@ -424,4 +424,8 @@ var ColosseumClient = class ColosseumClient {
   isFollowOnlyEnabled() {
     return this._settings.get_boolean(this._CONSTANTS.PREF_FOLLOWED_ONLY);
   }
+
+  destroy() {
+    this.session.abort();
+  }
 };
