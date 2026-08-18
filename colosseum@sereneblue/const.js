@@ -1,3 +1,6 @@
+var USER_AGENT =
+  "Mozilla/5.0 (X11; Linux x86_64; rv:153.0) Gecko/20100101 Firefox/153.0";
+
 var PREF_UPDATE_FREQ = "update-frequency";
 var PREF_FOLLOWED_ONLY = "followed-only";
 var PREF_COMPACT_MODE = "compact-mode";

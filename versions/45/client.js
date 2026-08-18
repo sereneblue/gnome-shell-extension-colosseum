@@ -50,6 +50,7 @@ const STATUS = {
 export default class ColosseumClient {
   constructor(constants, settings) {
     this.session = new Soup.Session();
+    this.session.user_agent = constants.USER_AGENT;
     this.dateFmt = new Intl.DateTimeFormat("en", {
       month: "2-digit",
       day: "2-digit",
@@ -143,6 +144,11 @@ export default class ColosseumClient {
 
     for (let i = 0; i < urls.length; i++) {
       let message = Soup.Message.new("GET", urls[i]);
+      message.request_headers.replace(
+        "Accept",
+        "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      );
+      message.request_headers.replace("Accept-Language", "en-US,en;q=0.5");
 
       requests.push(
         new Promise((resolve, reject) => {
