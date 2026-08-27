@@ -234,6 +234,8 @@ export default class ColosseumClient {
         }
       } catch (error) {}
 
+      l.games = this.sortGamesByLive(l.games);
+
       if (l.games.length) {
         events.push(l);
       }
@@ -273,6 +275,8 @@ export default class ColosseumClient {
         }
       } catch (error) {}
 
+      l.games = this.sortGamesByLive(l.games);
+
       if (l.games.length) {
         events.push(l);
       }
@@ -284,6 +288,22 @@ export default class ColosseumClient {
   getDate(date) {
     let parts = this.dateFmt.format(date).split("/");
     return parts[2] + parts[0] + parts[1];
+  }
+
+  sortGamesByLive(games) {
+    let live = [];
+    let rest = [];
+
+    for (let i = 0; i < games.length; i++) {
+      if (games[i].live) {
+        live.push(games[i]);
+      } else {
+        rest.push(games[i]);
+      }
+    }
+
+    // live games first, everything else in the original (ESPN) order
+    return live.concat(rest);
   }
 
   parseEvent(evt) {
