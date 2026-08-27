@@ -541,46 +541,34 @@ export default class ColosseumClient {
   }
 
   _getTennisRound(round) {
-    if (!round || !round.displayName) {
+    if (!round) {
       return "";
     }
 
-    let name = round.displayName.toLowerCase();
-    let m = name.match(/round of (\d+)/);
-    if (m) {
-      return "R" + m[1];
+    // ESPN's round ids are a stable enum: 1-4 are the main draw rounds,
+    // 5/6/7 the finals stages and 11+ the qualifying draw.
+    let roundNames = {
+      "1": "R1",
+      "2": "R2",
+      "3": "R3",
+      "4": "R4",
+      "5": "QF",
+      "6": "SF",
+      "7": "F",
+      "11": "QR1",
+      "12": "QR2",
+      "13": "QR3",
+      "14": "QRF",
+    };
+
+    let abbr = roundNames[String(round.id)];
+    if (abbr) {
+      return abbr;
     }
 
-    m = name.match(/(?:round|r)\s*(\d+)/);
-    if (m) {
-      return "R" + m[1];
-    }
-
-    m = name.match(/(\d+)(?:st|nd|rd|th)?\s*round/);
-    if (m) {
-      return "R" + m[1];
-    }
-
-    if (name.indexOf("quarterfinal") !== -1) {
-      return "QF";
-    }
-    if (name.indexOf("semifinal") !== -1) {
-      return "SF";
-    }
-    if (name.indexOf("round robin") !== -1) {
-      return "RR";
-    }
-    if (name.indexOf("final") !== -1) {
-      return "F";
-    }
-    if (name.indexOf("bronze") !== -1) {
-      return "3rd";
-    }
-    if (name.indexOf("qualify") !== -1) {
-      return "Q";
-    }
-
-    return round.displayName;
+    // Unknown or missing round ids (round robin, bronze and other formats):
+    // fall back to the display name so nothing is lost.
+    return round.displayName || "";
   }
 
   getEnabledLeagues() {
