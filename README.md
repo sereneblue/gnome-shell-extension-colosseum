@@ -23,20 +23,34 @@ $ git clone https://github.com/sereneblue/gnome-shell-extension-colosseum.git
 $ cd gnome-shell-extension-colosseum
 ```
 
-GNOME 45+:
+`build.sh` takes two arguments: the GNOME Shell version target and the package mode.
+
+* **Version** — `45` (GNOME 45+, default) or `pre45` (GNOME 40-44)
+* **Mode** — `manual` (default) or `release`
+
+Build for a manual install:
 ```
-$ ./build.sh 45
+$ ./build.sh 45 manual      # GNOME 45+   -> colosseum_45.zip
+$ ./build.sh pre45 manual   # GNOME 40-44 -> colosseum_pre45.zip
 ```
 
-GNOME 40 - 44:
-```
-$ ./build.sh
-```
+The `manual` builds include a compiled schema (`gschemas.compiled`), so they
+can be extracted straight into the extensions directory.
 
 Extract the contents of the newly created zip file into:
 ```
 ~/.local/share/gnome-shell/extensions/colosseum@sereneblue
 ```
+
+Build a submission for extensions.gnome.org:
+```
+$ ./build.sh 45 release     # -> colosseum_45_release.zip
+$ ./build.sh pre45 release  # -> colosseum_pre45_release.zip
+```
+
+For the 45 build, `release` omits `gschemas.compiled`, as the GNOME 45+ shell
+compiles the bundled schema at install time. The `pre45` release keeps the
+compiled schema, since pre-45 shells do not compile it automatically.
 
 # Configuration
 
