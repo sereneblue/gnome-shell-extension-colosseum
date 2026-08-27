@@ -129,6 +129,8 @@ var ColosseumClient = class ColosseumClient {
         this.BASE_API_URL + "soccer/uefa.wchampions/scoreboard",
       ],
       WNBA: [this.BASE_API_URL + "basketball/wnba/scoreboard"],
+      "ATP": [this.BASE_API_URL + "tennis/atp/scoreboard"],
+      "WTA": [this.BASE_API_URL + "tennis/wta/scoreboard"],
     };
 
     this._CONSTANTS = constants;
@@ -254,6 +256,8 @@ var ColosseumClient = class ColosseumClient {
         }
       } catch (error) {}
 
+      l.games = this.sortGamesByLive(l.games);
+
       if (l.games.length) {
         events.push(l);
       }
@@ -275,11 +279,25 @@ var ColosseumClient = class ColosseumClient {
 
         for (let j = 0; j < data.length; j++) {
           for (let k = 0; k < data[j].events.length; k++) {
-            let e = this.parseEvent(data[j].events[k]);
-            l.games.push(e);
+            if (this._isTennis(l.league)) {
+              // tennis scoreboards return whole tournaments; flatten to matches
+              let matches = this.parseTennisEvent(
+                data[j].events[k],
+                this.getDate(scoreboardDate),
+                l.league === "ATP" ? "mens-singles" : "womens-singles",
+              );
+              for (let m = 0; m < matches.length; m++) {
+                l.games.push(matches[m]);
+              }
+            } else {
+              let e = this.parseEvent(data[j].events[k]);
+              l.games.push(e);
+            }
           }
         }
       } catch (error) {}
+
+      l.games = this.sortGamesByLive(l.games);
 
       if (l.games.length) {
         events.push(l);
@@ -292,6 +310,22 @@ var ColosseumClient = class ColosseumClient {
   getDate(date) {
     let parts = this.dateFmt.format(date).split("/");
     return parts[2] + parts[0] + parts[1];
+  }
+
+  sortGamesByLive(games) {
+    let live = [];
+    let rest = [];
+
+    for (let i = 0; i < games.length; i++) {
+      if (games[i].live) {
+        live.push(games[i]);
+      } else {
+        rest.push(games[i]);
+      }
+    }
+
+    // live games first, everything else in the original (ESPN) order
+    return live.concat(rest);
   }
 
   parseEvent(evt) {
@@ -375,6 +409,208 @@ var ColosseumClient = class ColosseumClient {
     }
 
     return event;
+  }
+
+  _isTennis(league) {
+    return league === "ATP" || league === "WTA";
+  }
+
+  // Tennis scoreboards return whole tournaments (an `event` = tournament) with
+  // all of their matches nested under `groupings[].competitions[]`. Flatten
+  // those into individual "games" so they render like any other league.
+  parseTennisEvent(evt, queryDate, drawSlug) {
+    let link = null;
+
+    for (let i = 0; i < (evt.links || []).length; i++) {
+      if (
+        evt.links[i].rel &&
+        evt.links[i].rel.indexOf("summary") >= 0
+      ) {
+        link = evt.links[i].href;
+        break;
+      }
+    }
+
+    let games = [];
+
+    for (let i = 0; i < (evt.groupings || []).length; i++) {
+      let competitions = evt.groupings[i].competitions || [];
+
+      for (let j = 0; j < competitions.length; j++) {
+        // A grand slam event carries every draw (men's/women's singles and
+        // doubles) regardless of tour slug, so keep only the requested draw.
+        if (competitions[j].type && competitions[j].type.slug !== drawSlug) {
+          continue;
+        }
+
+        let match = this.parseTennisMatch(competitions[j], link, queryDate);
+        if (match) {
+          games.push(match);
+        }
+      }
+    }
+
+    return games;
+  }
+
+  parseTennisMatch(comp, link, queryDate) {
+    if (
+      !comp ||
+      !comp.status ||
+      !comp.status.type ||
+      !comp.competitors ||
+      comp.competitors.length < 2
+    ) {
+      return null;
+    }
+
+    let status = comp.status.type;
+    let isLive = status.id === STATUS.IN_PROGRESS;
+
+    // An entire tournament's draw is returned for the week, so only keep
+    // matches that are live right now or scheduled/finished on the queried
+    // day. Canceled matches fall through to the other statuses below.
+    if (!isLive) {
+      let date =
+        (comp.date || "").slice(0, 4) +
+        (comp.date || "").slice(5, 7) +
+        (comp.date || "").slice(8, 10);
+
+      if (date !== queryDate) {
+        return null;
+      }
+    }
+
+    let competitors = comp.competitors;
+    let home = competitors.find((c) => c.homeAway === "home");
+    let away = competitors.find((c) => c.homeAway === "away");
+
+    if (!home) {
+      home = competitors[0];
+    }
+    if (!away) {
+      away = competitors[competitors.length - 1];
+    }
+
+    let setsWon = (competitor) => {
+      let sets = 0;
+      for (let i = 0; i < (competitor.linescores || []).length; i++) {
+        if (competitor.linescores[i].winner === true) {
+          sets++;
+        }
+      }
+      return sets;
+    };
+
+    let homeSets = setsWon(home);
+    let awaySets = setsWon(away);
+
+    let homeWon = "winner" in home ? home.winner === true : homeSets > awaySets;
+    let awayWon = "winner" in away ? away.winner === true : awaySets > homeSets;
+    let homeLost =
+      "winner" in home ? home.winner === false : homeSets < awaySets;
+    let awayLost =
+      "winner" in away ? away.winner === false : awaySets < homeSets;
+
+    let round = this._getTennisRound(comp.round);
+    let prefix = round ? `${round} \u00B7 ` : "";
+    let meta;
+
+    if (status.id === STATUS.SCHEDULED) {
+      meta =
+        prefix +
+        (comp.timeValid === false
+          ? "TBD"
+          : this.timeFmt.format(new Date(comp.date)));
+    } else if (status.id === STATUS.IN_PROGRESS) {
+      meta = prefix + (status.detail || status.shortDetail);
+    } else if (status.id === STATUS.FINAL) {
+      meta = prefix + "Final";
+    } else if (status.id === STATUS.RETIRED) {
+      meta = prefix + "Retired";
+    } else if (status.id === STATUS.CANCELLED) {
+      meta = prefix + "Canceled";
+    } else {
+      meta =
+        prefix +
+        (status.detail ||
+          status.shortDetail ||
+          status.description ||
+          status.name ||
+          "");
+    }
+
+    let event = {
+      live: isLive,
+      link: link,
+      isComplete: status.completed === true || status.state === "post",
+      home: {
+        id: home.id,
+        team:
+          (home.athlete &&
+            (home.athlete.shortName ||
+              home.athlete.displayName ||
+              home.athlete.fullName)) ||
+          "TBD",
+        teamAbbr: home.athlete ? home.athlete.shortName || "" : "",
+        score:
+          status.id === STATUS.SCHEDULED || status.id === STATUS.CANCELLED
+            ? ""
+            : String(homeSets),
+        isWinner: homeWon,
+        isLoser: homeLost,
+      },
+      away: {
+        id: away.id,
+        team:
+          (away.athlete &&
+            (away.athlete.shortName ||
+              away.athlete.displayName ||
+              away.athlete.fullName)) ||
+          "TBD",
+        teamAbbr: away.athlete ? away.athlete.shortName || "" : "",
+        score:
+          status.id === STATUS.SCHEDULED || status.id === STATUS.CANCELLED
+            ? ""
+            : String(awaySets),
+        isWinner: awayWon,
+        isLoser: awayLost,
+      },
+      meta: meta,
+    };
+
+    return event;
+  }
+
+  _getTennisRound(round) {
+    if (!round) {
+      return "";
+    }
+
+    // ESPN's round ids are a stable enum: 1-4 are the main draw rounds,
+    // 5/6/7 the finals stages and 11+ the qualifying draw.
+    let roundNames = {
+      "1": "R1",
+      "2": "R2",
+      "3": "R3",
+      "4": "R4",
+      "5": "QF",
+      "6": "SF",
+      "7": "F",
+      "11": "QR1",
+      "12": "QR2",
+      "13": "QR3",
+      "14": "QRF",
+    };
+
+    let abbr = roundNames[String(round.id)];
+    if (abbr) {
+      return abbr;
+    }
+
+    // Unknown or missing round ids (round robin, bronze and other formats):
+    // fall back to the display name so nothing is lost.
+    return round.displayName || "";
   }
 
   getEnabledLeagues() {

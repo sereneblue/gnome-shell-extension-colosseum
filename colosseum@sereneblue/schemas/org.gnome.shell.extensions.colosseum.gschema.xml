@@ -21,6 +21,10 @@
             <summary
             >Position of extension in Top Bar (0 for Left, 1 for Right)</summary>
         </key>
+        <key name="atp-enabled" type="b">
+            <default>false</default>
+            <summary>Enable ATP scoreboard</summary>
+        </key>
         <key name="bund-enabled" type="b">
             <default>false</default>
             <summary>Enable Bund scoreboard</summary>
@@ -132,6 +136,10 @@
         <key name="uefawomenchampions-enabled" type="b">
             <default>false</default>
             <summary>Enable UEFA Women's Champions League scoreboard</summary>
+        </key>
+        <key name="wta-enabled" type="b">
+            <default>false</default>
+            <summary>Enable WTA scoreboard</summary>
         </key>
         <key name="bund-hdh" type="b">
             <default>false</default>

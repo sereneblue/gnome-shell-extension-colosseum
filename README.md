@@ -88,10 +88,11 @@ There are 19 supported sports leagues:
 
 #### Tournaments
 
-There are 9 supported tournaments:
+There are 11 supported tournaments:
 
 	CONCACAF Gold Cup
 	Copa America
+	ATP
 	FA Cup
 	FIFA World Cup
 	Leagues Cup
@@ -99,3 +100,4 @@ There are 9 supported tournaments:
 	UEFA Europa League
 	UEFA European Championship
 	UEFA Women's Champions League
+	WTA

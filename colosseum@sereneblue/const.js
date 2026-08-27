@@ -51,6 +51,7 @@ var DISPLAY_NAME = {
 };
 
 var PREF_TOURNAMENTS = {
+  "ATP": "atp-enabled",
   "CONCACAF Gold Cup": "concacafgold-enabled",
   "Copa America": "conmebol-enabled",
   "FA Cup": "facup-enabled",
@@ -60,6 +61,7 @@ var PREF_TOURNAMENTS = {
   "UEFA European Championship": "uefaeuro-enabled",
   "UEFA Europa League": "uefaeuropa-enabled",
   "UEFA Women's Champions League": "uefawomenchampions-enabled",
+  "WTA": "wta-enabled",
 };
 
 var SPORTS = {
