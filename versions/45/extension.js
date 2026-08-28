@@ -95,6 +95,13 @@ const Colosseum = GObject.registerClass(
       this._timeout = null;
       this._settings = null;
       this._signalIds = [];
+      this._scoreboards = [];
+
+      this._stSettings = St.Settings.get();
+      this._colorSchemeSignalId = this._stSettings.connect(
+        "notify::color-scheme",
+        this._applyScoreboardTheme.bind(this),
+      );
 
       this._panelBoxLayout = new St.BoxLayout();
 
@@ -264,6 +271,7 @@ const Colosseum = GObject.registerClass(
 
     _createMenu() {
       let menus = [];
+      this._scoreboards = [];
 
       const HAS_COMPACT =
         this._isCompactMode() &&
@@ -280,6 +288,7 @@ const Colosseum = GObject.registerClass(
         reactive: false,
         layout_manager: compactGrid,
       });
+      this._scoreboards.push(compactWidget);
 
       let offset = 0;
 
@@ -313,6 +322,7 @@ const Colosseum = GObject.registerClass(
             reactive: false,
             layout_manager: grid,
           });
+          this._scoreboards.push(g);
 
           this._addGamesToGrid(grid, this._scores[i].games);
 
@@ -345,6 +355,7 @@ const Colosseum = GObject.registerClass(
         menus.unshift(baseMenuItem);
       }
 
+      this._applyScoreboardTheme();
       return menus;
     }
 
@@ -354,6 +365,23 @@ const Colosseum = GObject.registerClass(
 
     _isCompactMode() {
       return this._settings.get_boolean(CONSTANTS.PREF_COMPACT_MODE);
+    }
+
+    _isLightTheme() {
+      return (
+        typeof Main.getStyleVariant === "function" &&
+        Main.getStyleVariant() === "light"
+      );
+    }
+
+    _applyScoreboardTheme() {
+      const isLightTheme = this._isLightTheme();
+      for (let i = 0; i < this._scoreboards.length; i++) {
+        if (isLightTheme)
+          this._scoreboards[i].add_style_class_name("colosseum-theme-light");
+        else
+          this._scoreboards[i].remove_style_class_name("colosseum-theme-light");
+      }
     }
 
     async _update() {
@@ -450,6 +478,11 @@ const Colosseum = GObject.registerClass(
 
     destroy() {
       this._client.destroy();
+
+      if (this._stSettings && this._colorSchemeSignalId) {
+        this._stSettings.disconnect(this._colorSchemeSignalId);
+        this._colorSchemeSignalId = 0;
+      }
 
       if (this._timeout) {
         GLib.source_remove(this._timeout);
