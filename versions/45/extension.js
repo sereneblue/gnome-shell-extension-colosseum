@@ -84,6 +84,32 @@ const GameLink = GObject.registerClass(
     }
   },
 );
+const RefreshMenuItem = GObject.registerClass(
+  {
+    GTypeName: "ColosseumRefreshMenuItem",
+    Signals: {
+      refresh: {},
+    },
+  },
+  class RefreshMenuItem extends PopupMenu.PopupMenuItem {
+    _init() {
+      super._init("Refresh");
+    }
+
+    // Emit "refresh" instead of "activate" to keep the menu open.
+    activate(event) {
+      this.emit("refresh");
+    }
+
+    setLoading(loading) {
+      if (loading) {
+        this.label.set_text("Refreshing…");
+      } else {
+        this.label.set_text("Refresh");
+      }
+    }
+  },
+);
 
 const Colosseum = GObject.registerClass(
   { GTypeName: "Colosseum" },
@@ -102,6 +128,9 @@ const Colosseum = GObject.registerClass(
         "notify::color-scheme",
         this._applyScoreboardTheme.bind(this),
       );
+      this._updating = false;
+      this._refreshQueued = false;
+      this._refreshItem = null;
 
       this._panelBoxLayout = new St.BoxLayout();
 
@@ -143,6 +172,11 @@ const Colosseum = GObject.registerClass(
         this._update.bind(this),
       );
       this._signalIds.push(compactModeId);
+      let updateFreqId = this._settings.connect(
+        "changed::" + CONSTANTS.PREF_UPDATE_FREQ,
+        this._scheduleNextUpdate.bind(this),
+      );
+      this._signalIds.push(updateFreqId);
 
       this._client = new ColosseumClient(CONSTANTS, this._settings);
     }
@@ -356,6 +390,12 @@ const Colosseum = GObject.registerClass(
       }
 
       this._applyScoreboardTheme();
+      let refreshItem = new RefreshMenuItem();
+      refreshItem.connect("refresh", () => {
+        this._update().catch((e) => console.error(e));
+      });
+      this._refreshItem = refreshItem;
+      menus.push(refreshItem);
       return menus;
     }
 
@@ -385,16 +425,47 @@ const Colosseum = GObject.registerClass(
     }
 
     async _update() {
-      await this._loadData();
-      let menus = this._createMenu();
-      this.menu.removeAll();
-
-      for (let i = 0; i < menus.length; i++) {
-        this.menu.addMenuItem(menus[i]);
+      if (this._updating) {
+        this._refreshQueued = true;
+        return;
       }
 
-      this._setTopBarText();
+      if (this._refreshItem) {
+        this._refreshItem.setSensitive(false);
+        this._refreshItem.setLoading(true);
+      }
 
+      this._scheduleNextUpdate();
+
+      this._updating = true;
+      try {
+        await this._loadData();
+        let menus = this._createMenu();
+        this.menu.removeAll();
+
+        for (let i = 0; i < menus.length; i++) {
+          this.menu.addMenuItem(menus[i]);
+        }
+
+        this._setTopBarText();
+      } catch (e) {
+        // Swallow fetch errors; _update is fire-and-forget.
+        console.error(e);
+      } finally {
+        this._updating = false;
+        if (this._refreshItem) {
+          this._refreshItem.setSensitive(true);
+          this._refreshItem.setLoading(false);
+        }
+      }
+
+      if (this._refreshQueued) {
+        this._refreshQueued = false;
+        this._update().catch((e) => console.error(e));
+      }
+    }
+
+    _scheduleNextUpdate() {
       if (this._timeout) {
         GLib.source_remove(this._timeout);
         this._timeout = null;
@@ -403,7 +474,11 @@ const Colosseum = GObject.registerClass(
       this._timeout = GLib.timeout_add_seconds(
         GLib.PRIORITY_DEFAULT,
         this._getUpdateSec(),
-        this._update.bind(this),
+        () => {
+          this._timeout = null;
+          this._update().catch((e) => console.error(e));
+          return GLib.SOURCE_REMOVE;
+        },
       );
     }
 
@@ -509,7 +584,7 @@ export default class ColosseumExtension extends Extension {
     this.scores.setSettings(
       this.getSettings("org.gnome.shell.extensions.colosseum"),
     );
-    this.scores._update();
+    this.scores._update().catch((e) => console.error(e));
 
     Main.panel.addToStatusArea(
       "colosseum",
