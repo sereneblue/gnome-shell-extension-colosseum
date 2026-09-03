@@ -1,0 +1,85 @@
+#!/bin/bash
+# Pre-commit hook: run shexli against both supported build variants.
+#
+# Requires core.hooksPath=.githooks (one-time setup):
+#   git config core.hooksPath .githooks
+#
+# shexli resolution order:
+#   1. uv / uvx  (cached ephemeral env, no install needed)
+#   2. shexli on PATH
+#
+# tree-sitter is pinned <0.26 because 0.26.0 segfaults shexli's analysis
+# (stack overflow in the tree-sitter binding); combined with shexli's own
+# >=0.25 requirement this resolves to 0.25.x.
+#
+# Bypass (not recommended): git commit --no-verify
+
+set -uo pipefail
+
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$DIR"
+
+if command -v uv >/dev/null 2>&1 || command -v uvx >/dev/null 2>&1; then
+  # No local shexli? uvx provisions a cached ephemeral env on first run.
+  shexli() { uvx --from shexli --with 'tree-sitter<0.26' shexli "$@"; }
+elif command -v shexli >/dev/null 2>&1; then
+  shexli() { command shexli "$@"; }
+else
+  cat >&2 <<EOF
+No way to run shexli. Install one of:
+
+  uv (recommended)   curl -LsSf https://astral.sh/uv/install.sh | sh
+  pipx               pipx install shexli 'tree-sitter<0.26'
+
+Or bypass this check with: git commit --no-verify
+EOF
+  exit 1
+fi
+
+status=0
+
+for VERSION in 45 pre45; do
+  echo "==> shexli: checking ${VERSION} build"
+
+  # Build the variant as a zip in the repo root (gitignored), lint it,
+  # then remove it. stderr from build.sh is kept for real errors.
+  # Release mode is what gets submitted to extensions.gnome.org, so it's
+  # what we lint (manual mode ships schemas/gschemas.compiled for 45,
+  # which shexli correctly flags for EGO review but is intentional there).
+  if ! bash build.sh "$VERSION" release >/dev/null; then
+    echo "shexli: build.sh failed for ${VERSION}; cannot lint." >&2
+    status=1
+    continue
+  fi
+
+  ZIP="colosseum_${VERSION}_release.zip"
+  if [[ ! -f "$ZIP" ]]; then
+    echo "shexli: expected $ZIP was not produced by build.sh." >&2
+    status=1
+    continue
+  fi
+
+  # shexli's zip handling segfaults (upstream bug), and it requires
+  # absolute paths anyway, so lint the extracted package directory.
+  LINT_DIR="$(mktemp -d)"
+  unzip -q "$ZIP" -d "$LINT_DIR"
+  OUTPUT="$(shexli --format text "$LINT_DIR" 2>&1)" || true
+  rm -rf "$LINT_DIR"
+
+  if echo "$OUTPUT" | head -n 1 | grep -q "^shexli: clean"; then
+    echo "    ${VERSION}: clean"
+  else
+    echo "$OUTPUT"
+    status=1
+  fi
+
+  rm -f "$ZIP"
+done
+
+if [[ $status -ne 0 ]]; then
+  echo
+  echo "shexli reported issues; commit aborted."
+  echo "Fix the findings above, or commit anyway with: git commit --no-verify"
+fi
+
+exit "$status"
