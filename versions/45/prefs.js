@@ -332,9 +332,20 @@ const TournamentRow = GObject.registerClass(
 
 export default class ColosseumPreferences extends ExtensionPreferences {
   fillPreferencesWindow(window) {
-    let preferences = new Preferences(
-      window,
-      this.getSettings("org.gnome.shell.extensions.colosseum"),
-    );
+    try {
+      new Preferences(
+        window,
+        this.getSettings("org.gnome.shell.extensions.colosseum"),
+      );
+    } catch (e) {
+      console.error(`colosseum: failed to build preferences window: ${e}`);
+
+      const errorLabel = new Gtk.Label({
+        label: "colosseum: failed to load the preferences window.\nSee Looking Glass logs for details.",
+        wrap: true,
+      });
+
+      window.set_content(new Adw.Bin({ child: errorLabel }));
+    }
   }
 }

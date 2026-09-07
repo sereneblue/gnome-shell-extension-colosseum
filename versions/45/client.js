@@ -1,6 +1,10 @@
 import GLib from "gi://GLib";
 import Soup from "gi://Soup";
 
+function warn(message) {
+  console.warn(message);
+}
+
 const STATUS = {
   TBD: "0",
   SCHEDULED: "1",
@@ -51,6 +55,7 @@ export default class ColosseumClient {
   constructor(constants, settings) {
     this.session = new Soup.Session();
     this.session.user_agent = constants.USER_AGENT;
+    this.session.timeout = 30;
     this.dateFmt = new Intl.DateTimeFormat("en", {
       month: "2-digit",
       day: "2-digit",
@@ -138,6 +143,11 @@ export default class ColosseumClient {
   }
 
   getLeagueScoreboard(league, date, cacheBuster) {
+    if (!this.API_URLS[league]) {
+      warn(`colosseum: no API URL configured for league "${league}"`);
+      return Promise.resolve([]);
+    }
+
     let urls = this.API_URLS[league].map(
       (l) => `${l}?limit=1000&dates=${date}&${cacheBuster}`,
     );
@@ -146,6 +156,14 @@ export default class ColosseumClient {
 
     for (let i = 0; i < urls.length; i++) {
       let message = Soup.Message.new("GET", urls[i]);
+
+      if (!message) {
+        warn(
+          `colosseum: failed to build request for URL "${urls[i]}"`,
+        );
+        continue;
+      }
+
       message.request_headers.replace(
         "Accept",
         "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -153,26 +171,40 @@ export default class ColosseumClient {
       message.request_headers.replace("Accept-Language", "en-US,en;q=0.5");
 
       requests.push(
-        new Promise((resolve, reject) => {
-          this.session.send_and_read_async(
-            message,
-            GLib.PRIORITY_DEFAULT,
-            null,
-            function (session, res) {
-              let data = session.send_and_read_finish(res);
-
-              if (data) {
+        new Promise((resolve) => {
+          try {
+            this.session.send_and_read_async(
+              message,
+              GLib.PRIORITY_DEFAULT,
+              null,
+              (session, res) => {
                 try {
-                  data = this._decoder.decode(data.toArray());
-                  resolve(JSON.parse(data));
+                  let data = session.send_and_read_finish(res);
+
+                  if (
+                    !data ||
+                    message.status_code !== Soup.Status.OK
+                  ) {
+                    warn(
+                      `colosseum: request to "${urls[i]}" failed with status ${message.status_code}`,
+                    );
+                    resolve([]);
+                    return;
+                  }
+
+                  resolve(JSON.parse(this._decoder.decode(data.toArray())));
                 } catch (e) {
+                  warn(
+                    `colosseum: request to "${urls[i]}" failed: ${e}`,
+                  );
                   resolve([]);
                 }
-              } else {
-                resolve([]);
-              }
-            }.bind(this),
-          );
+              },
+            );
+          } catch (e) {
+            warn(`colosseum: request to "${urls[i]}" failed: ${e}`);
+            resolve([]);
+          }
         }),
       );
     }
@@ -212,8 +244,14 @@ export default class ColosseumClient {
         );
 
         for (let j = 0; j < data.length; j++) {
-          for (let k = 0; k < data[j].events.length; k++) {
-            let e = this.parseEvent(data[j].events[k]);
+          let events = data[j] && data[j].events ? data[j].events : [];
+
+          for (let k = 0; k < events.length; k++) {
+            let e = this.parseEvent(events[k]);
+
+            if (!e) {
+              continue;
+            }
 
             let isFollowedTeam = [e.home.id, e.away.id].some(
               (t) => followedTeams.indexOf(t) >= 0,
@@ -232,7 +270,11 @@ export default class ColosseumClient {
             }
           }
         }
-      } catch (error) {}
+      } catch (error) {
+        warn(
+          `colosseum: failed to load scoreboard for league "${l.league}": ${error}`,
+        );
+      }
 
       l.games = this.sortGamesByLive(l.games);
 
@@ -256,11 +298,13 @@ export default class ColosseumClient {
         );
 
         for (let j = 0; j < data.length; j++) {
-          for (let k = 0; k < data[j].events.length; k++) {
+          let events = data[j] && data[j].events ? data[j].events : [];
+
+          for (let k = 0; k < events.length; k++) {
             if (this._isTennis(l.league)) {
               // tennis scoreboards return whole tournaments; flatten to matches
               let matches = this.parseTennisEvent(
-                data[j].events[k],
+                events[k],
                 this.getDate(scoreboardDate),
                 l.league === "ATP" ? "mens-singles" : "womens-singles",
               );
@@ -268,12 +312,19 @@ export default class ColosseumClient {
                 l.games.push(matches[m]);
               }
             } else {
-              let e = this.parseEvent(data[j].events[k]);
-              l.games.push(e);
+              let e = this.parseEvent(events[k]);
+
+              if (e) {
+                l.games.push(e);
+              }
             }
           }
         }
-      } catch (error) {}
+      } catch (error) {
+        warn(
+          `colosseum: failed to load scoreboard for tournament "${l.league}": ${error}`,
+        );
+      }
 
       l.games = this.sortGamesByLive(l.games);
 
@@ -306,13 +357,38 @@ export default class ColosseumClient {
     return live.concat(rest);
   }
 
+  _formatEventTime(dateStr) {
+    let date = dateStr ? new Date(dateStr) : null;
+
+    if (!date || isNaN(date.getTime())) {
+      return null;
+    }
+
+    return this.timeFmt.format(date);
+  }
+
   parseEvent(evt) {
+    if (
+      !evt ||
+      !evt.status ||
+      !evt.status.type ||
+      !evt.competitions ||
+      !evt.competitions[0] ||
+      !evt.competitions[0].competitors
+    ) {
+      return null;
+    }
+
     let home = evt.competitions[0].competitors.find(
       (c) => c.homeAway === "home",
     );
     let away = evt.competitions[0].competitors.find(
       (c) => c.homeAway === "away",
     );
+
+    if (!home || !away) {
+      return null;
+    }
 
     let event = {};
 
@@ -348,7 +424,8 @@ export default class ColosseumClient {
     ) {
       event.home.score = "";
       event.away.score = "";
-      event.meta = this.timeFmt.format(new Date(evt.date));
+      event.meta =
+        this._formatEventTime(evt.date) || evt.status.type.shortDetail || "";
     } else if (
       evt.status.type.id === STATUS.FINAL ||
       evt.status.type.id === STATUS.FINAL_SCORE_ABANDONED ||
@@ -373,7 +450,7 @@ export default class ColosseumClient {
       evt.status.type.id === STATUS.FIXTURE_NO_LIVE_COVERAGE
     ) {
       event.live = true;
-      event.meta = evt.status.type.shortDetail;
+      event.meta = evt.status.type.shortDetail || "";
     } else if (evt.status.type.id === STATUS.POSTPONED) {
       event.isComplete = true;
       event.meta = "Post";
@@ -383,7 +460,7 @@ export default class ColosseumClient {
     } else {
       event.home.score = event.isComplete ? home.score : "";
       event.away.score = event.isComplete ? away.score : "";
-      event.meta = evt.status.type.shortDetail;
+      event.meta = evt.status.type.shortDetail || "";
     }
 
     return event;
@@ -499,7 +576,7 @@ export default class ColosseumClient {
         prefix +
         (comp.timeValid === false
           ? "TBD"
-          : this.timeFmt.format(new Date(comp.date)));
+          : this._formatEventTime(comp.date) || "TBD");
     } else if (status.id === STATUS.IN_PROGRESS) {
       meta = prefix + (status.detail || status.shortDetail);
     } else if (status.id === STATUS.FINAL) {

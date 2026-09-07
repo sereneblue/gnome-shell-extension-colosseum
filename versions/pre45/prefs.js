@@ -291,8 +291,18 @@ const TournamentRow = GObject.registerClass(
 function init() {}
 
 function buildPrefsWidget() {
-  let c = new colosseum();
-  c.show();
+  try {
+    let c = new colosseum();
+    c.show();
 
-  return c;
+    return c;
+  } catch (e) {
+    logError(e);
+
+    return new Gtk.Label({
+      label:
+        "colosseum: failed to load the preferences window.\nSee logs for details.",
+      wrap: true,
+    });
+  }
 }

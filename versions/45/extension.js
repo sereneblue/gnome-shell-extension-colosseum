@@ -14,6 +14,10 @@ import * as CONSTANTS from "./const.js";
 import ColosseumClient from "./client.js";
 import { Extension } from "resource:///org/gnome/shell/extensions/extension.js";
 
+function warn(message) {
+  console.warn(message);
+}
+
 const EXT_PATH = import.meta.url;
 
 const GameLink = GObject.registerClass(
@@ -39,13 +43,17 @@ const GameLink = GObject.registerClass(
     }
 
     vfunc_button_release_event(event) {
-      if (!this.visible || this.get_paint_opacity() === 0)
+      if (!this.visible || this.get_paint_opacity() === 0 || !this._url)
         return Clutter.EVENT_PROPAGATE;
 
-      Gio.app_info_launch_default_for_uri(
-        this._url,
-        global.create_app_launch_context(0, -1),
-      );
+      try {
+        Gio.app_info_launch_default_for_uri(
+          this._url,
+          global.create_app_launch_context(0, -1),
+        );
+      } catch (e) {
+        warn(`colosseum: failed to open "${this._url}": ${e}`);
+      }
 
       return Clutter.EVENT_STOP;
     }
@@ -131,6 +139,7 @@ const Colosseum = GObject.registerClass(
       this._updating = false;
       this._refreshQueued = false;
       this._refreshItem = null;
+      this._destroyed = false;
 
       this._panelBoxLayout = new St.BoxLayout();
 
@@ -392,7 +401,9 @@ const Colosseum = GObject.registerClass(
       this._applyScoreboardTheme();
       let refreshItem = new RefreshMenuItem();
       refreshItem.connect("refresh", () => {
-        this._update().catch((e) => console.error(e));
+        this._update().catch((e) => {
+          warn(`colosseum: manual refresh failed: ${e}`);
+        });
       });
       this._refreshItem = refreshItem;
       menus.push(refreshItem);
@@ -440,6 +451,11 @@ const Colosseum = GObject.registerClass(
       this._updating = true;
       try {
         await this._loadData();
+
+        if (this._destroyed) {
+          return;
+        }
+
         let menus = this._createMenu();
         this.menu.removeAll();
 
@@ -449,8 +465,7 @@ const Colosseum = GObject.registerClass(
 
         this._setTopBarText();
       } catch (e) {
-        // Swallow fetch errors; _update is fire-and-forget.
-        console.error(e);
+        warn(`colosseum: scoreboard update failed: ${e}`);
       } finally {
         this._updating = false;
         if (this._refreshItem) {
@@ -461,7 +476,9 @@ const Colosseum = GObject.registerClass(
 
       if (this._refreshQueued) {
         this._refreshQueued = false;
-        this._update().catch((e) => console.error(e));
+        this._update().catch((e) => {
+          warn(`colosseum: queued update failed: ${e}`);
+        });
       }
     }
 
@@ -476,7 +493,9 @@ const Colosseum = GObject.registerClass(
         this._getUpdateSec(),
         () => {
           this._timeout = null;
-          this._update().catch((e) => console.error(e));
+          this._update().catch((e) => {
+            warn(`colosseum: scheduled update failed: ${e}`);
+          });
           return GLib.SOURCE_REMOVE;
         },
       );
@@ -536,7 +555,12 @@ const Colosseum = GObject.registerClass(
     }
 
     _updatePositionInPanel() {
-      this.container.get_parent().remove_actor(this.container);
+      let parent = this.container.get_parent();
+      if (!parent) {
+        return;
+      }
+
+      parent.remove_actor(this.container);
 
       let boxes = {
         left: Main.panel._leftBox,
@@ -552,7 +576,11 @@ const Colosseum = GObject.registerClass(
     }
 
     destroy() {
-      this._client.destroy();
+      this._destroyed = true;
+
+      if (this._client) {
+        this._client.destroy();
+      }
 
       if (this._stSettings && this._colorSchemeSignalId) {
         this._stSettings.disconnect(this._colorSchemeSignalId);
@@ -584,7 +612,9 @@ export default class ColosseumExtension extends Extension {
     this.scores.setSettings(
       this.getSettings("org.gnome.shell.extensions.colosseum"),
     );
-    this.scores._update().catch((e) => console.error(e));
+    this.scores._update().catch((e) => {
+      warn(`colosseum: initial update failed: ${e}`);
+    });
 
     Main.panel.addToStatusArea(
       "colosseum",
