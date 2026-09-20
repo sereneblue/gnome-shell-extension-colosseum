@@ -107,7 +107,7 @@ var SPORTS = {
     // { id: 9707, name: "Fortuna Düsseldorf", pref: "bund2-f95" },
     // { id: 127, name: "Hamburg SV", pref: "bund2-hsv" },
     { id: 2428, name: "Hannover 96", pref: "bund2-h96" },
-    // { id: 128, name: "Hansa Rostock", pref: "bund2-fch" },
+    // { id: 128, name: "Hansa Rostock", pref: "bund2-hro" },
     { id: 129, name: "Hertha Berlin", pref: "bund2-hert" },
     { id: 7884, name: "Holstein Kiel", pref: "bund2-kie" },
     { id: 130, name: "Kaiserslautern", pref: "bund2-fck" },

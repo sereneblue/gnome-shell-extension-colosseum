@@ -283,6 +283,10 @@
         </key>
         <key name="bund2-fch" type="b">
             <default>false</default>
+            <summary>Follow Bund2 team: 1. FC Heidenheim 1846</summary>
+        </key>
+        <key name="bund2-hro" type="b">
+            <default>false</default>
             <summary>Follow Bund2 team: Hansa Rostock</summary>
         </key>
         <key name="bund2-hert" type="b">
@@ -315,7 +319,7 @@
         </key>
         <key name="bund2-spgf" type="b">
             <default>false</default>
-            <summary>Follow Bund team: SpVgg Greuther Furth</summary>
+            <summary>Follow Bund2 team: SpVgg Greuther Fürth</summary>
         </key>
         <key name="bund2-stp" type="b">
             <default>false</default>
@@ -351,11 +355,7 @@
         </key>
         <key name="bund2-svd" type="b">
             <default>false</default>
-            <summary>Follow Bund2 team: SV Darmstadt</summary>
-        </key>
-        <key name="bund2-hdh" type="b">
-            <default>false</default>
-            <summary>Follow Bund2 team: FC Heidenheim</summary>
+            <summary>Follow Bund2 team: SV Darmstadt 98</summary>
         </key>
         <key name="bund2-ssv" type="b">
             <default>false</default>
