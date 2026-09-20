@@ -3,7 +3,7 @@ set -euo pipefail
 
 # --- release metadata -------------------------------------------------------
 VERSION_NUMBER_45=45
-VERSION_NUMBER_PRE45=44
+VERSION_NUMBER_PRE45=46
 
 UUID="colosseum@sereneblue"
 NAME="Colosseum"
