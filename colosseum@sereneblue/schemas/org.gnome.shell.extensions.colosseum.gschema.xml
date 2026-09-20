@@ -6711,7 +6711,7 @@
         </key>
         <key name="ncaaw-cark" type="b">
             <default>false</default>
-            <summary>Follow NCAAW team: Central Arkansas Sugar Bears</summary>
+            <summary>Follow NCAAW team: Central Arkansas Bears</summary>
         </key>
         <key name="ncaaw-ccsu" type="b">
             <default>false</default>
@@ -6969,7 +6969,7 @@
         </key>
         <key name="ncaaw-haw" type="b">
             <default>false</default>
-            <summary>Follow NCAAW team: Hawai'i Rainbow Wahine</summary>
+            <summary>Follow NCAAW team: Hawai'i Rainbow Warriors</summary>
         </key>
         <key name="ncaaw-hp" type="b">
             <default>false</default>
@@ -7314,7 +7314,7 @@
         </key>
         <key name="ncaaw-uno" type="b">
             <default>false</default>
-            <summary>Follow NCAAW team: New Orleans Privateers</summary>
+            <summary>Follow NCAAW team: LSU New Orleans Privateers</summary>
         </key>
         <key name="ncaaw-nia" type="b">
             <default>false</default>
@@ -7675,7 +7675,7 @@
         </key>
         <key name="ncaaw-stmn" type="b">
             <default>false</default>
-            <summary>Follow NCAAW team: St. Thomas-Minnesota Tommies</summary>
+            <summary>Follow NCAAW team: St. Thomas Tommies</summary>
         </key>
         <key name="ncaaw-stan" type="b">
             <default>false</default>
@@ -7933,6 +7933,14 @@
         <key name="ncaaw-web" type="b">
             <default>false</default>
             <summary>Follow NCAAW team: Weber State Wildcats</summary>
+        </key>
+        <key name="ncaaw-wfa" type="b">
+            <default>false</default>
+            <summary>Follow NCAAW team: West Florida Argonauts</summary>
+        </key>
+        <key name="ncaaw-wga" type="b">
+            <default>false</default>
+            <summary>Follow NCAAW team: West Georgia Wolves</summary>
         </key>
         <key name="ncaaw-wvu" type="b">
             <default>false</default>
