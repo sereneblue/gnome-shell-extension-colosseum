@@ -5858,7 +5858,7 @@
         </key>
         <key name="ncaam-uno" type="b">
             <default>false</default>
-            <summary>Follow NCAAM team: New Orleans Privateers</summary>
+            <summary>Follow NCAAM team: LSU New Orleans Privateers</summary>
         </key>
         <key name="ncaam-nia" type="b">
             <default>false</default>
@@ -6198,6 +6198,10 @@
             <default>false</default>
             <summary>Follow NCAAM team: St. Bonaventure Bonnies</summary>
         </key>
+        <key name="ncaam-wfa" type="b">
+            <default>false</default>
+            <summary>Follow NCAAM team: West Florida Argonauts</summary>
+        </key>
         <key name="ncaam-sfpa" type="b">
             <default>false</default>
             <summary>Follow NCAAM team: St. Francis Red Flash</summary>
@@ -6208,7 +6212,7 @@
         </key>
         <key name="ncaam-stmn" type="b">
             <default>false</default>
-            <summary>Follow NCAAM team: St. Thomas-Minnesota Tommies</summary>
+            <summary>Follow NCAAM team: St. Thomas Tommies</summary>
         </key>
         <key name="ncaam-stan" type="b">
             <default>false</default>
