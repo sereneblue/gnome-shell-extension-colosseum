@@ -1,7 +1,20 @@
 #!/bin/bash
+set -euo pipefail
+
+# --- release metadata -------------------------------------------------------
+VERSION_NUMBER_45=45
+VERSION_NUMBER_PRE45=44
+
+UUID="colosseum@sereneblue"
+NAME="Colosseum"
+DESCRIPTION="View live scores for your favorite sports teams."
+URL="https://github.com/sereneblue/gnome-shell-extension-colosseum"
+SHELL_VERSIONS_PRE45="40 41 42 43 44"
+SHELL_VERSIONS_45="45 46 47 48 49 50 51"
+# ----------------------------------------------------------------------------
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-WORK_DIR=`mktemp -d -p "$DIR"`
+WORK_DIR=$(mktemp -d -p "$DIR")
 
 function cleanup {
   rm -rf "$WORK_DIR"
@@ -49,13 +62,32 @@ fi
 cp -r colosseum@sereneblue/* $WORK_DIR
 cp -r "versions/$VERSION"/* $WORK_DIR
 
+version_number="$VERSION_NUMBER_45"
+shell_versions="$SHELL_VERSIONS_45"
+if [[ "$VERSION" = "pre45" ]]; then
+  version_number="$VERSION_NUMBER_PRE45"
+  shell_versions="$SHELL_VERSIONS_PRE45"
+fi
+json_shell_versions=$(printf '"%s", ' $shell_versions)
+json_shell_versions="[${json_shell_versions%, }]"
+
+cat > "$WORK_DIR/metadata.json" <<EOF
+{
+  "name": "$NAME",
+  "description": "$DESCRIPTION",
+  "url": "$URL",
+  "uuid": "$UUID",
+  "version": $version_number,
+  "shell-version": $json_shell_versions
+}
+EOF
+
 pushd $WORK_DIR >/dev/null
 
 if [[ $VERSION = "45" ]]; then
-  mv ui/prefs_adw.ui ui/prefs.ui
-  mv ui/league-row_adw.ui ui/league-row.ui
-  mv ui/tournament-row_adw.ui ui/tournament-row.ui
-
+  for ui in prefs league-row tournament-row; do
+    mv "ui/${ui}_adw.ui" "ui/${ui}.ui"
+  done
   sed -i -e 's/var/export const/g' ./const.js
 else
   rm ui/*_adw.ui
@@ -80,8 +112,8 @@ if [[ $VERSION = "45" && $MODE = "release" ]]; then
   ZIP+=(-x "schemas/gschemas.compiled")
 fi
 
-zip "${ZIP[@]}"
+zip "${ZIP[@]}" >/dev/null
 
 popd >/dev/null
 
-echo "Built ${DIR}/${OUTPUT}.zip ($MODE)"
+echo "Built ${DIR}/${OUTPUT}.zip ($MODE, shell version $version_number)"
