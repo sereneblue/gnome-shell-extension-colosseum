@@ -420,7 +420,6 @@ const Colosseum = GObject.registerClass(
 
     _isLightTheme() {
       return (
-        typeof Main.getStyleVariant === "function" &&
         Main.getStyleVariant() === "light"
       );
     }
