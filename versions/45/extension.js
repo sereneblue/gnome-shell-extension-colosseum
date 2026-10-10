@@ -139,7 +139,7 @@ const Colosseum = GObject.registerClass(
       this._updating = false;
       this._refreshQueued = false;
       this._refreshItem = null;
-      this._destroyed = false;
+      this._cancellable = new Gio.Cancellable();
 
       this._panelBoxLayout = new St.BoxLayout();
 
@@ -187,7 +187,7 @@ const Colosseum = GObject.registerClass(
       );
       this._signalIds.push(updateFreqId);
 
-      this._client = new ColosseumClient(CONSTANTS, this._settings);
+      this._client = new ColosseumClient(CONSTANTS, this._settings, this._cancellable);
     }
 
     _addGamesToGrid(grid, games, offset = 0, league = null) {
@@ -435,6 +435,10 @@ const Colosseum = GObject.registerClass(
     }
 
     async _update() {
+      if (this._cancellable.is_cancelled()) {
+        return;
+      }
+
       if (this._updating) {
         this._refreshQueued = true;
         return;
@@ -451,7 +455,7 @@ const Colosseum = GObject.registerClass(
       try {
         await this._loadData();
 
-        if (this._destroyed) {
+        if (this._cancellable.is_cancelled()) {
           return;
         }
 
@@ -575,22 +579,18 @@ const Colosseum = GObject.registerClass(
     }
 
     destroy() {
-      this._destroyed = true;
+      this._cancellable.cancel();
+      this._client?.destroy();
+      this._client = null;
 
-      if (this._client) {
-        this._client.destroy();
+      if (this._timeout) {
+        GLib.source_remove(this._timeout);
+        this._timeout = null;
       }
 
       if (this._stSettings && this._colorSchemeSignalId) {
         this._stSettings.disconnect(this._colorSchemeSignalId);
         this._colorSchemeSignalId = 0;
-      }
-
-      if (this._timeout) {
-        GLib.source_remove(this._timeout);
-        this._timeout = undefined;
-
-        this.menu.removeAll();
       }
 
       for (const signal of this._signalIds) {
@@ -599,6 +599,10 @@ const Colosseum = GObject.registerClass(
         }
       }
       this._signalIds = [];
+
+      this._refreshQueued = false;
+      this._refreshItem = null;
+      this.menu.removeAll();
 
       super.destroy();
     }

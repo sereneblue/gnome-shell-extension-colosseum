@@ -115,7 +115,7 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
             this._updating = false;
             this._refreshQueued = false;
             this._refreshItem = null;
-            this._destroyed = false;
+            this._cancellable = new Gio.Cancellable();
 
             this._settings = ExtensionUtils.getSettings("org.gnome.shell.extensions.colosseum");
 
@@ -130,7 +130,7 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
             let updateFreqId = this._settings.connect('changed::' + CONSTANTS.PREF_UPDATE_FREQ, this._scheduleNextUpdate.bind(this));
             this._signalIds.push(updateFreqId);
 
-            this._client = new Client.ColosseumClient(CONSTANTS, this._settings);
+            this._client = new Client.ColosseumClient(CONSTANTS, this._settings, this._cancellable);
 
             this._panelBoxLayout = new St.BoxLayout();
 
@@ -352,6 +352,10 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
         }
 
         async _update() {
+            if (this._cancellable.is_cancelled()) {
+                return;
+            }
+
             if (this._updating) {
                 this._refreshQueued = true;
                 return;
@@ -368,7 +372,7 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
             try {
                 await this._loadData();
 
-                if (this._destroyed) {
+                if (this._cancellable.is_cancelled()) {
                     return;
                 }
 
@@ -481,17 +485,16 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
         }
 
         destroy() {
-            this._destroyed = true;
+            this._cancellable.cancel();
 
             if (this._client) {
                 this._client.destroy();
+                this._client = null;
             }
 
             if (this._timeout) {
                 GLib.source_remove(this._timeout);
-                this._timeout = undefined;
-
-                this.menu.removeAll();
+                this._timeout = null;
             }
 
             for (let signal of this._signalIds) {
@@ -500,6 +503,10 @@ const Colosseum = GObject.registerClass({ GTypeName: 'Colosseum'},
                 }
             }
             this._signalIds = [];
+
+            this._refreshQueued = false;
+            this._refreshItem = null;
+            this.menu.removeAll();
 
             super.destroy();
         }

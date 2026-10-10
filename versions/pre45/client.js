@@ -57,7 +57,8 @@ const STATUS = {
 };
 
 var ColosseumClient = class ColosseumClient {
-  constructor(constants, settings) {
+  constructor(constants, settings, cancellable) {
+    this._cancellable = cancellable;
     this.session = new Soup.Session();
     this.session.user_agent = constants.USER_AGENT;
     this.session.timeout = 30;
@@ -198,7 +199,7 @@ var ColosseumClient = class ColosseumClient {
               this.session.send_and_read_async(
                 message,
                 GLib.PRIORITY_DEFAULT,
-                null,
+                this._cancellable,
                 function (session, res) {
                   try {
                     let data = session.send_and_read_finish(res);
