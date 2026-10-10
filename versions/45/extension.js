@@ -401,9 +401,7 @@ const Colosseum = GObject.registerClass(
       this._applyScoreboardTheme();
       let refreshItem = new RefreshMenuItem();
       refreshItem.connect("refresh", () => {
-        this._update().catch((e) => {
-          warn(`colosseum: manual refresh failed: ${e}`);
-        });
+        this._update();
       });
       this._refreshItem = refreshItem;
       menus.push(refreshItem);
@@ -479,9 +477,7 @@ const Colosseum = GObject.registerClass(
 
       if (this._refreshQueued) {
         this._refreshQueued = false;
-        this._update().catch((e) => {
-          warn(`colosseum: queued update failed: ${e}`);
-        });
+        this._update();
       }
     }
 
@@ -496,9 +492,7 @@ const Colosseum = GObject.registerClass(
         this._getUpdateSec(),
         () => {
           this._timeout = null;
-          this._update().catch((e) => {
-            warn(`colosseum: scheduled update failed: ${e}`);
-          });
+          this._update();
           return GLib.SOURCE_REMOVE;
         },
       );
@@ -615,9 +609,7 @@ export default class ColosseumExtension extends Extension {
     this.scores.setSettings(
       this.getSettings("org.gnome.shell.extensions.colosseum"),
     );
-    this.scores._update().catch((e) => {
-      warn(`colosseum: initial update failed: ${e}`);
-    });
+    this.scores._update();
 
     Main.panel.addToStatusArea(
       "colosseum",

@@ -173,39 +173,34 @@ export default class ColosseumClient {
 
       requests.push(
         new Promise((resolve) => {
-          try {
-            this.session.send_and_read_async(
-              message,
-              GLib.PRIORITY_DEFAULT,
-              this._cancellable,
-              (session, res) => {
-                try {
-                  let data = session.send_and_read_finish(res);
+          this.session.send_and_read_async(
+            message,
+            GLib.PRIORITY_DEFAULT,
+            this._cancellable,
+            (session, res) => {
+              try {
+                let data = session.send_and_read_finish(res);
 
-                  if (
-                    !data ||
-                    message.status_code !== Soup.Status.OK
-                  ) {
-                    warn(
-                      `colosseum: request to "${urls[i]}" failed with status ${message.status_code}`,
-                    );
-                    resolve([]);
-                    return;
-                  }
-
-                  resolve(JSON.parse(this._decoder.decode(data.toArray())));
-                } catch (e) {
+                if (
+                  !data ||
+                  message.status_code !== Soup.Status.OK
+                ) {
                   warn(
-                    `colosseum: request to "${urls[i]}" failed: ${e}`,
+                    `colosseum: request to "${urls[i]}" failed with status ${message.status_code}`,
                   );
                   resolve([]);
+                  return;
                 }
-              },
-            );
-          } catch (e) {
-            warn(`colosseum: request to "${urls[i]}" failed: ${e}`);
-            resolve([]);
-          }
+
+                resolve(JSON.parse(this._decoder.decode(data.toArray())));
+              } catch (e) {
+                warn(
+                  `colosseum: request to "${urls[i]}" failed: ${e}`,
+                );
+                resolve([]);
+              }
+            },
+          );
         }),
       );
     }
@@ -237,44 +232,38 @@ export default class ColosseumClient {
 
       let followedTeams = this.getFollowedTeams(leagues[i]);
 
-      try {
-        let data = await this.getLeagueScoreboard(
-          l.league,
-          this.getDate(scoreboardDate),
-          scoreboardDate.getTime(),
-        );
+      let data = await this.getLeagueScoreboard(
+        l.league,
+        this.getDate(scoreboardDate),
+        scoreboardDate.getTime(),
+      );
 
-        for (let j = 0; j < data.length; j++) {
-          let events = data[j] && data[j].events ? data[j].events : [];
+      for (let j = 0; j < data.length; j++) {
+        let events = data[j] && data[j].events ? data[j].events : [];
 
-          for (let k = 0; k < events.length; k++) {
-            let e = this.parseEvent(events[k]);
+        for (let k = 0; k < events.length; k++) {
+          let e = this.parseEvent(events[k]);
 
-            if (!e) {
-              continue;
-            }
+          if (!e) {
+            continue;
+          }
 
-            let isFollowedTeam = [e.home.id, e.away.id].some(
-              (t) => followedTeams.indexOf(t) >= 0,
+          let isFollowedTeam = [e.home.id, e.away.id].some(
+            (t) => followedTeams.indexOf(t) >= 0,
+          );
+
+          if (followOnlyMode) {
+            if (isFollowedTeam) l.games.push(e);
+          } else {
+            l.games.push(e);
+          }
+
+          if (isFollowedTeam && e.live) {
+            l.following.push(
+              `${e.home.teamAbbr}  ${e.home.score} - ${e.away.score}  ${e.away.teamAbbr} [${e.meta}]`,
             );
-
-            if (followOnlyMode) {
-              if (isFollowedTeam) l.games.push(e);
-            } else {
-              l.games.push(e);
-            }
-
-            if (isFollowedTeam && e.live) {
-              l.following.push(
-                `${e.home.teamAbbr}  ${e.home.score} - ${e.away.score}  ${e.away.teamAbbr} [${e.meta}]`,
-              );
-            }
           }
         }
-      } catch (error) {
-        warn(
-          `colosseum: failed to load scoreboard for league "${l.league}": ${error}`,
-        );
       }
 
       l.games = this.sortGamesByLive(l.games);
@@ -291,40 +280,34 @@ export default class ColosseumClient {
         following: [],
       };
 
-      try {
-        let data = await this.getLeagueScoreboard(
-          l.league,
-          this.getDate(scoreboardDate),
-          scoreboardDate.getTime(),
-        );
+      let data = await this.getLeagueScoreboard(
+        l.league,
+        this.getDate(scoreboardDate),
+        scoreboardDate.getTime(),
+      );
 
-        for (let j = 0; j < data.length; j++) {
-          let events = data[j] && data[j].events ? data[j].events : [];
+      for (let j = 0; j < data.length; j++) {
+        let events = data[j] && data[j].events ? data[j].events : [];
 
-          for (let k = 0; k < events.length; k++) {
-            if (this._isTennis(l.league)) {
-              // tennis scoreboards return whole tournaments; flatten to matches
-              let matches = this.parseTennisEvent(
-                events[k],
-                this.getDate(scoreboardDate),
-                l.league === "ATP" ? "mens-singles" : "womens-singles",
-              );
-              for (let m = 0; m < matches.length; m++) {
-                l.games.push(matches[m]);
-              }
-            } else {
-              let e = this.parseEvent(events[k]);
+        for (let k = 0; k < events.length; k++) {
+          if (this._isTennis(l.league)) {
+            // tennis scoreboards return whole tournaments; flatten to matches
+            let matches = this.parseTennisEvent(
+              events[k],
+              this.getDate(scoreboardDate),
+              l.league === "ATP" ? "mens-singles" : "womens-singles",
+            );
+            for (let m = 0; m < matches.length; m++) {
+              l.games.push(matches[m]);
+            }
+          } else {
+            let e = this.parseEvent(events[k]);
 
-              if (e) {
-                l.games.push(e);
-              }
+            if (e) {
+              l.games.push(e);
             }
           }
         }
-      } catch (error) {
-        warn(
-          `colosseum: failed to load scoreboard for tournament "${l.league}": ${error}`,
-        );
       }
 
       l.games = this.sortGamesByLive(l.games);
@@ -393,7 +376,7 @@ export default class ColosseumClient {
 
     let event = {};
 
-    let gameLink = evt.links.filter(
+    let gameLink = (evt.links || []).filter(
       (l) => l.text === "Gamecast" || l.text === "Summary",
     )[0];
 
